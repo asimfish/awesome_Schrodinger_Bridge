@@ -1,7 +1,7 @@
 # Schrödinger Bridge 趋势报告 2026
 
 > awesome_Schrödinger_Bridge · 综合调研报告 · 2026-09-01
-> 覆盖：25 篇核心精读 + 20 份专题笔记 + 62 篇扩展条目（其中 14 篇为 2025–2026 新增，检索日 2026-09-01）
+> 覆盖：25 篇核心精读 + 20 份专题笔记 + 69 篇扩展条目（其中 21 篇为 2025–2026 新增，检索日 2026-09-01）
 > 证据口径：每条论断后括注来源——`R:` 逐篇精读（`reports/`）、`E:` 专题（`topics/`）、`arXiv:` 论文页、`ICLR/ICML:` 会议页。无来源的判断以「判断」标出。
 
 ---
@@ -49,7 +49,8 @@
 - **任务代价**：GSBM 允许在路径动能之外加可微状态代价，把 keypoint/depth、逆动力学、安全约束写进 transport 目标（R:2310.02233；synthesis §3.4）。
 - **多边缘**：3MSBM 学满足多个位置约束的测度值样条，在 Lotka-Volterra、墨西哥湾洋流、scRNA-seq、北京空气质量上对比 DMSB / SBIRR / smoothSB / MMFM（R:2506.10168）；MSBM 走另一条路——逐区间局部 SB + 共享全局控制参数化，中间边缘全部满足且轨迹连续（arXiv:2510.16587）。
 - **分叉**：BranchSBM 参数化多条时变速度场 + 各分支增长过程，目标是 Unbalanced CondSOC 之和；在 Clonidine 扰动数据上重建多簇终态，单分支 SBM 无法区分高维主成分上分离的簇，可扩展到 150 PCs（ICLR 2026 项目页）。
-- **反馈与非平衡**：FSBM 把 SB 求解写成闭环反馈控制（ICLR 2025 Oral）；UDSB 允许质量不守恒（arXiv:2306.09099）；BranchSBM 的增长网络实质上把非平衡性变成分支间的质量分配。
+- **反馈与非平衡**：FSBM 把 SB 求解写成闭环反馈控制（ICLR 2025 Oral）；UDSB 允许质量不守恒（arXiv:2306.09099）；BranchSBM 的增长网络实质上把非平衡性变成分支间的质量分配；CytoBridge 把平均场 SB 推广到非归一化分布，用四个网络显式建模细胞转移、增殖与相互作用（NeurIPS 2025，arXiv:2505.11197）。
+- **约束域**：Reflected SBM 以单位超立方体上的反射布朗运动为参考过程，把 (α-)IMF 的部分 simulation-free 训练搬到反射 SB，样本保证落在数据域内且开销可忽略（arXiv:2607.03626）。
 - **函数空间**：SOC for diffusion bridges in function spaces（NeurIPS 2024）→ FAS 把 adjoint 采样推到无限维（R:2511.06239）。
 
 ### 2.3 离散状态空间：从翻译到采样与微调
@@ -63,13 +64,13 @@
 
 - **源头**：PIS / DDS / CMCD 把"从能量采样"写成 SOC，但受全轨迹反传、on-policy 耦合、先验受限三大瓶颈制约（E14）。
 - **转折**：Adjoint Matching（ICLR 2025 Spotlight）用 memoryless 噪声调度 + lean adjoint 回归，把 reward 微调和采样都变成回归（E06）。
-- **谱系**：AS 首次做到梯度更新数远多于能量评估数，扩展到 SPICE 分子构象的 amortized 采样（R:2504.11713）；ASBS 允许任意 source 分布（R:2506.22565，NeurIPS 2025 Oral）；FAS 上函数空间；DAM / DASBS 上离散空间。
+- **谱系**：AS 首次做到梯度更新数远多于能量评估数，扩展到 SPICE 分子构象的 amortized 采样（R:2504.11713）；ASBS 允许任意 source 分布（R:2506.22565，NeurIPS 2025 Oral）；NAAS 把退火参考动力学作为 base SDE，让参考轨迹自带朝目标推进的信息（NeurIPS 2025，arXiv:2506.18165）；WT-ASBS 把 well-tempered metadynamics 的在线偏置沿集体变量加进 ASBS，首次用扩散采样器刻画含键断裂/形成的反应面（ICLR 2026，arXiv:2510.11923）；FAS 上函数空间；DAM / DASBS 上离散空间。
 - **竞品与评测**：iDEM / NETS / Sendera 在"无偏 + 全模态覆盖"维度仍是 adjoint 线的短板；评测需补 EUBO、前向指标与 mode-coverage 口径（E15）。
 - **理论**：SMP 视角给出控制相关漂移/扩散与凸运行成本下的一般 Hamiltonian adjoint matching 目标，证明其期望的一阶变分与原 SOC 目标一致，lean adjoint 是状态无关扩散下的特例，AM 可解释为连续时间的逐次逼近法（arXiv:2604.08580）。
 
 ### 2.5 应用面：图像、具身、科学
 
-- **图像修复/翻译**：I²SB（2–10 NFE，R:2302.05872）→ DDBM → UNSB（unpaired）→ DBIM / CDBM（少步）→ UniDB（SOC 统一 + 可调终端罚改善细节）→ UniDB++（免训练加速）→ LBM（1 NFE latent）。E17 指出 DDIB 式"两段桥拼接 ≠ 跨域 OT"、精确 cycle consistency ≠ 对齐，语义漂移是对机器人数据最危险的失败模式。
+- **图像修复/翻译**：I²SB（2–10 NFE，R:2302.05872）→ DDBM → UNSB（unpaired）→ DBIM / CDBM（少步）→ UniDB（SOC 统一 + 可调终端罚改善细节）→ UniDB++（免训练加速）→ LBM（1 NFE latent）。CVPR 2026 的两篇继续在 DDBM 框架内做结构保真：RDBM 用成对残差调制噪声、只扰动退化区域，五类修复任务平均 +1.55 dB（arXiv:2510.23116）；Bi-Bridge 利用高斯桥均值对端点的对称性做双向一致性训练（CVF）。E17 指出 DDIB 式"两段桥拼接 ≠ 跨域 OT"、精确 cycle consistency ≠ 对齐，语义漂移是对机器人数据最危险的失败模式。
 - **具身**：表示对齐范式（EgoBridge、Guided OT co-training：在 joint feature-action 分布上对齐，R:2509.19626、R:2509.18631）与生成式 transport 范式（SB Flow、BDGxRL）不可平替，耦合方式需要显式定义（synthesis §4.4）。2026 年的新变量是"策略即桥"：BridgePolicy 把观测嵌入 SDE、从观测先验出发采样动作（ICML 2026），RSBM 用 ε 谱做少步导航策略（arXiv:2604.05673）。
 - **科学**：React-OT 用确定性 OT 生成化学反应过渡态（Nat. Mach. Intell. 2025，R:2404.13430）；SBUnfold 在 60 万仿真样本 + 1000 条伪数据下保持稳定（R:2308.12351）；单细胞轨迹推断是结构化 SB 的主战场（DMSB → 3MSBM → MSBM → BranchSBM）；Adjoint 线主攻分子构象与 Boltzmann 采样。
 - **语音**：Bridge-TTS 用 SB 替代扩散做 TTS（arXiv:2312.03491）、SB 语音增强（Interspeech 2024）。
@@ -121,7 +122,7 @@
 
 ## §6 方法与证据
 
-- **来源层次**：核心 25 篇有逐篇精读（经 10 路审查 + 修复，见原库审查记录摘要）；20 份专题笔记；扩展 62 条中 48 条为专题反复引用的基础论文（arXiv ID 与标题经 Semantic Scholar 批量核验，47/49 通过，1 条记忆错误已剔除），14 条为 2026-09-01 新检索（arXiv 页 / ICLR 2026 页 / ICML 2025–2026 页 / PMLR 页直接可见 ID、标题与 venue）。
-- **未核验即不写**：作者不确定的条目作者栏留空；venue 无会议页证据的写 `arXiv`；Reflected SBM、CytoBridge、XFlowMP 等仅在搜索摘要中出现、未能打开原页的条目未收录。
+- **来源层次**：核心 25 篇有逐篇精读（经 10 路审查 + 修复，见原库审查记录摘要）；20 份专题笔记；扩展 69 条中 48 条为专题反复引用的基础论文（arXiv ID 与标题经 Semantic Scholar 批量核验，47/49 通过，1 条记忆错误已剔除），21 条为 2026-09-01 新检索（arXiv 页 / ICLR 2026 页 / ICML 2025–2026 页 / PMLR 页直接可见 ID、标题与 venue）。
+- **未核验即不写**：作者不确定的条目作者栏留空；venue 无会议页证据的写 `arXiv`；XFlowMP、FreeBridge 等仅在搜索摘要中出现、未能打开原页的条目未收录（Reflected SBM 与 CytoBridge 在第二轮检索中已打开原页并收录）。
 - **局限**：检索日 arXiv API 与 Semantic Scholar 均出现限流，2025H2–2026 的覆盖以 WebSearch 命中为主，不保证完备；数值均取自摘要或论文页可见内容，未复现。
 - **复现**：`python3 scripts/build_readme.py` 重建 README；`python3 scripts/s2_verify.py --ids ...` 核验新 ID；`bash scripts/translate_batch.sh` 生成译本；`python3 scripts/qa_table.py` 重建译本 QA 表。

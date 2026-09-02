@@ -80,7 +80,8 @@ content("主线 2 · 结构化 SB：把领域知识写进路径", "Takeaway：�
 <tr><td>任务代价</td><td>GSBM（ICLR 24）</td><td>路径动能之外加可微状态代价：keypoint / depth / 逆动力学 / 安全约束</td><td>R:2310.02233</td></tr>
 <tr><td>多边缘</td><td>3MSBM（NeurIPS 25）· <span class="tag red">MSBM 2025</span></td><td>相空间测度值样条 vs 逐区间局部 SB + 共享全局参数化；两种构造并存，未收敛</td><td>R:2506.10168 · arXiv:2510.16587</td></tr>
 <tr><td>分叉</td><td><span class="tag red">BranchSBM（ICLR 26）</span></td><td>多条速度场 + 分支增长网络 = Unbalanced CondSOC 之和；单分支 SBM 在细胞命运分叉上模式塌缩；扩展到 150 PCs</td><td>ICLR 2026 项目页</td></tr>
-<tr><td>反馈 / 非平衡</td><td>FSBM（ICLR 25 Oral）· UDSB</td><td>闭环反馈控制求 SB；质量不守恒（增殖/死亡）</td><td>arXiv:2410.14055 · 2306.09099</td></tr>
+<tr><td>反馈 / 非平衡</td><td>FSBM（ICLR 25 Oral）· UDSB · <span class="tag red">CytoBridge（NeurIPS 25）</span></td><td>闭环反馈控制求 SB；质量不守恒；平均场 + 非平衡 + 相互作用四网络建模</td><td>arXiv:2410.14055 · 2306.09099 · 2505.11197</td></tr>
+<tr><td>约束域</td><td><span class="tag red">Reflected SBM（2026）</span></td><td>反射布朗运动参考过程 + IMF，样本保证在数据域内，开销可忽略</td><td>arXiv:2607.03626</td></tr>
 <tr><td>函数空间</td><td>SOC in function spaces（NeurIPS 24）→ FAS（ICML 26）</td><td>把 adjoint 采样推到无限维</td><td>R:2511.06239</td></tr></table>
 <div class="card red" style="margin-top:18px"><h3>判断</h3><p>结构先验（多边缘 / 分叉 / 非平衡）缺一，单细胞任务就会模式塌缩或质量守恒失真；3MSBM 与 MSBM 同年给出两种不同的多边缘构造，说明这个子问题尚未收敛。</p></div>''',
  "3 · 进展", "见表内证据列")
@@ -94,13 +95,13 @@ content("主线 3 · 离散状态空间：从翻译到采样与微调", "Takeawa
 content("主线 4 · SOC 采样与微调：Adjoint 谱系的三年", "Takeaway：Adjoint Matching 把 SOC 变成回归，衍生出整条采样 / 微调谱系；2026 年 SMP 给它补上严格地基。",
  '''<div class="cols"><div class="card"><h3>谱系</h3><ul><li>源头：PIS / DDS / CMCD——全轨迹反传、on-policy 耦合、先验受限三大瓶颈（E14）</li>
 <li>转折：Adjoint Matching（ICLR 25 Spotlight）memoryless 调度 + lean adjoint 回归</li>
-<li>AS（ICML 25）：梯度更新数 ≫ 能量评估数，SPICE 构象 amortized 采样</li><li>ASBS（NeurIPS 25 Oral）：任意 source 分布 · FAS：函数空间 · DAM / DASBS：离散</li></ul></div>
+<li>AS（ICML 25）：梯度更新数 ≫ 能量评估数，SPICE 构象 amortized 采样</li><li>ASBS（NeurIPS 25 Oral）：任意 source 分布 · <span class="tag red">NAAS</span>（NeurIPS 25）退火参考动力学 · <span class="tag red">WT-ASBS</span>（ICLR 26）metadynamics 偏置进 ASBS</li><li>FAS：函数空间 · DAM / DASBS：离散</li></ul></div>
 <div class="card red"><h3>竞品、评测与理论</h3><ul><li>竞品 iDEM / NETS / Sendera："无偏 + 全模态覆盖"仍是 adjoint 线短板；评测需补 EUBO、前向指标、mode-coverage（E15）</li>
 <li><span class="tag red">AM via SMP（2026）</span>：一般 Hamiltonian adjoint matching 目标，其期望一阶变分与 SOC 目标一致；lean adjoint = 状态无关扩散特例；AM = 连续时间逐次逼近法</li></ul></div></div>''',
  "3 · 进展", "R:2504.11713、R:2506.22565、R:2511.06239、R:2602.07132、R:2602.08243；arXiv:2604.08580；E06/E14/E15")
 # 13 apps image
 content("主线 5a · 应用：图像修复与翻译", "Takeaway：Doob h-transform 类桥是 SOC 终端罚 →∞ 的特例（UniDB）——这解释了过度平滑，也给出修法。",
- '''<div class="cols3"><div class="card"><h3>成对桥的演进</h3><ul><li>I²SB（ICML 23）：2–10 NFE vs Palette ~100</li><li>DDBM（ICLR 24）→ DBIM（ICLR 25）隐式采样</li><li><span class="tag red">UniDB（ICML 25）</span>：闭式最优控制器 + 可调终端罚，细节保真更好</li><li><span class="tag red">UniDB++</span>：免训练闭式加速</li></ul></div>
+ '''<div class="cols3"><div class="card"><h3>成对桥的演进</h3><ul><li>I²SB（ICML 23）：2–10 NFE vs Palette ~100</li><li>DDBM（ICLR 24）→ DBIM（ICLR 25）隐式采样</li><li><span class="tag red">UniDB（ICML 25）</span>：闭式最优控制器 + 可调终端罚，细节保真更好</li><li><span class="tag red">UniDB++</span>：免训练闭式加速</li><li><span class="tag red">RDBM / Bi-Bridge（CVPR 26）</span>：残差调制只扰动退化区（+1.55 dB）；双向一致性</li></ul></div>
 <div class="card"><h3>unpaired 与少步</h3><ul><li>UNSB（ICLR 24）神经 SB + 对抗正则</li><li>ASBM（NeurIPS 24）对抗式 D-IMF</li><li>LBM（ICCV 25）SD latent 上 1 NFE</li></ul></div>
 <div class="card red"><h3>失败模式（E17）</h3><ul><li>DDIB 两段桥拼接 ≠ 跨域 OT</li><li>精确 cycle consistency ≠ 对齐</li><li>语义漂移是机器人数据上最危险的失败</li></ul></div></div>''',
  "3 · 进展", "R:2302.05872；ICML 2025 PMLR 267 zhu25o；arXiv:2505.21528；E16/E17")

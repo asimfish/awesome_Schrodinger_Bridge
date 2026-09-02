@@ -42,7 +42,7 @@
 \vspace{4pt}
 \begin{center}\begin{tabular}{lrl}\toprule
 交付物 & 数量 & 位置 \\\midrule
-论文条目（核心 + 扩展） & 25 + 62 = 87 & \texttt{README.md}（脚本生成） \\
+论文条目（核心 + 扩展） & 25 + 69 = 94 & \texttt{README.md}（脚本生成） \\
 中文精读报告 & 25（+4 综合） & \texttt{reports/} \\
 保版式中文译本 PDF & 25 & \texttt{papers\_zh/}（QA 表随附） \\
 专题笔记 E01--E20 & 20 & \texttt{topics/} \\
@@ -115,9 +115,10 @@ SB 与 FM 是一条连续谱的两端；同一网络覆盖全谱。缺的是自�
 \begin{center}\footnotesize\begin{tabular}{P{1.6cm}p{3.9cm}p{5.0cm}p{3.1cm}}\toprule
 结构 & 代表 & 关键点 & 证据 \\\midrule
 任务代价 & GSBM（ICLR 24） & 路径动能外加可微状态代价 & R:2310.02233 \\\addlinespace[2pt]
-多边缘 & 3MSBM · \new{MSBM} & 相空间样条 vs 逐区间局部 SB；两构造并存 & R:2506.10168 · 2510.16587 \\\addlinespace[2pt]
+多边缘 & 3MSBM · \new{MSBM} & 相空间样条 vs 逐区间局部 SB；两构造并存 & R:2506.10168、2510.16587 \\\addlinespace[2pt]
 分叉 & \new{BranchSBM（ICLR 26）} & 多速度场 + 增长网络；单分支 SBM 模式塌缩 & ICLR 2026 \\\addlinespace[2pt]
-反馈 / 非平衡 & FSBM（ICLR 25 Oral）· UDSB & 闭环反馈控制；质量不守恒 & arXiv:2410.14055 · 2306.09099 \\\addlinespace[2pt]
+反馈 / 非平衡 & FSBM · UDSB · \new{CytoBridge（NeurIPS 25）} & 闭环反馈；质量不守恒；平均场 + 相互作用 & arXiv:2410.14055、2505.11197 \\\addlinespace[2pt]
+约束域 & \new{Reflected SBM（2026）} & 反射布朗参考 + IMF，样本保证在域内 & arXiv:2607.03626 \\\addlinespace[2pt]
 函数空间 & SOC-FS（NeurIPS 24）$\to$ FAS（ICML 26） & adjoint 采样推到无限维 & R:2511.06239 \\\bottomrule
 \end{tabular}\end{center}
 \vspace{4pt}
@@ -151,7 +152,7 @@ SB 与 FM 是一条连续谱的两端；同一网络覆盖全谱。缺的是自�
 \item 源头 PIS / DDS / CMCD：全轨迹反传、on-policy 耦合、先验受限（E14）
 \item 转折 Adjoint Matching（ICLR 25 Spotlight）：memoryless 调度 + lean adjoint 回归（E06）
 \item AS（ICML 25）：梯度更新数 $\gg$ 能量评估数；SPICE 构象 amortized 采样（R:2504.11713）
-\item ASBS（NeurIPS 25 Oral）任意 source · FAS 函数空间 · DAM / DASBS 离散
+\item ASBS（NeurIPS 25 Oral）任意 source · \new{NAAS}（NeurIPS 25）退火参考 · \new{WT-ASBS}（ICLR 26）metadynamics 偏置 · FAS 函数空间 · DAM / DASBS 离散
 \item 竞品 iDEM / NETS / Sendera：\con{无偏 + 全模态覆盖}仍是短板；评测需补 EUBO / 前向指标（E15）
 \item \new{AM via SMP（2026）}：一般 Hamiltonian adjoint matching 目标，一阶变分与 SOC 目标一致；lean adjoint 为状态无关扩散特例
 \end{itemize}
@@ -165,7 +166,7 @@ Adjoint Matching 把 SOC 变成回归，衍生整条采样 / 微调谱系；2026
 \vspace{4pt}
 \begin{center}\footnotesize\begin{tabular}{P{1.9cm}p{6.0cm}p{5.2cm}}\toprule
 领域 & 进展 & Takeaway \\\midrule
-图像修复 / 翻译 & I²SB $\to$ DDBM $\to$ DBIM $\to$ \new{UniDB / UniDB++}；UNSB、ASBM、LBM 1-NFE & Doob $h$-transform = SOC 终端罚 $\to\infty$ 特例，解释过平滑并给出修法 \\\addlinespace[3pt]
+图像修复 / 翻译 & I²SB $\to$ DDBM $\to$ DBIM $\to$ \new{UniDB / UniDB++}；\new{RDBM · Bi-Bridge（CVPR 26）}；UNSB、ASBM、LBM 1-NFE & Doob $h$-transform = SOC 终端罚 $\to\infty$ 特例，解释过平滑并给出修法 \\\addlinespace[3pt]
 具身 & 表示对齐（EgoBridge、Guided OT）· 生成式 transport（SB Flow、BDGxRL）· \new{策略即桥（BridgePolicy ICML 26、RSBM）} & 三范式不可平替；\con{真机统计协议缺口依旧}（R10 / E11） \\\addlinespace[3pt]
 科学 & 单细胞：TrajectoryNet $\to$ DMSB $\to$ 3MSBM $\to$ MSBM $\to$ \new{BranchSBM}；分子：React-OT、AS/ASBS；物理：SBUnfold & 结构化 SB 主战场是单细胞；Adjoint 主战场是构象 \\\bottomrule
 \end{tabular}\end{center}
@@ -246,8 +247,8 @@ dLLM 的 SB/SOC 微调 & DAM / DASBS 之外第二条独立路线，$\ge$7B 验�
 \begin{frame}{Backup Slides}\end{frame}
 \begin{frame}{Backup · 方法与证据、局限}
 \begin{itemize}
-\item 来源层次：核心 25 篇逐篇精读（经 10 路审查 + 修复）；专题 20 份；扩展 62 条 = 48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 14 条 2026-09-01 新检索（论文页直接可见 ID / 标题 / venue）
-\item 未核验即不写：作者不确定留空；venue 无会议页证据写 arXiv；Reflected SBM、CytoBridge 等未能打开原页者未收录
+\item 来源层次：核心 25 篇逐篇精读（经 10 路审查 + 修复）；专题 20 份；扩展 69 条 = 48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 2026-09-01 新检索（论文页直接可见 ID / 标题 / venue）
+\item 未核验即不写：作者不确定留空；venue 无会议页证据写 arXiv；XFlowMP、FreeBridge 等未能打开原页者未收录
 \item 局限：检索日 arXiv API 与 Semantic Scholar 均限流，2025H2--2026 覆盖以 WebSearch 命中为主；数值取自摘要或论文页，未复现
 \item 复现：\texttt{build\_readme.py} · \texttt{s2\_verify.py} · \texttt{translate\_batch.sh} · \texttt{qa\_table.py} · \texttt{build\_slides.py} · \texttt{md\_to\_pdf.py}
 \end{itemize}

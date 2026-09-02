@@ -1,6 +1,6 @@
 # Awesome Schrödinger Bridge
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-87-blue) ![中文精读](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%B2%BE%E8%AF%BB-25-orange) ![中文译本](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E8%AF%91%E6%9C%AC%20PDF-25-red) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen) ![last update](https://img.shields.io/badge/last%20update-2026-09-02-lightgrey)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-94-blue) ![中文精读](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%B2%BE%E8%AF%BB-25-orange) ![中文译本](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E8%AF%91%E6%9C%AC%20PDF-25-red) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen) ![last update](https://img.shields.io/badge/last%20update-2026-09-03-lightgrey)
 
 A curated list of papers, code, tutorials and **Chinese deep-dive reports** on the **Schrödinger Bridge (SB)** problem and its modern incarnations: diffusion Schrödinger bridges and bridge matching, generalized / multi-marginal / unbalanced SB, adjoint & stochastic-optimal-control samplers, and their applications in generative modeling, scientific data, and embodied AI (sim2real, cross-domain imitation).
 
@@ -194,15 +194,25 @@ _(to be added)_
 
  > Feedback SBM：把 SB 求解写成闭环反馈控制，提升多边缘/受约束场景的稳定性。
 
-7. **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS 2025. [paper](https://arxiv.org/abs/2506.10168) [code](https://github.com/panostheo98/3MSBM) [📄 PDF](papers/2506.10168_momentum_multi_marginal_sbm.pdf) [📘 精读](reports/2506.10168_momentum_multi_marginal_sbm.md) [🀄 译本](papers_zh/2506.10168_momentum_multi_marginal_sbm.zh.pdf) ⭐
+7. **Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge (CytoBridge).** NeurIPS 2025. [paper](https://arxiv.org/abs/2505.11197) [code](https://github.com/zhenyiizhang/CytoBridge-NeurIPS)
+
+ > UMFSB / CytoBridge：把平均场 SB 推广到非归一化分布，用四个网络（转移速度 v、增长率 g、log 密度 score s、相互作用势 Φ）显式建模细胞转移、增殖与相互作用，能量 + 重建 + Fokker–Planck 约束联合训练；在合成 GRN 与真实 scRNA-seq 上消除虚假转移。
+
+8. **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS 2025. [paper](https://arxiv.org/abs/2506.10168) [code](https://github.com/panostheo98/3MSBM) [📄 PDF](papers/2506.10168_momentum_multi_marginal_sbm.pdf) [📘 精读](reports/2506.10168_momentum_multi_marginal_sbm.md) [🀄 译本](papers_zh/2506.10168_momentum_multi_marginal_sbm.zh.pdf) ⭐
 
  *Panagiotis Theodoropoulos, Augustinos D. Saravanos, Evangelos A. Theodorou, Guan-Horng Liu*
 
-8. **Multi-Marginal Schrödinger Bridge Matching.** arXiv 2025. [paper](https://arxiv.org/abs/2510.16587) [code](https://github.com/bw-park/MSBM)
+9. **Multi-Marginal Schrödinger Bridge Matching.** arXiv 2025. [paper](https://arxiv.org/abs/2510.16587) [code](https://github.com/bw-park/MSBM)
 
  > MSBM：把 IMF 推广到多边缘约束——逐区间构造局部 SB 并共享全局控制参数化，保证中间边缘全部满足且轨迹连续；scRNA-seq 上与 3MSBM 同赛道。
 
-9. **Branched Schrödinger Bridge Matching.** ICLR 2026. [paper](https://iclr.cc/virtual/2026/poster/10008461) [code](https://github.com/sophtang/BranchSBM)
+10. **Reflected Schrödinger Bridge Matching.** arXiv 2026. [paper](https://arxiv.org/abs/2607.03626)
+
+ *Viktor Nilsson, Marcus Häggbom, Pierre Nyquist, Joakim Andén*
+
+ > 反射 SBM：以单位超立方体上的反射布朗运动为参考过程，把 (α-)IMF 的部分 simulation-free 训练搬到反射 SB，保证样本始终落在数据域内；相对非反射基线额外开销可忽略，生成质量持平或略升。
+
+11. **Branched Schrödinger Bridge Matching.** ICLR 2026. [paper](https://iclr.cc/virtual/2026/poster/10008461) [code](https://github.com/sophtang/BranchSBM)
 
  *Sophia Tang, Yinuo Zhang, Alexander Tong, Pranam Chatterjee*
 
@@ -335,19 +345,31 @@ _(to be added)_
 
  *Aaron Havens, Benjamin Kurt Miller, Bing Yan, Carles Domingo-Enrich, Anuroop Sriram, Daniel Levine, Bin Hu, Brandon Amos, Brian Karrer, Xiang Fu, Guan-Horng Liu, Ricky T. Q. Chen 等*
 
-2. **Adjoint Schrödinger Bridge Sampler.** NeurIPS 2025 (Oral). [paper](https://arxiv.org/abs/2506.22565) [code](https://github.com/facebookresearch/adjoint_samplers) [📄 PDF](papers/2506.22565_adjoint_schrodinger_bridge_sampler.pdf) [📘 精读](reports/2506.22565_adjoint_schrodinger_bridge_sampler.md) [🀄 译本](papers_zh/2506.22565_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
+2. **Non-equilibrium Annealed Adjoint Sampler.** NeurIPS 2025. [paper](https://arxiv.org/abs/2506.18165)
+
+ *Jaemoo Choi, Yongxin Chen, Molei Tao, Guan-Horng Liu*
+
+ > NAAS：把退火（非平稳）参考动力学作为 SOC 的 base SDE，让参考轨迹自带朝目标推进的信息；交替优化两个控制并用 lean adjoint 训练，回放缓冲避免重要性加权；在经典能量景观与分子 Boltzmann 分布上优于 PIS / DDS。
+
+3. **Adjoint Schrödinger Bridge Sampler.** NeurIPS 2025 (Oral). [paper](https://arxiv.org/abs/2506.22565) [code](https://github.com/facebookresearch/adjoint_samplers) [📄 PDF](papers/2506.22565_adjoint_schrodinger_bridge_sampler.pdf) [📘 精读](reports/2506.22565_adjoint_schrodinger_bridge_sampler.md) [🀄 译本](papers_zh/2506.22565_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
 
  *Guan-Horng Liu, Jaemoo Choi, Yongxin Chen, Benjamin Kurt Miller, Ricky T. Q. Chen*
 
-3. **MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control.** arXiv 2025. [paper](https://arxiv.org/abs/2508.10684)
+4. **MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control.** NeurIPS 2025. [paper](https://arxiv.org/abs/2508.10684)
 
- > MDNS：CTMC 随机最优控制视角训练离散神经采样器（Ising/Potts），用免微分的路径测度对齐目标与加权去噪交叉熵实现高维可扩展；与 DASBS 同属离散能量采样线。
+ > MDNS（NeurIPS 2025，据作者主页与 CV）：CTMC 随机最优控制视角训练离散神经采样器（Ising/Potts），用免微分的路径测度对齐目标与加权去噪交叉熵实现高维可扩展；与 DASBS 同属离散能量采样线。
 
-4. **Functional Adjoint Sampler: Scalable Sampling on Infinite Dimensional Spaces.** ICML 2026. [paper](https://arxiv.org/abs/2511.06239) [📄 PDF](papers/2511.06239_functional_adjoint_sampler.pdf) [📘 精读](reports/2511.06239_functional_adjoint_sampler.md) [🀄 译本](papers_zh/2511.06239_functional_adjoint_sampler.zh.pdf) ⭐
+5. **Enhancing Diffusion-Based Sampling with Molecular Collective Variables (WT-ASBS).** ICLR 2026. [paper](https://arxiv.org/abs/2510.11923) [code](https://github.com/facebookresearch/wt-asbs)
+
+ *Juno Nam, Bálint Máté, Artur P. Toshev, Manasa Kaniselvan, Rafael Gómez-Bombarelli, Ricky T. Q. Chen, Brandon Wood, Guan-Horng Liu, Benjamin Kurt Miller*
+
+ > WT-ASBS：把 well-tempered metadynamics 的在线排斥偏置沿集体变量（CV）加进 ASBS——内环训到有偏目标收敛、外环按 CV 投影叠加高斯核；发现稀有构象并重加权还原 Boltzmann 分布，首次用扩散采样器刻画含键断裂/形成的反应面。
+
+6. **Functional Adjoint Sampler: Scalable Sampling on Infinite Dimensional Spaces.** ICML 2026. [paper](https://arxiv.org/abs/2511.06239) [📄 PDF](papers/2511.06239_functional_adjoint_sampler.pdf) [📘 精读](reports/2511.06239_functional_adjoint_sampler.md) [🀄 译本](papers_zh/2511.06239_functional_adjoint_sampler.zh.pdf) ⭐
 
  *Byoungwoo Park, Juho Lee, Guan-Horng Liu*
 
-5. **Discrete Adjoint Schrödinger Bridge Sampler.** ICML 2026. [paper](https://arxiv.org/abs/2602.08243) [📄 PDF](papers/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.pdf) [📘 精读](reports/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.md) [🀄 译本](papers_zh/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
+7. **Discrete Adjoint Schrödinger Bridge Sampler.** ICML 2026. [paper](https://arxiv.org/abs/2602.08243) [📄 PDF](papers/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.pdf) [📘 精读](reports/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.md) [🀄 译本](papers_zh/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
 
  *Wei Guo, Yuchen Zhu, Xiaochen Du, Juno Nam, Yongxin Chen, Rafael Gómez-Bombarelli, Guan-Horng Liu, Molei Tao, Jaemoo Choi*
 
@@ -440,6 +462,22 @@ _(to be added)_
  *Beomsu Kim, Gihyun Kwon, Kwanyoung Kim, Jong-Chul Ye*
 
  > UNSB：神经 SB 做 unpaired 图像翻译，配对抗正则与 patch 判别。
+
+4. **Residual Diffusion Bridge Model for Image Restoration.** CVPR 2026. [paper](https://arxiv.org/abs/2510.23116) [code](https://github.com/MiliLab/RDBM)
+
+ *Hebaixu Wang, Jing Zhang, Haoyang Chen, Haonan Guo, Di Wang, Jiayi Ma, Bo Du*
+
+ > RDBM：重新推导广义 diffusion bridge 的前/反向 SDE 闭式，用成对图像的残差调制噪声注入与去除，只扰动退化区域、保护完好区域；五类通用修复任务平均 +1.55 dB PSNR，并证明现有桥模型是其特例（CVF Open Access，pp. 8375–8386）。
+
+5. **Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement.** CVPR 2026. [paper](https://openaccess.thecvf.com/content/CVPR2026/html/Hua_Bi-Bridge_Bidirectional_Diffusion_Bridges_for_Low-Light_Image_Enhancement_CVPR_2026_paper.html)
+
+ *Zeyu Hua, Hui Li, Yu Wang, Song Wang, Congchao Zhu, Caixia Zheng*
+
+ > Bi-Bridge：利用 DDBM 高斯桥均值对端点的对称性，训练时随机交换起终点、单个 U-Net 同时学增强与退化两个方向，用双向一致性约束抑制单向生成模型对结构的扭曲（CVF Open Access，pp. 37455–37464）。
+
+6. **Remote Sensing Image Super-Resolution via Progressive Diffusion Schrödinger Bridge.** Remote Sensing 18(3):532, 2026. [paper](https://www.mdpi.com/2072-4292/18/3/532)
+
+ > PDSB：把大尺度 SR 切成级联子桥，逐级以小尺度结果为条件重建，缓解 LR/HR 配对中的几何位移违反高斯假设的问题；Gaofen-6 (2 m) ↔ Sentinel-2 (10 m) 数据上 FID 8.294，为第二名的一半。
 
 ### <a id="42-video-3d-speech-audio"></a>4.2. Video, 3D, Speech & Audio
 *视频 / 3D / 语音 / 音频*
