@@ -74,13 +74,20 @@ def ext_entries():
                         en_pdf="", note=r.get("note", ""), core=False))
     return out
 
+def format_venue(venue, year):
+    """ml4co 约定：Venue, Year (note)。'NeurIPS 2024 (Spotlight)' -> 'NeurIPS, 2024 (Spotlight)'；已含逗号/复杂期刊卷期的保持原样。"""
+    m = re.match(r"^([A-Za-z][A-Za-z .&+\-]*?)\s+((?:19|20)\d{2})(\s*\(.*\))?$", venue.strip())
+    if m:
+        return f"{m.group(1)}, {m.group(2)}{m.group(3) or ''}"
+    if re.search(r"\b(19|20)\d{2}\b", venue):
+        return venue
+    return f"{venue}, {year}".strip(", ")
+
 def render_entry(i, e):
     links = [link("paper", e["paper_url"]), link("code", e["code_url"]), link("project", e["project_url"]),
              link("📄 PDF", e["en_pdf"]), link("📘 精读", e["report"]), link("🀄 译本", e["zh_pdf"])]
-    links = " ".join(x for x in links if x)
-    venue = e["venue"] or "arXiv"
-    year = e["year"]
-    vy = venue if re.search(r"\b(19|20)\d{2}\b", venue) else f"{venue} {year}".strip()
+    links = ", ".join(x for x in links if x)
+    vy = format_venue(e["venue"] or "arXiv", e["year"])
     star = " ⭐" if e["core"] else ""
     s = f"{i}. **{e['title'].rstrip('.')}.** {vy}. {links}{star}\n"
     if e["authors"]:
@@ -122,7 +129,7 @@ def build():
              "2025–2026 趋势调研与洞见见 `survey/`，汇报 PPT（HTML / PDF / Beamer）见 `slides/`。\n")
     L.append("*Maintained by [asimfish](https://github.com/asimfish). Entries marked ⭐ are core papers with full Chinese reports and translated PDFs. "
              "Venues are verified against arXiv comments / OpenReview / proceedings; preprints are labelled `arXiv`. "
-             "Contributions are welcome — see [Contributing](#8-contributing-citation--license).*\n")
+             "Contributions are welcome — see [Contributing](#8-contributing-citation-license).*\n")
     L.append("**Legend**: `paper` arXiv/publisher page · `code` official implementation · `project` project page · "
              "`📄 PDF` English PDF in repo · `📘 精读` Chinese deep-dive report · `🀄 译本` layout-preserving Chinese PDF\n")
     L.append("## [Content](#content)\n")
@@ -133,10 +140,13 @@ def build():
 
     for k, en, zh in SECTIONS:
         head = "###" if "." in k else "##"
-        L.append(f"{head} <a id=\"{anchor(k)}\"></a>{k}. {en}")
+        L.append(f"<a name=\"{anchor(k)}\"></a>")
+        L.append(f"{head} [{k}. {en}](#content)")
         L.append(f"*{zh}*\n")
         if k == "1":
-            L.append(render_resources(res, kinds=("survey", "tutorial", "lecture")))
+            blk = render_resources(res, kinds=("survey", "tutorial", "lecture"))
+            if "to be added" not in blk:
+                L.append(blk)
             for i, e in enumerate(sorted(by_sec.get(k, []), key=sort_key), 1):
                 L.append(render_entry(i, e))
         elif k == "5":

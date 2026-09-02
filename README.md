@@ -6,7 +6,7 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
 本仓库系统整理薛定谔桥（Schrödinger Bridge）方向的论文与资源。**核心论文每篇配有中文精读报告（`reports/`）与保版式中文译本 PDF（`papers_zh/`，由 [SuperTranslate](https://github.com/asimfish/super_translate) 生成并经视觉 QA）**；20 份专题笔记（`topics/`）梳理方法谱系与基线；2025–2026 趋势调研与洞见见 `survey/`，汇报 PPT（HTML / PDF / Beamer）见 `slides/`。
 
-*Maintained by [asimfish](https://github.com/asimfish). Entries marked ⭐ are core papers with full Chinese reports and translated PDFs. Venues are verified against arXiv comments / OpenReview / proceedings; preprints are labelled `arXiv`. Contributions are welcome — see [Contributing](#8-contributing-citation--license).*
+*Maintained by [asimfish](https://github.com/asimfish). Entries marked ⭐ are core papers with full Chinese reports and translated PDFs. Venues are verified against arXiv comments / OpenReview / proceedings; preprints are labelled `arXiv`. Contributions are welcome — see [Contributing](#8-contributing-citation-license).*
 
 **Legend**: `paper` arXiv/publisher page · `code` official implementation · `project` project page · `📄 PDF` English PDF in repo · `📘 精读` Chinese deep-dive report · `🀄 译本` layout-preserving Chinese PDF
 
@@ -35,441 +35,473 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 7. [Trend Report & Slides](#7-trend-report-slides) — 趋势报告与汇报  
 8. [Contributing, Citation & License](#8-contributing-citation-license) — 贡献、引用与许可  
 
-## <a id="1-surveys-tutorials-foundations"></a>1. Surveys, Tutorials & Foundations
+<a name="1-surveys-tutorials-foundations"></a>
+## [1. Surveys, Tutorials & Foundations](#content)
 *综述、教程与基础*
 
-_(to be added)_
-
-1. **Sinkhorn Distances: Lightspeed Computation of Optimal Transport.** NeurIPS 2013. [paper](https://arxiv.org/abs/1306.0895)
+1. **Sinkhorn Distances: Lightspeed Computation of Optimal Transport.** NeurIPS, 2013. [paper](https://arxiv.org/abs/1306.0895)
 
  *Marco Cuturi*
 
  > 熵正则 OT 的 Sinkhorn 算法：SB 离散化后每一步 IPF 都是它。
 
-2. **A survey of the Schrödinger problem and some of its connections with optimal transport.** Discrete Contin. Dyn. Syst. 2014. [paper](https://arxiv.org/abs/1308.0215)
+2. **A survey of the Schrödinger problem and some of its connections with optimal transport.** Discrete Contin. Dyn. Syst., 2014. [paper](https://arxiv.org/abs/1308.0215)
 
  *Christian Léonard*
 
  > Schrödinger 问题的经典综述：大偏差起源、与熵正则 OT 的联系、动态/静态表述。
 
-3. **Computational Optimal Transport.** Found. Trends Mach. Learn. 2019. [paper](https://arxiv.org/abs/1803.00567)
+3. **Computational Optimal Transport.** Found. Trends Mach. Learn., 2019. [paper](https://arxiv.org/abs/1803.00567)
 
- *G. Peyré, Marco Cuturi*
+ *Gabriel Peyré, Marco Cuturi*
 
  > 计算 OT 教科书；熵正则、Sinkhorn、动态形式的标准参考。
 
-4. **Stochastic Control Liaisons: Richard Sinkhorn Meets Gaspard Monge on a Schrödinger Bridge.** SIAM Review 2021. [paper](https://arxiv.org/abs/2005.10963)
+4. **Stochastic Control Liaisons: Richard Sinkhorn Meets Gaspard Monge on a Schrödinger Bridge.** SIAM Review, 2021. [paper](https://arxiv.org/abs/2005.10963)
 
  *Yongxin Chen, Tryphon T. Georgiou, Michele Pavon*
 
  > 把 SB 讲成随机控制问题的权威综述：Sinkhorn 迭代 ↔ IPF ↔ 最优控制三位一体。
 
-5. **Flow Matching Guide and Code.** arXiv 2024. [paper](https://arxiv.org/abs/2412.06264) [code](https://github.com/facebookresearch/flow_matching)
+5. **Flow Matching Guide and Code.** arXiv, 2024. [paper](https://arxiv.org/abs/2412.06264), [code](https://github.com/facebookresearch/flow_matching)
 
- *Y. Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le et al.*
+ *Yaron Lipman, Marton Havasi, Peter Holderrieth, Neta Shaul, Matt Le et al.*
 
  > Flow Matching 官方指南与代码；含离散 FM 与与 SB/随机插值的关系。
 
-6. **Foundations of Schrödinger Bridges for Generative Modeling.** arXiv 2026. [paper](https://arxiv.org/abs/2603.18992)
+6. **Foundations of Schrödinger Bridges for Generative Modeling.** arXiv, 2026. [paper](https://arxiv.org/abs/2603.18992)
+
+ *Sophia Tang*
 
  > 从 OT、随机控制与路径空间优化出发系统建立 SB 数学基础的教程式指南，聚焦动态表述与现代生成建模的联系（含 DSBM 专节）。
 
-7. **Notes on generative modeling: flow matching, diffusion, optimal transport and Schrödinger bridge.** arXiv 2026. [paper](https://arxiv.org/abs/2606.30053)
+7. **Notes on generative modeling: flow matching, diffusion, optimal transport and Schrödinger bridge.** arXiv, 2026. [paper](https://arxiv.org/abs/2606.30053)
+
+ *Titouan Vayer*
 
  > Peyresq 2026 暑期学校讲义：用 OT 把 flow matching、扩散与 SB 串成一条线，强调 IMF 收敛到熵最优耦合而 rectified flow 不收敛到 OT 耦合。
 
-## <a id="2-diffusion-schrdinger-bridges-bridge-matching"></a>2. Diffusion Schrödinger Bridges & Bridge Matching
+<a name="2-diffusion-schrdinger-bridges-bridge-matching"></a>
+## [2. Diffusion Schrödinger Bridges & Bridge Matching](#content)
 *扩散薛定谔桥与桥匹配（求解器）*
 
-### <a id="21-ipf-dsb-imf-dsbm-lineage"></a>2.1. IPF / DSB / IMF / DSBM Lineage
+<a name="21-ipf-dsb-imf-dsbm-lineage"></a>
+### [2.1. IPF / DSB / IMF / DSBM Lineage](#content)
 *IPF / DSB / IMF / DSBM 谱系*
 
-1. **Diffusion Schrödinger Bridge with Applications to Score-Based Generative Modeling.** NeurIPS 2021. [paper](https://arxiv.org/abs/2106.01357) [code](https://github.com/JTT94/diffusion_schrodinger_bridge)
+1. **Diffusion Schrödinger Bridge with Applications to Score-Based Generative Modeling.** NeurIPS, 2021. [paper](https://arxiv.org/abs/2106.01357), [code](https://github.com/JTT94/diffusion_schrodinger_bridge)
 
- *Valentin De Bortoli, James Thornton, J. Heng, A. Doucet*
+ *Valentin De Bortoli, James Thornton, Jeremy Heng, Arnaud Doucet*
 
  > DSB：用 IPF 交替回归 score 网络求解 SB，把 score-based 生成推广到任意两分布之间。
 
-2. **Solving Schrödinger Bridges via Maximum Likelihood.** Entropy 2021. [paper](https://arxiv.org/abs/2106.02081)
+2. **Solving Schrödinger Bridges via Maximum Likelihood.** Entropy, 2021. [paper](https://arxiv.org/abs/2106.02081)
 
- *Francisco Vargas, Pierre Thodoroff, Neil D. Lawrence, A. Lamacraft*
+ *Francisco Vargas, Pierre Thodoroff, Neil D. Lawrence, Austen Lamacraft*
 
  > 用最大似然（GP 回归 drift）求解 SB 的早期方法。
 
-3. **Deep Generative Learning via Schrödinger Bridge.** ICML 2021. [paper](https://arxiv.org/abs/2106.10410)
+3. **Deep Generative Learning via Schrödinger Bridge.** ICML, 2021. [paper](https://arxiv.org/abs/2106.10410)
 
  *Gefei Wang, Yuling Jiao, Qiang Xu, Yang Wang, Can Yang*
 
  > 早期用 SB 做生成建模的工作：以数据分布为终端的 SB + 分数估计。
 
-4. **Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory.** ICLR 2022. [paper](https://arxiv.org/abs/2110.11291) [code](https://github.com/ghliu/SB-FBSDE)
+4. **Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory.** ICLR, 2022. [paper](https://arxiv.org/abs/2110.11291), [code](https://github.com/ghliu/SB-FBSDE)
 
- *T. Chen, Guan-Horng Liu, Evangelos A. Theodorou*
+ *Tianrong Chen, Guan-Horng Liu, Evangelos A. Theodorou*
 
  > SB-FBSDE：用前向-后向 SDE 理论给 SB 一个似然训练目标，连通 SB 与 score-based 模型。
 
-5. **Diffusion Schrödinger Bridge Matching.** NeurIPS 2023. [paper](https://arxiv.org/abs/2303.16852) [code](https://github.com/yuyang-shi/dsbm-pytorch)
+5. **Diffusion Schrödinger Bridge Matching.** NeurIPS, 2023. [paper](https://arxiv.org/abs/2303.16852), [code](https://github.com/yuyang-shi/dsbm-pytorch)
 
- *Yuyang Shi, Valentin De Bortoli, Andrew Campbell, A. Doucet*
+ *Yuyang Shi, Valentin De Bortoli, Andrew Campbell, Arnaud Doucet*
 
  > DSBM：Iterative Markovian Fitting（IMF）交替投影到 Markov 类与 reciprocal 类，避免 IPF 的误差累积；unpaired 翻译主力基线。
 
-6. **Diffusion Bridge Mixture Transports, Schrödinger Bridge Problems and Generative Modeling.** JMLR 2023. [paper](https://arxiv.org/abs/2304.00917)
+6. **Diffusion Bridge Mixture Transports, Schrödinger Bridge Problems and Generative Modeling.** JMLR, 2023. [paper](https://arxiv.org/abs/2304.00917)
 
  *Stefano Peluchetti*
 
  > IDBM：给 bridge matching 的理论地基——桥混合 → Markov 化 → 迭代收敛到 SB（第一次迭代即合法 transport）。
 
-7. **Schrödinger Bridge Flow for Unpaired Data Translation.** NeurIPS 2024 (Spotlight). [paper](https://arxiv.org/abs/2409.09347) [📄 PDF](papers/2409.09347_schrodinger_bridge_flow_unpaired_translation.pdf) [📘 精读](reports/2409.09347_schrodinger_bridge_flow_unpaired_translation.md) [🀄 译本](papers_zh/2409.09347_schrodinger_bridge_flow_unpaired_translation.zh.pdf) ⭐
+7. **Schrödinger Bridge Flow for Unpaired Data Translation.** NeurIPS, 2024 (Spotlight). [paper](https://arxiv.org/abs/2409.09347), [📄 PDF](papers/2409.09347_schrodinger_bridge_flow_unpaired_translation.pdf), [📘 精读](reports/2409.09347_schrodinger_bridge_flow_unpaired_translation.md), [🀄 译本](papers_zh/2409.09347_schrodinger_bridge_flow_unpaired_translation.zh.pdf) ⭐
 
  *Valentin De Bortoli, Iryna Korshunova, Andriy Mnih, Arnaud Doucet*
 
-8. **BM2: Coupled Schrödinger Bridge Matching.** TMLR 2024. [paper](https://arxiv.org/abs/2409.09376)
+8. **BM2: Coupled Schrödinger Bridge Matching.** TMLR, 2024. [paper](https://arxiv.org/abs/2409.09376)
 
  *Stefano Peluchetti*
 
  > BM²：耦合的双向 bridge matching，单轮同时拟合两个方向。
 
-### <a id="22-paired-bridges-isb-ddbm-dbim"></a>2.2. Paired Bridges (I²SB, DDBM, DBIM)
+<a name="22-paired-bridges-isb-ddbm-dbim"></a>
+### [2.2. Paired Bridges (I²SB, DDBM, DBIM)](#content)
 *成对数据桥*
 
-1. **I²SB: Image-to-Image Schrödinger Bridge.** ICML 2023. [paper](https://arxiv.org/abs/2302.05872) [code](https://github.com/NVlabs/I2SB) [📄 PDF](papers/2302.05872_i2sb.pdf) [📘 精读](reports/2302.05872_i2sb.md) [🀄 译本](papers_zh/2302.05872_i2sb.zh.pdf) ⭐
+1. **I²SB: Image-to-Image Schrödinger Bridge.** ICML, 2023. [paper](https://arxiv.org/abs/2302.05872), [code](https://github.com/NVlabs/I2SB), [📄 PDF](papers/2302.05872_i2sb.pdf), [📘 精读](reports/2302.05872_i2sb.md), [🀄 译本](papers_zh/2302.05872_i2sb.zh.pdf) ⭐
 
  *Guan-Horng Liu, Arash Vahdat, De-An Huang, Evangelos A. Theodorou, Weili Nie, Anima Anandkumar*
 
-2. **Aligned Diffusion Schrödinger Bridges.** UAI 2023. [paper](https://arxiv.org/abs/2302.11419)
+2. **Aligned Diffusion Schrödinger Bridges.** UAI, 2023. [paper](https://arxiv.org/abs/2302.11419)
 
  *Vignesh Ram Somnath, Matteo Pariset, Ya-Ping Hsieh, María Rodríguez Martínez, Andreas Krause, Charlotte Bunne*
 
  > Aligned DSB：利用已配对数据的 SB（单细胞对齐场景）。
 
-3. **Denoising Diffusion Bridge Models.** ICLR 2024. [paper](https://arxiv.org/abs/2309.16948) [code](https://github.com/alexzhou907/DDBM)
+3. **Denoising Diffusion Bridge Models.** ICLR, 2024. [paper](https://arxiv.org/abs/2309.16948), [code](https://github.com/alexzhou907/DDBM)
 
- *Linqi Zhou, Aaron Lou, Samar Khanna, S. Ermon*
+ *Linqi Zhou, Aaron Lou, Samar Khanna, Stefano Ermon*
 
  > DDBM：在 paired 端点之间定义 Doob h-transform 桥，统一 I²SB 类方法的训练/采样接口。
 
-4. **Diffusion Bridge Implicit Models.** ICLR 2025. [paper](https://arxiv.org/abs/2405.15885) [code](https://github.com/thu-ml/DiffusionBridge)
+4. **Diffusion Bridge Implicit Models.** ICLR, 2025. [paper](https://arxiv.org/abs/2405.15885), [code](https://github.com/thu-ml/DiffusionBridge)
 
  *Kaiwen Zheng, Guande He, Jianfei Chen, Fan Bao, Jun Zhu*
 
  > DBIM：给 diffusion bridge 的 DDIM 式隐式采样器，大幅减少 NFE。
 
-5. **UniDB: A Unified Diffusion Bridge Framework via Stochastic Optimal Control.** ICML 2025. [paper](https://proceedings.mlr.press/v267/zhu25o.html) [code](https://github.com/UniDB-SOC/UniDB)
+5. **UniDB: A Unified Diffusion Bridge Framework via Stochastic Optimal Control.** ICML, 2025. [paper](https://proceedings.mlr.press/v267/zhu25o.html), [code](https://github.com/UniDB-SOC/UniDB)
 
  > UniDB：把 diffusion bridge 写成 SOC 问题并给出闭式最优控制器；Doob h-transform 类桥（DDBM 等）是终端罚系数 →∞ 的特例，可调终端罚显著改善修复细节。
 
-### <a id="23-generalized-multi-marginal-mean-field-unbalanced-sb"></a>2.3. Generalized, Multi-marginal, Mean-field & Unbalanced SB
+<a name="23-generalized-multi-marginal-mean-field-unbalanced-sb"></a>
+### [2.3. Generalized, Multi-marginal, Mean-field & Unbalanced SB](#content)
 *广义 / 多边缘 / 平均场 / 非平衡 SB*
 
-1. **Deep Generalized Schrödinger Bridge.** NeurIPS 2022 (Oral). [paper](https://arxiv.org/abs/2209.09893) [code](https://github.com/ghliu/DeepGSB) [📄 PDF](papers/2209.09893_deep_generalized_schrodinger_bridge.pdf) [📘 精读](reports/2209.09893_deep_generalized_schrodinger_bridge.md) [🀄 译本](papers_zh/2209.09893_deep_generalized_schrodinger_bridge.zh.pdf) ⭐
+1. **Deep Generalized Schrödinger Bridge.** NeurIPS, 2022 (Oral). [paper](https://arxiv.org/abs/2209.09893), [code](https://github.com/ghliu/DeepGSB), [📄 PDF](papers/2209.09893_deep_generalized_schrodinger_bridge.pdf), [📘 精读](reports/2209.09893_deep_generalized_schrodinger_bridge.md), [🀄 译本](papers_zh/2209.09893_deep_generalized_schrodinger_bridge.zh.pdf) ⭐
 
  *Guan-Horng Liu, Tianrong Chen, Oswin So, Evangelos A. Theodorou*
 
-2. **Deep Momentum Multi-Marginal Schrödinger Bridge.** NeurIPS 2023. [paper](https://arxiv.org/abs/2303.01751) [code](https://github.com/TianrongChen/DMSB)
+2. **Deep Momentum Multi-Marginal Schrödinger Bridge.** NeurIPS, 2023. [paper](https://arxiv.org/abs/2303.01751), [code](https://github.com/TianrongChen/DMSB)
 
- *T. Chen, Guan-Horng Liu, Molei Tao, Evangelos A. Theodorou*
+ *Tianrong Chen, Guan-Horng Liu, Molei Tao, Evangelos A. Theodorou*
 
  > DMSB：带动量的多边缘 SB，用于单细胞等多时间点轨迹推断（3MSBM 的前身）。
 
-3. **Unbalanced Diffusion Schrödinger Bridge.** arXiv 2023. [paper](https://arxiv.org/abs/2306.09099)
+3. **Unbalanced Diffusion Schrödinger Bridge.** arXiv, 2023. [paper](https://arxiv.org/abs/2306.09099)
 
  *Matteo Pariset, Ya-Ping Hsieh, Charlotte Bunne, Andreas Krause, Valentin De Bortoli*
 
  > Unbalanced DSB：允许质量不守恒（细胞增殖/死亡）的 SB 求解。
 
-4. **Generalized Schrödinger Bridge Matching.** ICLR 2024 (Poster). [paper](https://arxiv.org/abs/2310.02233) [code](https://github.com/facebookresearch/generalized-schrodinger-bridge-matching) [📄 PDF](papers/2310.02233_generalized_schrodinger_bridge_matching.pdf) [📘 精读](reports/2310.02233_generalized_schrodinger_bridge_matching.md) [🀄 译本](papers_zh/2310.02233_generalized_schrodinger_bridge_matching.zh.pdf) ⭐
+4. **Generalized Schrödinger Bridge Matching.** ICLR, 2024 (Poster). [paper](https://arxiv.org/abs/2310.02233), [code](https://github.com/facebookresearch/generalized-schrodinger-bridge-matching), [📄 PDF](papers/2310.02233_generalized_schrodinger_bridge_matching.pdf), [📘 精读](reports/2310.02233_generalized_schrodinger_bridge_matching.md), [🀄 译本](papers_zh/2310.02233_generalized_schrodinger_bridge_matching.zh.pdf) ⭐
 
  *Guan-Horng Liu, Yaron Lipman, Maximilian Nickel, Brian Karrer, Evangelos A. Theodorou, Ricky T. Q. Chen*
 
-5. **Stochastic Optimal Control for Diffusion Bridges in Function Spaces.** NeurIPS 2024. [paper](https://arxiv.org/abs/2405.20630)
+5. **Stochastic Optimal Control for Diffusion Bridges in Function Spaces.** NeurIPS, 2024. [paper](https://arxiv.org/abs/2405.20630)
 
  *Byoungwoo Park, Jungwon Choi, Sungbin Lim, Juho Lee*
 
  > 函数空间上的 diffusion bridge SOC（FAS 的函数空间前身）。
 
-6. **Feedback Schrödinger Bridge Matching.** ICLR 2025 (Oral). [paper](https://arxiv.org/abs/2410.14055)
+6. **Feedback Schrödinger Bridge Matching.** ICLR, 2025 (Oral). [paper](https://arxiv.org/abs/2410.14055)
 
  *Panagiotis Theodoropoulos, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, Evangelos A. Theodorou*
 
  > Feedback SBM：把 SB 求解写成闭环反馈控制，提升多边缘/受约束场景的稳定性。
 
-7. **Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge (CytoBridge).** NeurIPS 2025. [paper](https://arxiv.org/abs/2505.11197) [code](https://github.com/zhenyiizhang/CytoBridge-NeurIPS)
+7. **Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge (CytoBridge).** NeurIPS, 2025. [paper](https://arxiv.org/abs/2505.11197), [code](https://github.com/zhenyiizhang/CytoBridge-NeurIPS)
+
+ *Zhenyi Zhang, Zihan Wang, Yuhao Sun, Tiejun Li, Peijie Zhou*
 
  > UMFSB / CytoBridge：把平均场 SB 推广到非归一化分布，用四个网络（转移速度 v、增长率 g、log 密度 score s、相互作用势 Φ）显式建模细胞转移、增殖与相互作用，能量 + 重建 + Fokker–Planck 约束联合训练；在合成 GRN 与真实 scRNA-seq 上消除虚假转移。
 
-8. **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS 2025. [paper](https://arxiv.org/abs/2506.10168) [code](https://github.com/panostheo98/3MSBM) [📄 PDF](papers/2506.10168_momentum_multi_marginal_sbm.pdf) [📘 精读](reports/2506.10168_momentum_multi_marginal_sbm.md) [🀄 译本](papers_zh/2506.10168_momentum_multi_marginal_sbm.zh.pdf) ⭐
+8. **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS, 2025. [paper](https://arxiv.org/abs/2506.10168), [code](https://github.com/panostheo98/3MSBM), [📄 PDF](papers/2506.10168_momentum_multi_marginal_sbm.pdf), [📘 精读](reports/2506.10168_momentum_multi_marginal_sbm.md), [🀄 译本](papers_zh/2506.10168_momentum_multi_marginal_sbm.zh.pdf) ⭐
 
  *Panagiotis Theodoropoulos, Augustinos D. Saravanos, Evangelos A. Theodorou, Guan-Horng Liu*
 
-9. **Multi-Marginal Schrödinger Bridge Matching.** arXiv 2025. [paper](https://arxiv.org/abs/2510.16587) [code](https://github.com/bw-park/MSBM)
+9. **Multi-Marginal Schrödinger Bridge Matching.** arXiv, 2025. [paper](https://arxiv.org/abs/2510.16587), [code](https://github.com/bw-park/MSBM)
+
+ *Byoungwoo Park, Juho Lee*
 
  > MSBM：把 IMF 推广到多边缘约束——逐区间构造局部 SB 并共享全局控制参数化，保证中间边缘全部满足且轨迹连续；scRNA-seq 上与 3MSBM 同赛道。
 
-10. **Reflected Schrödinger Bridge Matching.** arXiv 2026. [paper](https://arxiv.org/abs/2607.03626)
+10. **Reflected Schrödinger Bridge Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2607.03626)
 
  *Viktor Nilsson, Marcus Häggbom, Pierre Nyquist, Joakim Andén*
 
  > 反射 SBM：以单位超立方体上的反射布朗运动为参考过程，把 (α-)IMF 的部分 simulation-free 训练搬到反射 SB，保证样本始终落在数据域内；相对非反射基线额外开销可忽略，生成质量持平或略升。
 
-11. **Branched Schrödinger Bridge Matching.** ICLR 2026. [paper](https://iclr.cc/virtual/2026/poster/10008461) [code](https://github.com/sophtang/BranchSBM)
+11. **Branched Schrödinger Bridge Matching.** ICLR, 2026. [paper](https://iclr.cc/virtual/2026/poster/10008461), [code](https://github.com/sophtang/BranchSBM)
 
  *Sophia Tang, Yinuo Zhang, Alexander Tong, Pranam Chatterjee*
 
  > BranchSBM：学多条分叉的速度场 + 各分支的质量增长网络，把 Unbalanced CondSOC 之和作为目标，刻画单细胞命运分叉与药物扰动的多模态终态；单分支 SBM 会模式塌缩。
 
-### <a id="24-light-latent-few-step-bridges"></a>2.4. Light, Latent & Few-step Bridges
+<a name="24-light-latent-few-step-bridges"></a>
+### [2.4. Light, Latent & Few-step Bridges](#content)
 *轻量 / 隐空间 / 少步桥*
 
-1. **Light Schrödinger Bridge.** ICLR 2024. [paper](https://arxiv.org/abs/2310.01174) [code](https://github.com/ngushchin/LightSB)
+1. **Light Schrödinger Bridge.** ICLR, 2024. [paper](https://arxiv.org/abs/2310.01174), [code](https://github.com/ngushchin/LightSB)
 
- *A. Korotin, N. Gushchin, Evgeny Burnaev*
+ *Alexander Korotin, Nikita Gushchin, Evgeny Burnaev*
 
  > LightSB：Gaussian-mixture 参数化的闭式 SB 求解器，分钟级训练，适合低维/latent。
 
-2. **Light and Optimal Schrödinger Bridge Matching.** ICML 2024. [paper](https://arxiv.org/abs/2402.03207) [code](https://github.com/SKholkin/LightSB-Matching)
+2. **Light and Optimal Schrödinger Bridge Matching.** ICML, 2024. [paper](https://arxiv.org/abs/2402.03207), [code](https://github.com/SKholkin/LightSB-Matching)
 
- *N. Gushchin, S. Kholkin, Evgeny Burnaev, A. Korotin*
+ *Nikita Gushchin, Sergei Kholkin, Evgeny Burnaev, Alexander Korotin*
 
  > LightSB-M：把 LightSB 的闭式参数化与 bridge matching 结合，单步优化到 SB。
 
-3. **Adversarial Schrödinger Bridge Matching.** NeurIPS 2024. [paper](https://arxiv.org/abs/2405.14449) [code](https://github.com/Daniil-Selikhanovych/ASBM)
+3. **Adversarial Schrödinger Bridge Matching.** NeurIPS, 2024. [paper](https://arxiv.org/abs/2405.14449), [code](https://github.com/Daniil-Selikhanovych/ASBM)
 
- *N. Gushchin, Daniil Selikhanovych, S. Kholkin, Evgeny Burnaev, A. Korotin*
+ *Nikita Gushchin, Daniil Selikhanovych, Sergei Kholkin, Evgeny Burnaev, Alexander Korotin*
 
  > ASBM：对抗式 D-IMF，用 GAN 判别器替代大量 NFE，像素空间少步 SB。
 
-4. **Consistency Diffusion Bridge Models.** NeurIPS 2024. [paper](https://arxiv.org/abs/2410.22637) [code](https://github.com/thu-ml/DiffusionBridge)
+4. **Consistency Diffusion Bridge Models.** NeurIPS, 2024. [paper](https://arxiv.org/abs/2410.22637), [code](https://github.com/thu-ml/DiffusionBridge)
 
  *Guande He, Kaiwen Zheng, Jianfei Chen, Fan Bao, Jun Zhu*
 
  > CDBM：把 consistency 训练搬到 diffusion bridge，'先训 bridge 再压缩'到少步。
 
-5. **LBM: Latent Bridge Matching for Fast Image-to-Image Translation.** ICCV 2025. [paper](https://arxiv.org/abs/2503.07535) [code](https://github.com/gojasper/LBM)
+5. **LBM: Latent Bridge Matching for Fast Image-to-Image Translation.** ICCV, 2025. [paper](https://arxiv.org/abs/2503.07535), [code](https://github.com/gojasper/LBM)
 
- *Clément Chadebec, O. Tasar, Sanjeev Sreetharan, Benjamin Aubin*
+ *Clément Chadebec, Onur Tasar, Sanjeev Sreetharan, Benjamin Aubin*
 
  > LBM：在 SD latent 上做 bridge matching，1 NFE 完成图像翻译/重光照/深度等任务。
 
-6. **A Unified and Fast-Sampling Diffusion Bridge Framework via Stochastic Optimal Control (UniDB++).** arXiv 2025. [paper](https://arxiv.org/abs/2505.21528) [code](https://github.com/2769433owo/UniDB-plusplus)
+6. **A Unified and Fast-Sampling Diffusion Bridge Framework via Stochastic Optimal Control (UniDB++).** arXiv, 2025. [paper](https://arxiv.org/abs/2505.21528), [code](https://github.com/2769433owo/UniDB-plusplus)
+
+ *Mokai Pan, Kaizhen Zhu, Yuexin Ma, Yanwei Fu, Jingyi Yu et al.*
 
  > UniDB++：为 UniDB 反向 SDE 推出精确闭式解 + 数据预测 + SDE-Corrector，免训练把采样步数减到 5–10（最多 20×），并在特定条件下退化为 DBIM。
 
-### <a id="25-discrete-state-bridges"></a>2.5. Discrete-state Bridges
+<a name="25-discrete-state-bridges"></a>
+### [2.5. Discrete-state Bridges](#content)
 *离散状态空间桥*
 
-1. **Discrete Diffusion Schrödinger Bridge Matching for Graph Transformation.** ICLR 2025. [paper](https://arxiv.org/abs/2410.01500)
+1. **Discrete Diffusion Schrödinger Bridge Matching for Graph Transformation.** ICLR, 2025. [paper](https://arxiv.org/abs/2410.01500)
 
  *Jun Hyeong Kim, Seonghwan Kim, Seokhyun Moon, Hyeongwoo Kim, Jeheon Woo, Woo Youn Kim*
 
  > 离散 DSBM 做图变换（分子/图编辑）。
 
-2. **Categorical Schrödinger Bridge Matching.** ICML 2025. [paper](https://arxiv.org/abs/2502.01416)
+2. **Categorical Schrödinger Bridge Matching.** ICML, 2025. [paper](https://arxiv.org/abs/2502.01416)
 
- *Grigoriy Ksenofontov, A. Korotin*
+ *Grigoriy Ksenofontov, Alexander Korotin*
 
  > Categorical SBM：把 IMF 推到离散状态空间（categorical），文本/图/序列可用。
 
-3. **Minimal-Action Discrete Schrödinger Bridge Matching for Peptide Sequence Design.** arXiv 2026. [paper](https://arxiv.org/abs/2601.22408)
+3. **Minimal-Action Discrete Schrödinger Bridge Matching for Peptide Sequence Design.** arXiv, 2026. [paper](https://arxiv.org/abs/2601.22408)
+
+ *Shrey Goel, Pranam Chatterjee*
 
  > MadSBM：把肽序列生成写成氨基酸编辑图上的受控 CTMC，参考过程来自冻结的 ESM-2 logits，学时变控制场得到低作用量传输路径；首次在 SB 生成模型上做离散 classifier guidance。
 
-4. **Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport.** ICLR 2026. [paper](https://iclr.cc/virtual/2026/poster/10008954) [code](https://github.com/gregkseno/catsbench)
+4. **Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport.** ICLR, 2026. [paper](https://iclr.cc/virtual/2026/poster/10008954), [code](https://github.com/gregkseno/catsbench)
 
  *Xavier Aramayo Carrasco, Grigoriy Ksenofontov, Aleksei Leonov, Iaroslav Koshelev, Alexander Korotin*
 
  > 离散空间 SB 基准：构造有解析解的分布对以严格评测离散 SB 求解器；副产品 DLightSB / DLightSB-M 与 α-CSBM。离散 SB 第一次有了 ground truth。
 
-### <a id="26-flow-matching-stochastic-interpolants-sb-unification"></a>2.6. Flow Matching, Stochastic Interpolants & SB Unification
+<a name="26-flow-matching-stochastic-interpolants-sb-unification"></a>
+### [2.6. Flow Matching, Stochastic Interpolants & SB Unification](#content)
 *流匹配 / 随机插值 / SB 统一*
 
-1. **Neural Optimal Transport.** ICLR 2023. [paper](https://arxiv.org/abs/2201.12220) [code](https://github.com/iamalexkorotin/NeuralOptimalTransport)
+1. **Neural Optimal Transport.** ICLR, 2023. [paper](https://arxiv.org/abs/2201.12220), [code](https://github.com/iamalexkorotin/NeuralOptimalTransport)
 
  *Alexander Korotin, Daniil Selikhanovych, Evgeny Burnaev*
 
  > Neural OT：对抗式弱 OT 求解器，SB/EOT 求解器的重要对照。
 
-2. **Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow.** ICLR 2023. [paper](https://arxiv.org/abs/2209.03003) [code](https://github.com/gnobitab/RectifiedFlow)
+2. **Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow.** ICLR, 2023. [paper](https://arxiv.org/abs/2209.03003), [code](https://github.com/gnobitab/RectifiedFlow)
 
  *Xingchao Liu, Chengyue Gong, Qiang Liu*
 
  > Rectified Flow：reflow 直线化 + 蒸馏到一步。
 
-3. **Building Normalizing Flows with Stochastic Interpolants.** ICLR 2023. [paper](https://arxiv.org/abs/2209.15571)
+3. **Building Normalizing Flows with Stochastic Interpolants.** ICLR, 2023. [paper](https://arxiv.org/abs/2209.15571)
 
- *M. Albergo, E. Vanden-Eijnden*
+ *Michael S. Albergo, Eric Vanden-Eijnden*
 
  > 随机插值短版：用插值构造 normalizing flow。
 
-4. **Flow Matching for Generative Modeling.** ICLR 2023. [paper](https://arxiv.org/abs/2210.02747) [code](https://github.com/facebookresearch/flow_matching)
+4. **Flow Matching for Generative Modeling.** ICLR, 2023. [paper](https://arxiv.org/abs/2210.02747), [code](https://github.com/facebookresearch/flow_matching)
 
- *Y. Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le*
+ *Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le*
 
  > Flow Matching：条件回归训练 ODE 生成模型；SB 视角下它是 σ→0 的确定性极限。
 
-5. **Improving and generalizing flow-based generative models with minibatch optimal transport.** TMLR 2024. [paper](https://arxiv.org/abs/2302.00482) [code](https://github.com/atong01/conditional-flow-matching)
+5. **Improving and generalizing flow-based generative models with minibatch optimal transport.** TMLR, 2024. [paper](https://arxiv.org/abs/2302.00482), [code](https://github.com/atong01/conditional-flow-matching)
 
- *Alexander Tong, Esmeralda S. Whitammer, G. Huguet, Yanlei Zhang, Jarrid Rector-Brooks et al.*
+ *Alexander Tong, Kilian Fatras, Nikolay Malkin, Guillaume Huguet, Yanlei Zhang et al.*
 
  > OT-CFM：minibatch OT coupling 让 FM 轨迹变直、可做 unpaired 翻译。
 
-6. **Simulation-free Schrödinger bridges via score and flow matching.** AISTATS 2024. [paper](https://arxiv.org/abs/2307.03672) [code](https://github.com/atong01/conditional-flow-matching)
+6. **Simulation-free Schrödinger bridges via score and flow matching.** AISTATS, 2024. [paper](https://arxiv.org/abs/2307.03672), [code](https://github.com/atong01/conditional-flow-matching)
 
  *Alexander Tong, Esmeralda S. Whitammer, Kilian Fatras, Lazar Atanackovic, Yanlei Zhang et al.*
 
  > [SF]²M：score + flow matching 的 simulation-free SB 求解器。
 
-7. **Optimal Flow Matching: Learning Straight Trajectories in Just One Step.** NeurIPS 2024. [paper](https://arxiv.org/abs/2403.13117)
+7. **Optimal Flow Matching: Learning Straight Trajectories in Just One Step.** NeurIPS, 2024. [paper](https://arxiv.org/abs/2403.13117)
 
- *Nikita Kornilov, Alexander Gasnikov, A. Korotin*
+ *Nikita Kornilov, Petr Mokrov, Alexander Gasnikov, Alexander Korotin*
 
  > Optimal Flow Matching：一步得到直线 OT 轨迹。
 
-8. **Stochastic Interpolants: A Unifying Framework for Flows and Diffusions.** JMLR 2025. [paper](https://arxiv.org/abs/2303.08797)
+8. **Stochastic Interpolants: A Unifying Framework for Flows and Diffusions.** JMLR, 2025. [paper](https://arxiv.org/abs/2303.08797)
 
- *M. Albergo, N. Boffi, E. Vanden-Eijnden*
+ *Michael S. Albergo, Nicholas M. Boffi, Eric Vanden-Eijnden*
 
  > Stochastic Interpolants：统一 flow / diffusion / bridge / SB 的插值框架。
 
-9. **A Unified Framework for Diffusion Bridge Problems: Flow Matching and Schrödinger Matching into One.** arXiv 2025. [paper](https://arxiv.org/abs/2503.21756)
+9. **A Unified Framework for Diffusion Bridge Problems: Flow Matching and Schrödinger Matching into One.** arXiv, 2025. [paper](https://arxiv.org/abs/2503.21756)
+
+ *Minyoung Kim*
 
  > 统一视角：FM、minibatch-OT FM、minibatch SB-FM 与 DSBM 都是同一 bridge 框架的特例；含对 IMF 与 CFM 的简明技术回顾。
 
-## <a id="3-sampling-stochastic-optimal-control"></a>3. Sampling & Stochastic Optimal Control
+<a name="3-sampling-stochastic-optimal-control"></a>
+## [3. Sampling & Stochastic Optimal Control](#content)
 *采样与随机最优控制*
 
-### <a id="31-adjoint-soc-samplers-energy-only"></a>3.1. Adjoint / SOC Samplers (energy-only)
+<a name="31-adjoint-soc-samplers-energy-only"></a>
+### [3.1. Adjoint / SOC Samplers (energy-only)](#content)
 *Adjoint / SOC 采样器（仅能量）*
 
-1. **Adjoint Sampling: Highly Scalable Diffusion Samplers via Adjoint Matching.** ICML 2025. [paper](https://arxiv.org/abs/2504.11713) [code](https://github.com/facebookresearch/adjoint_sampling) [📄 PDF](papers/2504.11713_adjoint_sampling.pdf) [📘 精读](reports/2504.11713_adjoint_sampling.md) [🀄 译本](papers_zh/2504.11713_adjoint_sampling.zh.pdf) ⭐
+1. **Adjoint Sampling: Highly Scalable Diffusion Samplers via Adjoint Matching.** ICML, 2025. [paper](https://arxiv.org/abs/2504.11713), [code](https://github.com/facebookresearch/adjoint_sampling), [📄 PDF](papers/2504.11713_adjoint_sampling.pdf), [📘 精读](reports/2504.11713_adjoint_sampling.md), [🀄 译本](papers_zh/2504.11713_adjoint_sampling.zh.pdf) ⭐
 
  *Aaron Havens, Benjamin Kurt Miller, Bing Yan, Carles Domingo-Enrich, Anuroop Sriram, Daniel Levine, Bin Hu, Brandon Amos, Brian Karrer, Xiang Fu, Guan-Horng Liu, Ricky T. Q. Chen 等*
 
-2. **Non-equilibrium Annealed Adjoint Sampler.** NeurIPS 2025. [paper](https://arxiv.org/abs/2506.18165)
+2. **Non-equilibrium Annealed Adjoint Sampler.** NeurIPS, 2025. [paper](https://arxiv.org/abs/2506.18165)
 
  *Jaemoo Choi, Yongxin Chen, Molei Tao, Guan-Horng Liu*
 
  > NAAS：把退火（非平稳）参考动力学作为 SOC 的 base SDE，让参考轨迹自带朝目标推进的信息；交替优化两个控制并用 lean adjoint 训练，回放缓冲避免重要性加权；在经典能量景观与分子 Boltzmann 分布上优于 PIS / DDS。
 
-3. **Adjoint Schrödinger Bridge Sampler.** NeurIPS 2025 (Oral). [paper](https://arxiv.org/abs/2506.22565) [code](https://github.com/facebookresearch/adjoint_samplers) [📄 PDF](papers/2506.22565_adjoint_schrodinger_bridge_sampler.pdf) [📘 精读](reports/2506.22565_adjoint_schrodinger_bridge_sampler.md) [🀄 译本](papers_zh/2506.22565_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
+3. **Adjoint Schrödinger Bridge Sampler.** NeurIPS, 2025 (Oral). [paper](https://arxiv.org/abs/2506.22565), [code](https://github.com/facebookresearch/adjoint_samplers), [📄 PDF](papers/2506.22565_adjoint_schrodinger_bridge_sampler.pdf), [📘 精读](reports/2506.22565_adjoint_schrodinger_bridge_sampler.md), [🀄 译本](papers_zh/2506.22565_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
 
  *Guan-Horng Liu, Jaemoo Choi, Yongxin Chen, Benjamin Kurt Miller, Ricky T. Q. Chen*
 
-4. **MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control.** NeurIPS 2025. [paper](https://arxiv.org/abs/2508.10684)
+4. **MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control.** NeurIPS, 2025. [paper](https://arxiv.org/abs/2508.10684)
+
+ *Yuchen Zhu, Wei Guo, Jaemoo Choi, Guan-Horng Liu, Yongxin Chen, Molei Tao*
 
  > MDNS（NeurIPS 2025，据作者主页与 CV）：CTMC 随机最优控制视角训练离散神经采样器（Ising/Potts），用免微分的路径测度对齐目标与加权去噪交叉熵实现高维可扩展；与 DASBS 同属离散能量采样线。
 
-5. **Enhancing Diffusion-Based Sampling with Molecular Collective Variables (WT-ASBS).** ICLR 2026. [paper](https://arxiv.org/abs/2510.11923) [code](https://github.com/facebookresearch/wt-asbs)
+5. **Enhancing Diffusion-Based Sampling with Molecular Collective Variables (WT-ASBS).** ICLR, 2026. [paper](https://arxiv.org/abs/2510.11923), [code](https://github.com/facebookresearch/wt-asbs)
 
  *Juno Nam, Bálint Máté, Artur P. Toshev, Manasa Kaniselvan, Rafael Gómez-Bombarelli, Ricky T. Q. Chen, Brandon Wood, Guan-Horng Liu, Benjamin Kurt Miller*
 
  > WT-ASBS：把 well-tempered metadynamics 的在线排斥偏置沿集体变量（CV）加进 ASBS——内环训到有偏目标收敛、外环按 CV 投影叠加高斯核；发现稀有构象并重加权还原 Boltzmann 分布，首次用扩散采样器刻画含键断裂/形成的反应面。
 
-6. **Functional Adjoint Sampler: Scalable Sampling on Infinite Dimensional Spaces.** ICML 2026. [paper](https://arxiv.org/abs/2511.06239) [📄 PDF](papers/2511.06239_functional_adjoint_sampler.pdf) [📘 精读](reports/2511.06239_functional_adjoint_sampler.md) [🀄 译本](papers_zh/2511.06239_functional_adjoint_sampler.zh.pdf) ⭐
+6. **Functional Adjoint Sampler: Scalable Sampling on Infinite Dimensional Spaces.** ICML, 2026. [paper](https://arxiv.org/abs/2511.06239), [📄 PDF](papers/2511.06239_functional_adjoint_sampler.pdf), [📘 精读](reports/2511.06239_functional_adjoint_sampler.md), [🀄 译本](papers_zh/2511.06239_functional_adjoint_sampler.zh.pdf) ⭐
 
  *Byoungwoo Park, Juho Lee, Guan-Horng Liu*
 
-7. **Discrete Adjoint Schrödinger Bridge Sampler.** ICML 2026. [paper](https://arxiv.org/abs/2602.08243) [📄 PDF](papers/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.pdf) [📘 精读](reports/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.md) [🀄 译本](papers_zh/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
+7. **Discrete Adjoint Schrödinger Bridge Sampler.** ICML, 2026. [paper](https://arxiv.org/abs/2602.08243), [📄 PDF](papers/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.pdf), [📘 精读](reports/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.md), [🀄 译本](papers_zh/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
 
  *Wei Guo, Yuchen Zhu, Xiaochen Du, Juno Nam, Yongxin Chen, Rafael Gómez-Bombarelli, Guan-Horng Liu, Molei Tao, Jaemoo Choi*
 
-### <a id="32-soc-for-reward-fine-tuning-adjoint-matching-lineage"></a>3.2. SOC for Reward Fine-tuning (Adjoint Matching lineage)
+<a name="32-soc-for-reward-fine-tuning-adjoint-matching-lineage"></a>
+### [3.2. SOC for Reward Fine-tuning (Adjoint Matching lineage)](#content)
 *SOC 奖励微调（Adjoint Matching 谱系）*
 
-1. **Training Diffusion Models with Reinforcement Learning.** ICLR 2024. [paper](https://arxiv.org/abs/2305.13301) [code](https://github.com/jannerm/ddpo)
+1. **Training Diffusion Models with Reinforcement Learning.** ICLR, 2024. [paper](https://arxiv.org/abs/2305.13301), [code](https://github.com/jannerm/ddpo)
 
- *Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, S. Levine*
+ *Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, Sergey Levine*
 
  > DDPO：把去噪过程当 MDP 用 policy gradient 微调扩散模型。
 
-2. **Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control.** ICLR 2025 (Spotlight). [paper](https://arxiv.org/abs/2409.08861)
+2. **Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control.** ICLR, 2025 (Spotlight). [paper](https://arxiv.org/abs/2409.08861)
 
  *Carles Domingo-Enrich, Michal Drozdzal, Brian Karrer, Ricky T. Q. Chen*
 
  > Adjoint Matching：memoryless SOC + lean adjoint 回归做 reward 微调；AS/ASBS/DAM/FAS 的共同源头。
 
-3. **Fine-Tuning Discrete Diffusion Models via Reward Optimization with Applications to DNA and Protein Design.** arXiv 2024. [paper](https://arxiv.org/abs/2410.13643)
+3. **Fine-Tuning Discrete Diffusion Models via Reward Optimization with Applications to DNA and Protein Design.** arXiv, 2024. [paper](https://arxiv.org/abs/2410.13643)
+
+ *Chenyu Wang, Masatoshi Uehara, Yichun He, Amy Wang, Tommaso Biancalani et al.*
 
  > DRAKES：对 masked 离散扩散做 reward 微调（Gumbel-Softmax 反传），目标是既像预训练分布又高 reward；DAM 的直接对照。
 
-4. **Discrete Adjoint Matching.** ICLR 2026. [paper](https://arxiv.org/abs/2602.07132) [📄 PDF](papers/2602.07132_discrete_adjoint_matching.pdf) [📘 精读](reports/2602.07132_discrete_adjoint_matching.md) [🀄 译本](papers_zh/2602.07132_discrete_adjoint_matching.zh.pdf) ⭐
+4. **Discrete Adjoint Matching.** ICLR, 2026. [paper](https://arxiv.org/abs/2602.07132), [📄 PDF](papers/2602.07132_discrete_adjoint_matching.pdf), [📘 精读](reports/2602.07132_discrete_adjoint_matching.md), [🀄 译本](papers_zh/2602.07132_discrete_adjoint_matching.zh.pdf) ⭐
 
  *Oswin So, Brian Karrer, Chuchu Fan, Ricky T. Q. Chen, Guan-Horng Liu*
 
-5. **Adjoint Matching through the Lens of the Stochastic Maximum Principle in Optimal Control.** arXiv 2026. [paper](https://arxiv.org/abs/2604.08580)
+5. **Adjoint Matching through the Lens of the Stochastic Maximum Principle in Optimal Control.** arXiv, 2026. [paper](https://arxiv.org/abs/2604.08580)
+
+ *Carles Domingo-Enrich, Jiequn Han*
 
  > 从随机极大值原理（SMP）重推 Adjoint Matching：给出控制相关漂移/扩散与凸运行成本下的一般 Hamiltonian adjoint matching 目标，证明其一阶变分与原 SOC 目标一致；lean adjoint 是状态无关扩散下的特例。
 
-### <a id="33-classical-soc-samplers-competitors"></a>3.3. Classical SOC Samplers & Competitors
+<a name="33-classical-soc-samplers-competitors"></a>
+### [3.3. Classical SOC Samplers & Competitors](#content)
 *经典 SOC 采样器与竞品*
 
-1. **Path Integral Sampler: a stochastic control approach for sampling.** ICLR 2022. [paper](https://arxiv.org/abs/2111.15141) [code](https://github.com/qsh-zh/pis)
+1. **Path Integral Sampler: a stochastic control approach for sampling.** ICLR, 2022. [paper](https://arxiv.org/abs/2111.15141), [code](https://github.com/qsh-zh/pis)
 
  *Qinsheng Zhang, Yongxin Chen*
 
  > PIS：路径积分控制视角的扩散采样器，SOC 采样线源头。
 
-2. **Denoising Diffusion Samplers.** ICLR 2023. [paper](https://arxiv.org/abs/2302.13834) [code](https://github.com/franciscovargas/denoising_diffusion_samplers)
+2. **Denoising Diffusion Samplers.** ICLR, 2023. [paper](https://arxiv.org/abs/2302.13834), [code](https://github.com/franciscovargas/denoising_diffusion_samplers)
 
- *Francisco Vargas, Will Grathwohl, A. Doucet*
+ *Francisco Vargas, Will Grathwohl, Arnaud Doucet*
 
  > DDS：去噪扩散采样器，KL 控制目标。
 
-3. **Transport meets Variational Inference: Controlled Monte Carlo Diffusions.** ICLR 2024. [paper](https://arxiv.org/abs/2307.01050)
+3. **Transport meets Variational Inference: Controlled Monte Carlo Diffusions.** ICLR, 2024. [paper](https://arxiv.org/abs/2307.01050)
 
  *Francisco Vargas, Shreyas Padhy, Denis Blessing, Nikolas Nusken*
 
  > CMCD：controlled Monte Carlo diffusions，把 transport 与变分推断统一。
 
-4. **Iterated Denoising Energy Matching for Sampling from Boltzmann Densities.** ICML 2024. [paper](https://arxiv.org/abs/2402.06121) [code](https://github.com/jarridrb/DEM)
+4. **Iterated Denoising Energy Matching for Sampling from Boltzmann Densities.** ICML, 2024. [paper](https://arxiv.org/abs/2402.06121), [code](https://github.com/jarridrb/DEM)
 
- *Tara Akhound-Sadegh, Jarrid Rector-Brooks, A. Bose, Sarthak Mittal, Pablo Lemos et al.*
+ *Tara Akhound-Sadegh, Jarrid Rector-Brooks, Avishek Joey Bose, Sarthak Mittal, Pablo Lemos et al.*
 
  > iDEM：simulation-free 能量采样竞品，Boltzmann 生成基准（DW4/LJ13/LJ55）。
 
-5. **NETS: A Non-Equilibrium Transport Sampler.** ICML 2025. [paper](https://arxiv.org/abs/2410.02711)
+5. **NETS: A Non-Equilibrium Transport Sampler.** ICML, 2025. [paper](https://arxiv.org/abs/2410.02711)
 
- *M. Albergo, Eric Vanden-Eijnden*
+ *Michael S. Albergo, Eric Vanden-Eijnden*
 
  > NETS：非平衡 transport 采样器（annealed Langevin + 学习的 transport）。
 
-6. **Underdamped Diffusion Bridges with Applications to Sampling.** ICLR 2025. [paper](https://arxiv.org/abs/2503.01006)
+6. **Underdamped Diffusion Bridges with Applications to Sampling.** ICLR, 2025. [paper](https://arxiv.org/abs/2503.01006)
 
  *Denis Blessing, Julius Berner, Lorenz Richter, Gerhard Neumann*
 
  > Underdamped Diffusion Bridges：欠阻尼动力学的 bridge 采样器。
 
-## <a id="4-applications"></a>4. Applications
+<a name="4-applications"></a>
+## [4. Applications](#content)
 *应用*
 
-### <a id="41-image-translation-restoration-editing"></a>4.1. Image Translation, Restoration & Editing
+<a name="41-image-translation-restoration-editing"></a>
+### [4.1. Image Translation, Restoration & Editing](#content)
 *图像翻译 / 修复 / 编辑*
 
-1. **SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations.** ICLR 2022. [paper](https://arxiv.org/abs/2108.01073) [code](https://github.com/ermongroup/SDEdit)
+1. **SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations.** ICLR, 2022. [paper](https://arxiv.org/abs/2108.01073), [code](https://github.com/ermongroup/SDEdit)
 
  *Chenlin Meng, Yutong He, Yang Song, Jiaming Song, Jiajun Wu et al.*
 
  > SDEdit：噪声-去噪的零样本编辑基线。
 
-2. **Dual Diffusion Implicit Bridges for Image-to-Image Translation.** ICLR 2023. [paper](https://arxiv.org/abs/2203.08382) [code](https://github.com/suxuann/ddib)
+2. **Dual Diffusion Implicit Bridges for Image-to-Image Translation.** ICLR, 2023. [paper](https://arxiv.org/abs/2203.08382), [code](https://github.com/suxuann/ddib)
 
- *Xu Su, Jiaming Song, Chenlin Meng, S. Ermon*
+ *Xuan Su, Jiaming Song, Chenlin Meng, Stefano Ermon*
 
  > DDIB：两段 DDIM 拼接实现零样本图像翻译；两段 SB 拼接≠跨域 OT 的对照案例。
 
-3. **Unpaired Image-to-Image Translation via Neural Schrödinger Bridge.** ICLR 2024. [paper](https://arxiv.org/abs/2305.15086) [code](https://github.com/cyclomon/UNSB)
+3. **Unpaired Image-to-Image Translation via Neural Schrödinger Bridge.** ICLR, 2024. [paper](https://arxiv.org/abs/2305.15086), [code](https://github.com/cyclomon/UNSB)
 
  *Beomsu Kim, Gihyun Kwon, Kwanyoung Kim, Jong-Chul Ye*
 
  > UNSB：神经 SB 做 unpaired 图像翻译，配对抗正则与 patch 判别。
 
-4. **Residual Diffusion Bridge Model for Image Restoration.** CVPR 2026. [paper](https://arxiv.org/abs/2510.23116) [code](https://github.com/MiliLab/RDBM)
+4. **Residual Diffusion Bridge Model for Image Restoration.** CVPR, 2026. [paper](https://arxiv.org/abs/2510.23116), [code](https://github.com/MiliLab/RDBM)
 
  *Hebaixu Wang, Jing Zhang, Haoyang Chen, Haonan Guo, Di Wang, Jiayi Ma, Bo Du*
 
  > RDBM：重新推导广义 diffusion bridge 的前/反向 SDE 闭式，用成对图像的残差调制噪声注入与去除，只扰动退化区域、保护完好区域；五类通用修复任务平均 +1.55 dB PSNR，并证明现有桥模型是其特例（CVF Open Access，pp. 8375–8386）。
 
-5. **Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement.** CVPR 2026. [paper](https://openaccess.thecvf.com/content/CVPR2026/html/Hua_Bi-Bridge_Bidirectional_Diffusion_Bridges_for_Low-Light_Image_Enhancement_CVPR_2026_paper.html)
+5. **Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement.** CVPR, 2026. [paper](https://openaccess.thecvf.com/content/CVPR2026/html/Hua_Bi-Bridge_Bidirectional_Diffusion_Bridges_for_Low-Light_Image_Enhancement_CVPR_2026_paper.html)
 
  *Zeyu Hua, Hui Li, Yu Wang, Song Wang, Congchao Zhu, Caixia Zheng*
 
@@ -479,105 +511,114 @@ _(to be added)_
 
  > PDSB：把大尺度 SR 切成级联子桥，逐级以小尺度结果为条件重建，缓解 LR/HR 配对中的几何位移违反高斯假设的问题；Gaofen-6 (2 m) ↔ Sentinel-2 (10 m) 数据上 FID 8.294，为第二名的一半。
 
-### <a id="42-video-3d-speech-audio"></a>4.2. Video, 3D, Speech & Audio
+<a name="42-video-3d-speech-audio"></a>
+### [4.2. Video, 3D, Speech & Audio](#content)
 *视频 / 3D / 语音 / 音频*
 
-1. **Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis.** arXiv 2023. [paper](https://arxiv.org/abs/2312.03491)
+1. **Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis.** arXiv, 2023. [paper](https://arxiv.org/abs/2312.03491)
 
  *Zehua Chen, Guande He, Kaiwen Zheng, Xu Tan, Jun Zhu*
 
  > Bridge-TTS：用 SB 替代扩散做 TTS，少步下质量更优。
 
-2. **Schrödinger Bridge for Generative Speech Enhancement.** Interspeech 2024. [paper](https://arxiv.org/abs/2407.16074)
+2. **Schrödinger Bridge for Generative Speech Enhancement.** Interspeech, 2024. [paper](https://arxiv.org/abs/2407.16074)
 
- *Ante Jukic, Roman Korostik, J. Balam, Boris Ginsburg*
+ *Ante Jukić, Roman Korostik, Jagadeesh Balam, Boris Ginsburg*
 
  > 语音增强的 SB 模型。
 
-### <a id="43-science-single-cell-molecules-chemistry-physics"></a>4.3. Science: Single-cell, Molecules, Chemistry & Physics
+<a name="43-science-single-cell-molecules-chemistry-physics"></a>
+### [4.3. Science: Single-cell, Molecules, Chemistry & Physics](#content)
 *科学：单细胞 / 分子 / 化学 / 物理*
 
-1. **TrajectoryNet: A Dynamic Optimal Transport Network for Modeling Cellular Dynamics.** ICML 2020. [paper](https://arxiv.org/abs/2002.04461) [code](https://github.com/KrishnaswamyLab/TrajectoryNet)
+1. **TrajectoryNet: A Dynamic Optimal Transport Network for Modeling Cellular Dynamics.** ICML, 2020. [paper](https://arxiv.org/abs/2002.04461), [code](https://github.com/KrishnaswamyLab/TrajectoryNet)
 
- *Alexander Tong, Jessie Huang, Guy Wolf, D. V. Dijk, Smita Krishnaswamy*
+ *Alexander Tong, Jessie Huang, Guy Wolf, David van Dijk, Smita Krishnaswamy*
 
  > TrajectoryNet：动态 OT 做单细胞轨迹推断的起点。
 
-2. **Improving Generative Model-based Unfolding with Schrödinger Bridges.** Phys. Rev. D 109, 076011 (2024). [paper](https://arxiv.org/abs/2308.12351) [code](https://github.com/ViniciusMikuni/SBUnfold) [📄 PDF](papers/2308.12351_sb_unfold.pdf) [📘 精读](reports/2308.12351_sb_unfold.md) [🀄 译本](papers_zh/2308.12351_sb_unfold.zh.pdf) ⭐
+2. **Improving Generative Model-based Unfolding with Schrödinger Bridges.** Phys. Rev. D 109, 076011 (2024). [paper](https://arxiv.org/abs/2308.12351), [code](https://github.com/ViniciusMikuni/SBUnfold), [📄 PDF](papers/2308.12351_sb_unfold.pdf), [📘 精读](reports/2308.12351_sb_unfold.md), [🀄 译本](papers_zh/2308.12351_sb_unfold.zh.pdf) ⭐
 
  *Sascha Diefenbacher, Guan-Horng Liu, Vinicius Mikuni, Benjamin Nachman, Weili Nie*
 
-3. **React-OT: Optimal Transport for Generating Transition State in Chemical Reactions.** Nature Machine Intelligence 7, 615-626 (2025). [paper](https://arxiv.org/abs/2404.13430) [code](https://github.com/deepprinciple/react-ot) [📄 PDF](papers/2404.13430_react_ot.pdf) [📘 精读](reports/2404.13430_react_ot.md) [🀄 译本](papers_zh/2404.13430_react_ot.zh.pdf) ⭐
+3. **React-OT: Optimal Transport for Generating Transition State in Chemical Reactions.** Nature Machine Intelligence 7, 615-626 (2025). [paper](https://arxiv.org/abs/2404.13430), [code](https://github.com/deepprinciple/react-ot), [📄 PDF](papers/2404.13430_react_ot.pdf), [📘 精读](reports/2404.13430_react_ot.md), [🀄 译本](papers_zh/2404.13430_react_ot.zh.pdf) ⭐
 
  *Chenru Duan, Guan-Horng Liu, Yuanqi Du, Tianrong Chen, Qiyuan Zhao, Haojun Jia, Carla P. Gomes, Evangelos A. Theodorou, Heather J. Kulik*
 
-### <a id="44-embodied-ai-sim2real-cross-domain-transfer-rl"></a>4.4. Embodied AI: Sim2Real, Cross-domain Transfer & RL
+<a name="44-embodied-ai-sim2real-cross-domain-transfer-rl"></a>
+### [4.4. Embodied AI: Sim2Real, Cross-domain Transfer & RL](#content)
 *具身智能：sim2real / 跨域迁移 / RL*
 
-1. **Affine Transport for Sim-to-Real Domain Adaptation.** arXiv 2021. [paper](https://arxiv.org/abs/2105.11739) [📄 PDF](papers/2105.11739_affine_transport_sim2real.pdf) [📘 精读](reports/2105.11739_affine_transport_sim2real.md) [🀄 译本](papers_zh/2105.11739_affine_transport_sim2real.zh.pdf) ⭐
+1. **Affine Transport for Sim-to-Real Domain Adaptation.** arXiv, 2021. [paper](https://arxiv.org/abs/2105.11739), [📄 PDF](papers/2105.11739_affine_transport_sim2real.pdf), [📘 精读](reports/2105.11739_affine_transport_sim2real.md), [🀄 译本](papers_zh/2105.11739_affine_transport_sim2real.zh.pdf) ⭐
 
  *Anton Mallasto, Karol Arndt, Markus Heinonen, Samuel Kaski, Ville Kyrki*
 
-2. **One-Shot Imitation under Mismatched Execution.** ICRA 2025. [paper](https://arxiv.org/abs/2409.06615) [code](https://github.com/portal-cornell/rhyme) [📄 PDF](papers/2409.06615_rhyme_one_shot_mismatched_execution.pdf) [📘 精读](reports/2409.06615_rhyme_one_shot_mismatched_execution.md) [🀄 译本](papers_zh/2409.06615_rhyme_one_shot_mismatched_execution.zh.pdf) ⭐
+2. **One-Shot Imitation under Mismatched Execution.** ICRA, 2025. [paper](https://arxiv.org/abs/2409.06615), [code](https://github.com/portal-cornell/rhyme), [📄 PDF](papers/2409.06615_rhyme_one_shot_mismatched_execution.pdf), [📘 精读](reports/2409.06615_rhyme_one_shot_mismatched_execution.md), [🀄 译本](papers_zh/2409.06615_rhyme_one_shot_mismatched_execution.zh.pdf) ⭐
 
  *Kushal Kedia, Prithwish Dan, Angela Chao, Maximus A. Pace, Sanjiban Choudhury*
 
-3. **Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training.** NeurIPS 2025. [paper](https://arxiv.org/abs/2509.18631) [project](https://ot-sim2real.github.io/) [📄 PDF](papers/2509.18631_guided_ot_sim_real_policy_cotraining.pdf) [📘 精读](reports/2509.18631_guided_ot_sim_real_policy_cotraining.md) [🀄 译本](papers_zh/2509.18631_guided_ot_sim_real_policy_cotraining.zh.pdf) ⭐
+3. **Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training.** NeurIPS, 2025. [paper](https://arxiv.org/abs/2509.18631), [project](https://ot-sim2real.github.io/), [📄 PDF](papers/2509.18631_guided_ot_sim_real_policy_cotraining.pdf), [📘 精读](reports/2509.18631_guided_ot_sim_real_policy_cotraining.md), [🀄 译本](papers_zh/2509.18631_guided_ot_sim_real_policy_cotraining.zh.pdf) ⭐
 
  *Shuo Cheng, Liqian Ma, Zhenyang Chen, Ajay Mandlekar, Caelan Garrett, Danfei Xu*
 
-4. **EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data.** NeurIPS 2025 + CoRL 2025 (Oral). [paper](https://arxiv.org/abs/2509.19626) [📄 PDF](papers/2509.19626_egobridge.pdf) [📘 精读](reports/2509.19626_egobridge.md) [🀄 译本](papers_zh/2509.19626_egobridge.zh.pdf) ⭐
+4. **EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data.** NeurIPS 2025 + CoRL 2025 (Oral). [paper](https://arxiv.org/abs/2509.19626), [📄 PDF](papers/2509.19626_egobridge.pdf), [📘 精读](reports/2509.19626_egobridge.md), [🀄 译本](papers_zh/2509.19626_egobridge.zh.pdf) ⭐
 
  *Ryan Punamiya, Dhruv Patel, Patcharapong Aphiwetsa, Pranav Kuppili, Lawrence Y. Zhu, Simar Kareer, Judy Hoffman, Danfei Xu*
 
-5. **Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation.** ICML 2026. [paper](https://arxiv.org/abs/2512.07212) [code](https://github.com/jianghcsr/BridgePolicy)
+5. **Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation.** ICML, 2026. [paper](https://arxiv.org/abs/2512.07212), [code](https://github.com/jianghcsr/BridgePolicy)
+
+ *Zhaoyang Liu, Mokai Pan, Zhongyi Wang, Kaizhen Zhu, Haotao Lu et al.*
 
  > BridgePolicy：把观测直接嵌入扩散 SDE，用 diffusion bridge 从'观测先验'而非高斯噪声出发采样动作；语义对齐器解决观测/动作维度异构；52 个仿真任务 + 5 个真机任务优于现有生成式策略。
 
-6. **Bridging Dynamics Gaps via Diffusion Schrödinger Bridge for Cross-Domain Reinforcement Learning.** arXiv 2026. [paper](https://arxiv.org/abs/2602.23737) [📄 PDF](papers/2602.23737_bdgxrl_diffusion_schrodinger_bridge.pdf) [📘 精读](reports/2602.23737_bdgxrl_diffusion_schrodinger_bridge.md) [🀄 译本](papers_zh/2602.23737_bdgxrl_diffusion_schrodinger_bridge.zh.pdf) ⭐
+6. **Bridging Dynamics Gaps via Diffusion Schrödinger Bridge for Cross-Domain Reinforcement Learning.** arXiv, 2026. [paper](https://arxiv.org/abs/2602.23737), [📄 PDF](papers/2602.23737_bdgxrl_diffusion_schrodinger_bridge.pdf), [📘 精读](reports/2602.23737_bdgxrl_diffusion_schrodinger_bridge.md), [🀄 译本](papers_zh/2602.23737_bdgxrl_diffusion_schrodinger_bridge.zh.pdf) ⭐
 
  *Hanping Zhang, Yuhong Guo*
 
-7. **Rectified Schrödinger Bridge Matching for Few-Step Visual Navigation.** arXiv 2026. [paper](https://arxiv.org/abs/2604.05673)
+7. **Rectified Schrödinger Bridge Matching for Few-Step Visual Navigation.** arXiv, 2026. [paper](https://arxiv.org/abs/2604.05673)
+
+ *Wuyang Luan, Junhui Li, Weiguang Zhao, Wenjian Zhang, Tieru Wu, Rui Ma*
 
  > RSBM：证明条件速度场在整个熵正则 ε 谱上函数形式不变（SB ε=1 ↔ OT ε→0 同一网络），降低 ε 线性减小速度方差；视觉导航 3 步积分达 92% 成功率、94.5% 余弦相似度，无需蒸馏。
 
-### <a id="45-optimal-transport-for-imitation-reward"></a>4.5. Optimal Transport for Imitation & Reward
+<a name="45-optimal-transport-for-imitation-reward"></a>
+### [4.5. Optimal Transport for Imitation & Reward](#content)
 *最优传输用于模仿学习与奖励*
 
-1. **Primal Wasserstein Imitation Learning.** ICLR 2021. [paper](https://arxiv.org/abs/2006.04678) [code](https://github.com/google-research/google-research/tree/master/pwil) [📄 PDF](papers/2006.04678_primal_wasserstein_imitation_learning.pdf) [📘 精读](reports/2006.04678_primal_wasserstein_imitation_learning.md) [🀄 译本](papers_zh/2006.04678_primal_wasserstein_imitation_learning.zh.pdf) ⭐
+1. **Primal Wasserstein Imitation Learning.** ICLR, 2021. [paper](https://arxiv.org/abs/2006.04678), [code](https://github.com/google-research/google-research/tree/master/pwil), [📄 PDF](papers/2006.04678_primal_wasserstein_imitation_learning.pdf), [📘 精读](reports/2006.04678_primal_wasserstein_imitation_learning.md), [🀄 译本](papers_zh/2006.04678_primal_wasserstein_imitation_learning.zh.pdf) ⭐
 
  *Robert Dadashi, Léonard Hussenot, Matthieu Geist, Olivier Pietquin*
 
-2. **Imitation Learning with Sinkhorn Distances.** ECML PKDD 2022. [paper](https://arxiv.org/abs/2008.09167) [code](https://github.com/gpapagiannis/sinkhorn-imitation) [📄 PDF](papers/2008.09167_sinkhorn_imitation_learning.pdf) [📘 精读](reports/2008.09167_sinkhorn_imitation_learning.md) [🀄 译本](papers_zh/2008.09167_sinkhorn_imitation_learning.zh.pdf) ⭐
+2. **Imitation Learning with Sinkhorn Distances.** ECML PKDD, 2022. [paper](https://arxiv.org/abs/2008.09167), [code](https://github.com/gpapagiannis/sinkhorn-imitation), [📄 PDF](papers/2008.09167_sinkhorn_imitation_learning.pdf), [📘 精读](reports/2008.09167_sinkhorn_imitation_learning.md), [🀄 译本](papers_zh/2008.09167_sinkhorn_imitation_learning.zh.pdf) ⭐
 
  *Georgios Papagiannis, Yunpeng Li*
 
-3. **Cross-Domain Imitation Learning via Optimal Transport.** ICLR 2022. [paper](https://arxiv.org/abs/2110.03684) [code](https://github.com/facebookresearch/gwil) [📄 PDF](papers/2110.03684_gwil_cross_domain_imitation_via_ot.pdf) [📘 精读](reports/2110.03684_gwil_cross_domain_imitation_via_ot.md) [🀄 译本](papers_zh/2110.03684_gwil_cross_domain_imitation_via_ot.zh.pdf) ⭐
+3. **Cross-Domain Imitation Learning via Optimal Transport.** ICLR, 2022. [paper](https://arxiv.org/abs/2110.03684), [code](https://github.com/facebookresearch/gwil), [📄 PDF](papers/2110.03684_gwil_cross_domain_imitation_via_ot.pdf), [📘 精读](reports/2110.03684_gwil_cross_domain_imitation_via_ot.md), [🀄 译本](papers_zh/2110.03684_gwil_cross_domain_imitation_via_ot.zh.pdf) ⭐
 
  *Arnaud Fickinger, Samuel Cohen, Stuart Russell, Brandon Amos*
 
-4. **Learn what matters: cross-domain imitation learning with task-relevant embeddings.** NeurIPS 2022. [paper](https://arxiv.org/abs/2209.12093) [📄 PDF](papers/2209.12093_task_relevant_embeddings_cross_domain_il.pdf) [📘 精读](reports/2209.12093_task_relevant_embeddings_cross_domain_il.md) [🀄 译本](papers_zh/2209.12093_task_relevant_embeddings_cross_domain_il.zh.pdf) ⭐
+4. **Learn what matters: cross-domain imitation learning with task-relevant embeddings.** NeurIPS, 2022. [paper](https://arxiv.org/abs/2209.12093), [📄 PDF](papers/2209.12093_task_relevant_embeddings_cross_domain_il.pdf), [📘 精读](reports/2209.12093_task_relevant_embeddings_cross_domain_il.md), [🀄 译本](papers_zh/2209.12093_task_relevant_embeddings_cross_domain_il.zh.pdf) ⭐
 
  *Tim Franzmeyer, Philip H. S. Torr, João F. Henriques*
 
-5. **Watch and Match: Supercharging Imitation with Regularized Optimal Transport.** CoRL 2022 (PMLR 205:32-43, 2023). [paper](https://proceedings.mlr.press/v205/haldar23a.html) [code](https://github.com/siddhanthaldar/ROT) [project](https://rot-robot.github.io/) [📄 PDF](papers/2206.15469_rot_watch_and_match.pdf) [📘 精读](reports/2206.15469_rot_watch_and_match.md) [🀄 译本](papers_zh/2206.15469_rot_watch_and_match.zh.pdf) ⭐
+5. **Watch and Match: Supercharging Imitation with Regularized Optimal Transport.** CoRL, 2022 (PMLR 205:32-43, 2023). [paper](https://proceedings.mlr.press/v205/haldar23a.html), [code](https://github.com/siddhanthaldar/ROT), [project](https://rot-robot.github.io/), [📄 PDF](papers/2206.15469_rot_watch_and_match.pdf), [📘 精读](reports/2206.15469_rot_watch_and_match.md), [🀄 译本](papers_zh/2206.15469_rot_watch_and_match.zh.pdf) ⭐
 
  *Siddhant Haldar, Vaibhav Mathur, Denis Yarats, Lerrel Pinto*
 
-6. **Offline Imitation from Observation via Primal Wasserstein State Occupancy Matching.** ICML 2024. [paper](https://arxiv.org/abs/2311.01331) [code](https://github.com/KaiYan289/PW-DICE) [📄 PDF](papers/2311.01331_primal_wasserstein_state_occupancy.pdf) [📘 精读](reports/2311.01331_primal_wasserstein_state_occupancy.md) [🀄 译本](papers_zh/2311.01331_primal_wasserstein_state_occupancy.zh.pdf) ⭐
+6. **Offline Imitation from Observation via Primal Wasserstein State Occupancy Matching.** ICML, 2024. [paper](https://arxiv.org/abs/2311.01331), [code](https://github.com/KaiYan289/PW-DICE), [📄 PDF](papers/2311.01331_primal_wasserstein_state_occupancy.pdf), [📘 精读](reports/2311.01331_primal_wasserstein_state_occupancy.md), [🀄 译本](papers_zh/2311.01331_primal_wasserstein_state_occupancy.zh.pdf) ⭐
 
  *Kai Yan, Alexander G. Schwing, Yu-Xiong Wang*
 
-7. **Robot Policy Learning with Temporal Optimal Transport Reward.** NeurIPS 2024. [paper](https://arxiv.org/abs/2410.21795) [code](https://github.com/fuyw/TemporalOT) [📄 PDF](papers/2410.21795_temporal_ot_reward.pdf) [📘 精读](reports/2410.21795_temporal_ot_reward.md) [🀄 译本](papers_zh/2410.21795_temporal_ot_reward.zh.pdf) ⭐
+7. **Robot Policy Learning with Temporal Optimal Transport Reward.** NeurIPS, 2024. [paper](https://arxiv.org/abs/2410.21795), [code](https://github.com/fuyw/TemporalOT), [📄 PDF](papers/2410.21795_temporal_ot_reward.pdf), [📘 精读](reports/2410.21795_temporal_ot_reward.md), [🀄 译本](papers_zh/2410.21795_temporal_ot_reward.zh.pdf) ⭐
 
  *Yuwei Fu, Haichao Zhang, Di Wu, Wei Xu, Benoit Boulet*
 
-8. **Zero-Shot Offline Imitation Learning via Optimal Transport.** ICML 2025. [paper](https://arxiv.org/abs/2410.08751) [code](https://github.com/martius-lab/zilot) [📄 PDF](papers/2410.08751_zero_shot_offline_il_ot.pdf) [📘 精读](reports/2410.08751_zero_shot_offline_il_ot.md) [🀄 译本](papers_zh/2410.08751_zero_shot_offline_il_ot.zh.pdf) ⭐
+8. **Zero-Shot Offline Imitation Learning via Optimal Transport.** ICML, 2025. [paper](https://arxiv.org/abs/2410.08751), [code](https://github.com/martius-lab/zilot), [📄 PDF](papers/2410.08751_zero_shot_offline_il_ot.pdf), [📘 精读](reports/2410.08751_zero_shot_offline_il_ot.md), [🀄 译本](papers_zh/2410.08751_zero_shot_offline_il_ot.zh.pdf) ⭐
 
  *Thomas Rupf, Marco Bagatella, Nico Gürtler, Jonas Frey, Georg Martius*
 
-## <a id="5-codebases-benchmarks"></a>5. Codebases & Benchmarks
+<a name="5-codebases-benchmarks"></a>
+## [5. Codebases & Benchmarks](#content)
 *代码库与基准*
 
 **Codebases**
@@ -632,7 +673,8 @@ _(to be added)_
    2026 年离散 SB / adjoint 采样多篇早期版本的发表地（如 DASBS workshop 版）。
 
 
-## <a id="6-chinese-deep-dive-reports-topic-notes"></a>6. Chinese Deep-dive Reports & Topic Notes
+<a name="6-chinese-deep-dive-reports-topic-notes"></a>
+## [6. Chinese Deep-dive Reports & Topic Notes](#content)
 *中文精读报告与专题笔记*
 
 Every core paper has a Chinese deep-dive report (基本信息 / 一句话总结 / 方法核心 / 实验与结果 / 局限性 / 与相关方向的关系) and a layout-preserving Chinese translation. Start from [reports/INDEX.md](reports/INDEX.md) and the synthesis documents:
@@ -693,14 +735,16 @@ Every core paper has a Chinese deep-dive report (基本信息 / 一句话总结 
 - [E19](topics/E19_ot_theory_toolbox.md) E19 扩充笔记：OT 理论工具箱 —— UOT / GW 系变体 / Neural OT 求解器与评估陷阱
 - [E20](topics/E20_sb_inverse_trajectory.md) E20：SB 逆问题 × Trajectory Inference 横断综述
 
-## <a id="7-trend-report-slides"></a>7. Trend Report & Slides
+<a name="7-trend-report-slides"></a>
+## [7. Trend Report & Slides](#content)
 *趋势报告与汇报*
 
 - **Trend report (2025–2026)**: [survey/SB_TREND_REPORT_2026.md](survey/SB_TREND_REPORT_2026.md) · [PDF](survey/SB_TREND_REPORT_2026.pdf) — 五条主线的进展盘点、证据表与 insight。
 - **Raw survey notes**: [survey/raw/](survey/raw/) — 分轴调研原始条目（理论与求解器 / 视觉与科学应用 / 具身与对齐 / 采样器与离散桥 / 综述与代码）。
 - **Slides**: [slides/awesome_sb_report.html](slides/awesome_sb_report.html)（HTML，←/→ 翻页，可打印）· [slides/awesome_sb_report.pdf](slides/awesome_sb_report.pdf) · Beamer 版 [slides/beamer/awesome_sb_beamer.pdf](slides/beamer/awesome_sb_beamer.pdf)
 
-## <a id="8-contributing-citation-license"></a>8. Contributing, Citation & License
+<a name="8-contributing-citation-license"></a>
+## [8. Contributing, Citation & License](#content)
 *贡献、引用与许可*
 
 **Contributing** — PRs are welcome. Add a row to `metadata/extended.tsv` (or `resources.tsv`) and run `python3 scripts/build_readme.py`; please verify the venue on arXiv/OpenReview and link the official code when it exists. Chinese reports follow the template in `reports/` (基本信息 → 一句话总结 → 方法核心 → 实验与结果 → 局限性 → 关系).
