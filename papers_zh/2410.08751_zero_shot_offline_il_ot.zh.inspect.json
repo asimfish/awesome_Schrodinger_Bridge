@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.46pt but the original at this position is 10.06pt (ratio 0.84 vs page median 0.92) at x=319.4, y=70.1: H 步内到达。为此，我们训练一个额外的价值函数"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.46pt but the original at this position is 10.06pt (ratio 0.84 vs page median 0.92) at x=370.6, y=82.8: V, i.e.来估计从一个目标到下一个目标所需的"
+    }
+  ]
+}

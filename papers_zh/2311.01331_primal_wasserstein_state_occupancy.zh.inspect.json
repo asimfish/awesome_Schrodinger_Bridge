@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 6.42pt but the original at this position is 10.06pt (ratio 0.64 vs page median 0.92) at x=310.3, y=466.2: q.之间的匹配变量。Wasserstein 距离还具有等价的Kantorovich-Rubins"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 6.42pt but the original at this position is 10.06pt (ratio 0.64 vs page median 0.92) at x=310.3, y=500.0: f是1-Lipschitz 的。虽然这种形式常被机器学习社区采用，但Lipschitz 约束在实"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 6.42pt but the original at this position is 10.06pt (ratio 0.64 vs page median 0.92) at x=308.2, y=509.6: 践中通常通过梯度正则化器来实现。由于梯度是使用欧氏距离定义的，因此Rubinstein 对偶性的"
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=347 shifted horizontally by 17pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 7.76pt but the original at this position is 10.06pt (ratio 0.77 vs page median 0.92) at x=56.2, y=375.0: 实验设置。我们采用LobsDICE（Kim 等人，2022b）中的表格型马尔可夫决策过程实验。在"
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 7.76pt but the original at this position is 10.06pt (ratio 0.77 vs page median 0.92) at x=283.1, y=386.6: a 导致四个均匀选择的状态四个后续状态上的概率分布向量由以下公式确定"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (5 words, 0 CJK chars) at x=134.8, y=418.6: measure ρπ : S × A →R, is deﬁned as ρπ(s, a) = (1 −γ)π(a"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (8 words, 0 CJK chars) at x=134.4, y=525.6: where Hcausal(π) := Eρπ[−log π(a|s)]/(1 −γ) [41]. The pr"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=135.6, y=243.6: 命题1。方程（11）中定义的奖励正则化器导致熵正则化的最大熵逆强化学习算法。当时，"
+    }
+  ]
+}

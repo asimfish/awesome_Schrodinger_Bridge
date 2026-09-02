@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.01pt but the original at this position is 9.90pt (ratio 0.71 vs page median 0.92) at x=108.5, y=429.9: 为解决该优化问题，基于值的强化学习方法通常学习状态-动作值函数"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.01pt but the original at this position is 9.90pt (ratio 0.71 vs page median 0.92) at x=110.7, y=440.2: π 下的期望回报。为方便起见，采用向量记号"
+    }
+  ]
+}

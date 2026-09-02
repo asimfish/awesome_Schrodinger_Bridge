@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (3 words, 0 CJK chars) at x=107.6, y=74.2: with Σ⋆given by"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (10 words, 0 CJK chars) at x=107.7, y=291.1: Then for any t ∈[0, 1), we define Lt : A2 →R given for a"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (3 words, 0 CJK chars) at x=112.3, y=512.1: where µn = (1 −α)Pn + αPvθn."
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (3 words, 0 CJK chars) at x=198.2, y=269.6: For any n ∈N, ifZ 1"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (4 words, 0 CJK chars) at x=107.6, y=531.7: where for any s ≥0, x1 ∈Rd"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=421.8: Similarly, for any µ ∈P(C), we define"
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (3 words, 0 CJK chars) at x=112.3, y=551.3: and for any n ∈N"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 37: paragraph still in English (5 words, 0 CJK chars) at x=107.6, y=165.1: with ε ∈R. Similarly, we define P2n+1, = projε,"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 37: paragraph still in English (7 words, 0 CJK chars) at x=108.0, y=165.1: M(P2n, ) such that for any t ∈[0, 1], P2n+1, isassociate"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 37: paragraph still in English (2 words, 0 CJK chars) at x=202.8, y=237.7: 0,1= N(0, Σn+1, Id) where"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 37: paragraph still in English (3 words, 0 CJK chars) at x=112.3, y=297.9: and for any n ∈N"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (4 words, 0 CJK chars) at x=260.2, y=414.6: 1,1)n∈N such that for any n ∈N"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (4 words, 0 CJK chars) at x=209.8, y=453.1: 1,1)n∈N such that for any n ∈N"
+    }
+  ]
+}

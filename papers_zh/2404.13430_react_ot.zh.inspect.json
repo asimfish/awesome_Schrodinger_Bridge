@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (14 words, 0 CJK chars) at x=75.6, y=712.5: outperforms the combination of 40-shots sampling of OA-R"
+    }
+  ]
+}

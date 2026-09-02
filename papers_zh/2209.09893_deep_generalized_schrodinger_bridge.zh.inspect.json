@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 6.28pt but the original at this position is 9.98pt (ratio 0.63 vs page median 0.92) at x=108.8, y=666.8: 12）中的正倒向随机微分方程组。选项1："
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 6.28pt but the original at this position is 9.98pt (ratio 0.63 vs page median 0.92) at x=135.7, y=679.1: L_{IPF}. 鉴于定理2 如何推广了[27] 中的定理（见附录A.2 中的(22)），自然会"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (4 words, 0 CJK chars) at x=123.4, y=616.8: LIPF(φ) is minimized ⇔DKL(qθ||qφ) = 0 ⇔∀s ∈[0, T], Zθ"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (4 words, 0 CJK chars) at x=124.7, y=633.8: LIPF(θ) is minimized ⇔DKL(qφ||qθ) = 0 ⇔∀t ∈[0, T], Zθ"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "issue_count": 12,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=274.3: where we define mx0"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (5 words, 0 CJK chars) at x=307.1, y=104.7: (12)where g(x) = U(x) + log qT (x0, x). Accordingly, the"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 6.42pt but the original at this position is 9.92pt (ratio 0.65 vs page median 0.92) at x=137.3, y=271.1: (i)由我们方法的固定端点得出。注意，右侧第二项等于(50) 中的CoS 目标。因此，(54) "
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 6.42pt but the original at this position is 9.92pt (ratio 0.65 vs page median 0.92) at x=99.6, y=283.5: NLL 相比，(55) 更符合路径参数化。它将每个网格点"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 6.42pt but the original at this position is 9.92pt (ratio 0.65 vs page median 0.92) at x=347.7, y=283.5: V的低值，并惩罚粗糙增量，从而抑制"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 6.42pt but the original at this position is 9.92pt (ratio 0.65 vs page median 0.92) at x=56.2, y=283.5: V的振荡并产生更平滑的梯度，因此在尖锐势能（如分子系统）上训练更稳定。"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (4 words, 0 CJK chars) at x=89.6, y=628.5: B.4 (Stochastic inteH). Assume A, C are H"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (14 words, 0 CJK chars) at x=55.4, y=260.4: and Dxyf(x, y) is the continuous bilinear form (h, k) →⟨"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (3 words, 0 CJK chars) at x=55.4, y=95.7: 0 Q1/2αsds is a QPbecause"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=205.2: where we define mx0"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (5 words, 0 CJK chars) at x=55.1, y=423.9: where(i)followsfromthedefinitionofHJBequation(68)andwede"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (3 words, 0 CJK chars) at x=55.1, y=376.8: where we denote q(k)"
+    }
+  ]
+}

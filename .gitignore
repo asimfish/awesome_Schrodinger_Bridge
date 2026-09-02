@@ -1,0 +1,27 @@
+# 翻译缓存与中间件（可由 papers/ 重新生成）
+papers_zh/*.translation-cache.jsonl
+papers_zh/*.missing.jsonl
+papers_zh/*.retry.pdf
+papers_zh/*.retry.inspect.json
+logs/
+metadata/.arxiv_meta_cache.json
+# 系统与编辑器
+.DS_Store
+._*
+Thumbs.db
+.vscode/
+.idea/
+# LaTeX 中间件
+slides/beamer/*.aux
+slides/beamer/*.log
+slides/beamer/*.nav
+slides/beamer/*.out
+slides/beamer/*.snm
+slides/beamer/*.toc
+slides/beamer/*.vrb
+slides/beamer/*.fls
+slides/beamer/*.fdb_latexmk
+slides/beamer/*.synctex.gz
+# 临时
+*.tmp
+__pycache__/

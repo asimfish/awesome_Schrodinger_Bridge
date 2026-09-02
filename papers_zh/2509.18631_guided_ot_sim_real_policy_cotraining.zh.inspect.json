@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (18 words, 0 CJK chars) at x=108.0, y=267.2: In the source (simulation) domain, we leverage the abili"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.50pt but the original at this position is 10.00pt (ratio 0.85 vs page median 0.92) at x=108.8, y=188.1: {(o^{i} _{src}, a^{i} _{src})}^{N}^{src} 和目标域样本，"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.50pt but the original at this position is 10.00pt (ratio 0.85 vs page median 0.92) at x=108.8, y=200.8: (z, a)空间中联合分布之间的传输代价。基于式1 中的一般最优传输公式，编码器"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.50pt but the original at this position is 10.00pt (ratio 0.85 vs page median 0.92) at x=364.6, y=239.1: c 理想情况下应结合学习到的视觉潜"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.05pt but the original at this position is 9.94pt (ratio 0.71 vs page median 0.92) at x=108.8, y=605.3: 非平衡最优传输损失公式。考虑一个小批量，包含"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 8.13pt but the original at this position is 10.03pt (ratio 0.81 vs page median 0.92) at x=108.8, y=466.3: 基于动态时间规整（Dynamic Time Warping, DTW）的行为配对。动态时间规整（"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (3 words, 0 CJK chars) at x=108.0, y=437.4: where Pn+ := limt→t+"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (3 words, 0 CJK chars) at x=108.0, y=284.7: where Pn+ := limt→t+"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (9 words, 0 CJK chars) at x=108.0, y=236.6: since the bridges of T are the same with P, and Q, i.e.,"
+    }
+  ]
+}

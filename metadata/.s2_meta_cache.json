@@ -1,0 +1,665 @@
+{
+ "1308.0215": {
+  "title": "A survey of the Schr\\\"odinger problem and some of its connections with optimal transport",
+  "year": 2013,
+  "venue": "",
+  "authors": [
+   "Christian Léonard"
+  ]
+ },
+ "1306.0895": {
+  "title": "Sinkhorn Distances: Lightspeed Computation of Optimal Transport",
+  "year": 2013,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "Marco Cuturi"
+  ]
+ },
+ "1803.00567": {
+  "title": "Computational Optimal Transport",
+  "year": 2018,
+  "venue": "Found. Trends Mach. Learn.",
+  "authors": [
+   "G. Peyré",
+   "Marco Cuturi"
+  ]
+ },
+ "2106.01357": {
+  "title": "Diffusion Schrödinger Bridge with Applications to Score-Based Generative Modeling",
+  "year": 2021,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "Valentin De Bortoli",
+   "James Thornton",
+   "J. Heng",
+   "A. Doucet"
+  ]
+ },
+ "2110.11291": {
+  "title": "Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory",
+  "year": 2021,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "T. Chen",
+   "Guan-Horng Liu",
+   "Evangelos A. Theodorou"
+  ]
+ },
+ "2303.16852": {
+  "title": "Diffusion Schrödinger Bridge Matching",
+  "year": 2023,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "Yuyang Shi",
+   "Valentin De Bortoli",
+   "Andrew Campbell",
+   "A. Doucet"
+  ]
+ },
+ "2309.16948": {
+  "title": "Denoising Diffusion Bridge Models",
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Linqi Zhou",
+   "Aaron Lou",
+   "Samar Khanna",
+   "S. Ermon"
+  ]
+ },
+ "2304.00917": {
+  "title": "Diffusion Bridge Mixture Transports, Schrödinger Bridge Problems and Generative Modeling",
+  "year": 2023,
+  "venue": "Journal of machine learning research",
+  "authors": [
+   "Stefano Peluchetti"
+  ]
+ },
+ "2405.14449": {
+  "title": "Adversarial Schrödinger Bridge Matching",
+  "year": 2024,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "N. Gushchin",
+   "Daniil Selikhanovych",
+   "S. Kholkin",
+   "Evgeny Burnaev",
+   "A. Korotin"
+  ]
+ },
+ "2310.01174": {
+  "title": "Light Schrödinger Bridge",
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "A. Korotin",
+   "N. Gushchin",
+   "Evgeny Burnaev"
+  ]
+ },
+ "2402.03207": {
+  "title": "Light and Optimal Schrödinger Bridge Matching",
+  "year": 2024,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "N. Gushchin",
+   "S. Kholkin",
+   "Evgeny Burnaev",
+   "A. Korotin"
+  ]
+ },
+ "2305.15086": {
+  "title": "Unpaired Image-to-Image Translation via Neural Schrödinger Bridge",
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Beomsu Kim",
+   "Gihyun Kwon",
+   "Kwanyoung Kim",
+   "Jong-Chul Ye"
+  ]
+ },
+ "2210.02747": {
+  "title": "Flow Matching for Generative Modeling",
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Y. Lipman",
+   "Ricky T. Q. Chen",
+   "Heli Ben-Hamu",
+   "Maximilian Nickel",
+   "Matt Le"
+  ]
+ },
+ "2302.00482": {
+  "title": "Improving and generalizing flow-based generative models with minibatch optimal transport",
+  "year": 2023,
+  "venue": "Trans. Mach. Learn. Res.",
+  "authors": [
+   "Alexander Tong",
+   "Esmeralda S. Whitammer",
+   "G. Huguet",
+   "Yanlei Zhang",
+   "Jarrid Rector-Brooks",
+   "Kilian Fatras",
+   "Guy Wolf",
+   "Y. Bengio"
+  ]
+ },
+ "2307.03672": {
+  "title": "Simulation-free Schrödinger bridges via score and flow matching",
+  "year": 2023,
+  "venue": "International Conference on Artificial Intelligence and Statistics",
+  "authors": [
+   "Alexander Tong",
+   "Esmeralda S. Whitammer",
+   "Kilian Fatras",
+   "Lazar Atanackovic",
+   "Yanlei Zhang",
+   "G. Huguet",
+   "Guy Wolf",
+   "Y. Bengio"
+  ]
+ },
+ "2209.03003": {
+  "title": "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow",
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Xingchao Liu",
+   "Chengyue Gong",
+   "Qiang Liu"
+  ]
+ },
+ "2303.08797": {
+  "title": "Stochastic Interpolants: A Unifying Framework for Flows and Diffusions",
+  "year": 2023,
+  "venue": "Journal of machine learning research",
+  "authors": [
+   "M. Albergo",
+   "N. Boffi",
+   "E. Vanden-Eijnden"
+  ]
+ },
+ "2209.15571": {
+  "title": "Building Normalizing Flows with Stochastic Interpolants",
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "M. Albergo",
+   "E. Vanden-Eijnden"
+  ]
+ },
+ "2409.08861": {
+  "title": "Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control",
+  "year": 2024,
+  "venue": "arXiv.org",
+  "authors": [
+   "Carles Domingo-Enrich",
+   "Michal Drozdzal",
+   "Brian Karrer",
+   "Ricky T. Q. Chen"
+  ]
+ },
+ "2305.13301": {
+  "title": "Training Diffusion Models with Reinforcement Learning",
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Kevin Black",
+   "Michael Janner",
+   "Yilun Du",
+   "Ilya Kostrikov",
+   "S. Levine"
+  ]
+ },
+ "2111.15141": {
+  "title": "Path Integral Sampler: a stochastic control approach for sampling",
+  "year": 2021,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Qinsheng Zhang",
+   "Yongxin Chen"
+  ]
+ },
+ "2302.13834": {
+  "title": "Denoising Diffusion Samplers",
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Francisco Vargas",
+   "Will Grathwohl",
+   "A. Doucet"
+  ]
+ },
+ "2307.01050": {
+  "title": "Transport meets Variational Inference: Controlled Monte Carlo Diffusions",
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Francisco Vargas",
+   "Shreyas Padhy",
+   "Denis Blessing",
+   "Nikolas Nusken"
+  ]
+ },
+ "2402.06121": {
+  "title": "Iterated Denoising Energy Matching for Sampling from Boltzmann Densities",
+  "year": 2024,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "Tara Akhound-Sadegh",
+   "Jarrid Rector-Brooks",
+   "A. Bose",
+   "Sarthak Mittal",
+   "Pablo Lemos",
+   "Cheng-Hao Liu",
+   "Marcin Sendera",
+   "Siamak Ravanbakhsh",
+   "G. Gidel",
+   "Y. Bengio",
+   "Esmeralda S. Whitammer",
+   "Alexander Tong"
+  ]
+ },
+ "2410.02711": {
+  "title": "NETS: A Non-Equilibrium Transport Sampler",
+  "year": 2024,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "M. Albergo",
+   "Eric Vanden-Eijnden"
+  ]
+ },
+ "2203.08382": {
+  "title": "Dual Diffusion Implicit Bridges for Image-to-Image Translation",
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Xu Su",
+   "Jiaming Song",
+   "Chenlin Meng",
+   "S. Ermon"
+  ]
+ },
+ "2108.01073": {
+  "title": "SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations",
+  "year": 2021,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Chenlin Meng",
+   "Yutong He",
+   "Yang Song",
+   "Jiaming Song",
+   "Jiajun Wu",
+   "Jun-Yan Zhu",
+   "S. Ermon"
+  ]
+ },
+ "2503.07535": {
+  "title": "LBM: Latent Bridge Matching for Fast Image-to-Image Translation",
+  "year": 2025,
+  "venue": "IEEE International Conference on Computer Vision",
+  "authors": [
+   "Clément Chadebec",
+   "O. Tasar",
+   "Sanjeev Sreetharan",
+   "Benjamin Aubin"
+  ]
+ },
+ "2410.22637": {
+  "title": "Consistency Diffusion Bridge Models",
+  "year": 2024,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "Guande He",
+   "Kaiwen Zheng",
+   "Jianfei Chen",
+   "Fan Bao",
+   "Jun Zhu"
+  ]
+ },
+ "2405.15885": {
+  "title": "Diffusion Bridge Implicit Models",
+  "year": 2024,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Kaiwen Zheng",
+   "Guande He",
+   "Jianfei Chen",
+   "Fan Bao",
+   "Jun Zhu"
+  ]
+ },
+ "2502.01416": {
+  "title": "Categorical Schrödinger Bridge Matching",
+  "year": 2025,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "Grigoriy Ksenofontov",
+   "A. Korotin"
+  ]
+ },
+ "2410.01500": {
+  "title": "Discrete Diffusion Schrödinger Bridge Matching for Graph Transformation",
+  "year": 2024,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Jun Hyeong Kim",
+   "Seonghwan Kim",
+   "Seokhyun Moon",
+   "Hyeongwoo Kim",
+   "Jeheon Woo",
+   "Woo Youn Kim"
+  ]
+ },
+ "2503.01006": {
+  "title": "Underdamped Diffusion Bridges with Applications to Sampling",
+  "year": 2025,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Denis Blessing",
+   "Julius Berner",
+   "Lorenz Richter",
+   "Gerhard Neumann"
+  ]
+ },
+ "2410.14055": {
+  "title": "Feedback Schrödinger Bridge Matching",
+  "year": 2024,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Panagiotis Theodoropoulos",
+   "Nikolaos Komianos",
+   "Vincent Pacelli",
+   "Guan-Horng Liu",
+   "Evangelos A. Theodorou"
+  ]
+ },
+ "2403.13117": {
+  "title": "Optimal Flow Matching: Learning Straight Trajectories in Just One Step",
+  "year": 2024,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "Nikita Kornilov",
+   "Alexander Gasnikov",
+   "A. Korotin"
+  ]
+ },
+ "2302.11419": {
+  "title": "Aligned Diffusion Schrödinger Bridges",
+  "year": 2023,
+  "venue": "Conference on Uncertainty in Artificial Intelligence",
+  "authors": [
+   "Vignesh Ram Somnath",
+   "Matteo Pariset",
+   "Ya-Ping Hsieh",
+   "María Rodríguez Martínez",
+   "Andreas Krause",
+   "Charlotte Bunne"
+  ]
+ },
+ "2312.03491": {
+  "title": "Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis",
+  "year": 2023,
+  "venue": "arXiv.org",
+  "authors": [
+   "Zehua Chen",
+   "Guande He",
+   "Kaiwen Zheng",
+   "Xu Tan",
+   "Jun Zhu"
+  ]
+ },
+ "2303.01751": {
+  "title": "Deep Momentum Multi-Marginal Schrödinger Bridge",
+  "year": 2023,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "T. Chen",
+   "Guan-Horng Liu",
+   "Molei Tao",
+   "Evangelos A. Theodorou"
+  ]
+ },
+ "2306.09099": {
+  "title": "Unbalanced Diffusion Schrödinger Bridge",
+  "year": 2023,
+  "venue": "arXiv.org",
+  "authors": [
+   "Matteo Pariset",
+   "Ya-Ping Hsieh",
+   "Charlotte Bunne",
+   "Andreas Krause",
+   "Valentin De Bortoli"
+  ]
+ },
+ "2106.10410": {
+  "title": "Deep Generative Learning via Schrödinger Bridge",
+  "year": 2021,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "Gefei Wang",
+   "Yuling Jiao",
+   "Qiang Xu",
+   "Yang Wang",
+   "Can Yang"
+  ]
+ },
+ "2106.02081": {
+  "title": "Solving Schrödinger Bridges via Maximum Likelihood",
+  "year": 2021,
+  "venue": "Entropy",
+  "authors": [
+   "Francisco Vargas",
+   "Pierre Thodoroff",
+   "Neil D. Lawrence",
+   "A. Lamacraft"
+  ]
+ },
+ "2412.06264": {
+  "title": "Flow Matching Guide and Code",
+  "year": 2024,
+  "venue": "arXiv.org",
+  "authors": [
+   "Y. Lipman",
+   "Marton Havasi",
+   "Peter Holderrieth",
+   "Neta Shaul",
+   "Matt Le",
+   "Brian Karrer",
+   "Ricky T. Q. Chen",
+   "David Lopez-Paz",
+   "Heli Ben-Hamu",
+   "Itai Gat"
+  ]
+ },
+ "2407.16074": {
+  "title": "Schrödinger Bridge for Generative Speech Enhancement",
+  "year": 2024,
+  "venue": "Interspeech",
+  "authors": [
+   "Ante Jukic",
+   "Roman Korostik",
+   "J. Balam",
+   "Boris Ginsburg"
+  ]
+ },
+ "2002.04461": {
+  "title": "TrajectoryNet: A Dynamic Optimal Transport Network for Modeling Cellular Dynamics",
+  "year": 2020,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "Alexander Tong",
+   "Jessie Huang",
+   "Guy Wolf",
+   "D. V. Dijk",
+   "Smita Krishnaswamy"
+  ]
+ },
+ "2201.12220": {
+  "title": "Neural Optimal Transport",
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Alexander Korotin",
+   "Daniil Selikhanovych",
+   "Evgeny Burnaev"
+  ]
+ },
+ "2405.20630": {
+  "title": "Stochastic Optimal Control for Diffusion Bridges in Function Spaces",
+  "year": 2024,
+  "venue": "Neural Information Processing Systems",
+  "authors": [
+   "Byoungwoo Park",
+   "Jungwon Choi",
+   "Sungbin Lim",
+   "Juho Lee"
+  ]
+ },
+ "2409.09376": {
+  "title": "BM2: Coupled Schrödinger Bridge Matching",
+  "year": 2024,
+  "venue": "Trans. Mach. Learn. Res.",
+  "authors": [
+   "Stefano Peluchetti"
+  ]
+ },
+ "2604.05673": {
+  "title": "Rectified Schrödinger Bridge Matching for Few-Step Visual Navigation",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "authors": [
+   "Wuyang Luan",
+   "Junhui Li",
+   "Weiguang Zhao",
+   "Wenjian Zhang",
+   "Tieru Wu",
+   "Rui Ma"
+  ]
+ },
+ "2601.22408": {
+  "title": "Minimal-Action Discrete Schrödinger Bridge Matching for Peptide Sequence Design",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "authors": [
+   "Shrey Goel",
+   "Pranam Chatterjee"
+  ]
+ },
+ "2604.08580": {
+  "title": "Adjoint Matching through the Lens of the Stochastic Maximum Principle in Optimal Control",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "authors": [
+   "Carles Domingo-Enrich",
+   "Jiequn Han"
+  ]
+ },
+ "2512.07212": {
+  "title": "Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "authors": [
+   "Zhaoyang Liu",
+   "Mokai Pan",
+   "Zhongyi Wang",
+   "Kaizhen Zhu",
+   "Haotao Lu",
+   "Jingya Wang",
+   "Ye Shi"
+  ]
+ },
+ "2505.21528": {
+  "title": "A Unified and Fast-Sampling Diffusion Bridge Framework via Stochastic Optimal Control.",
+  "year": 2025,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "authors": [
+   "Mokai Pan",
+   "Kaizhen Zhu",
+   "Yuexin Ma",
+   "Yanwei Fu",
+   "Jingyi Yu",
+   "Jingya Wang",
+   "Ye Shi"
+  ]
+ },
+ "2510.16587": {
+  "title": "Multi-Marginal Schrödinger Bridge Matching",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "authors": [
+   "Byoungwoo Park",
+   "Juho Lee"
+  ]
+ },
+ "2508.10684": {
+  "title": "MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control",
+  "year": 2025,
+  "venue": "Advances in Neural Information Processing Systems 38",
+  "authors": [
+   "Yuchen Zhu",
+   "Wei Guo",
+   "Jaemoo Choi",
+   "Guan-Horng Liu",
+   "Yongxin Chen",
+   "Molei Tao"
+  ]
+ },
+ "2410.13643": {
+  "title": "Fine-Tuning Discrete Diffusion Models via Reward Optimization with Applications to DNA and Protein Design",
+  "year": 2024,
+  "venue": "International Conference on Learning Representations",
+  "authors": [
+   "Chenyu Wang",
+   "Masatoshi Uehara",
+   "Yichun He",
+   "Amy Wang",
+   "Tommaso Biancalani",
+   "Avantika Lal",
+   "T. Jaakkola",
+   "Sergey Levine",
+   "Hanchen Wang",
+   "Aviv Regev"
+  ]
+ },
+ "2606.30053": {
+  "title": "Notes on generative modeling: flow matching, diffusion, optimal transport and Schr{ö}dinger bridge",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "authors": [
+   "Titouan Vayer"
+  ]
+ },
+ "2603.18992": {
+  "title": "Foundations of Schrödinger Bridges for Generative Modeling",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "authors": [
+   "Sophia Tang"
+  ]
+ },
+ "2503.21756": {
+  "title": "A Unified Framework for Diffusion Bridge Problems: Flow Matching and Schrödinger Matching into One",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "authors": [
+   "Minyoung Kim"
+  ]
+ },
+ "2502.05749": {
+  "title": "UniDB: A Unified Diffusion Bridge Framework via Stochastic Optimal Control",
+  "year": 2025,
+  "venue": "International Conference on Machine Learning",
+  "authors": [
+   "Kaizhen Zhu",
+   "Mokai Pan",
+   "Yuexin Ma",
+   "Yanwei Fu",
+   "Jingyi Yu",
+   "Jingya Wang",
+   "Ye Shi"
+  ]
+ }
+}

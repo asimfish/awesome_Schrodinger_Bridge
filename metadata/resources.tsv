@@ -1,0 +1,22 @@
+kind	name	url	desc	meta
+code	yuyang-shi/dsbm-pytorch	https://github.com/yuyang-shi/dsbm-pytorch	DSBM / IMF 官方 PyTorch 实现（DSBM-IPF 与 DSBM-IMF，含自洽的高斯基准）。	NeurIPS 2023
+code	JTT94/diffusion_schrodinger_bridge	https://github.com/JTT94/diffusion_schrodinger_bridge	DSB（IPF 求解）官方实现。	NeurIPS 2021
+code	ghliu/SB-FBSDE · ghliu/DeepGSB · facebookresearch/generalized-schrodinger-bridge-matching	https://github.com/ghliu	Guan-Horng Liu 组的 SB 系列：SB-FBSDE（似然训练）、DeepGSB（平均场/广义 SB）、GSBM（任务代价的 SB 匹配）。	ICLR 2022 / NeurIPS 2022 / ICLR 2024
+code	NVlabs/I2SB	https://github.com/NVlabs/I2SB	I²SB 官方实现：paired 图像修复的 SB 基线（inpainting / deblurring / super-resolution / JPEG）。	ICML 2023 · ⭐400+
+code	facebookresearch/adjoint_sampling · facebookresearch/adjoint_samplers	https://github.com/facebookresearch/adjoint_sampling	Adjoint Sampling 与 Adjoint Schrödinger Bridge Sampler 官方实现，含分子构象生成基准（SPICE/eSEN）。	ICML 2025 / NeurIPS 2025
+code	ngushchin/LightSB · SKholkin/LightSB-Matching · Daniil-Selikhanovych/ASBM	https://github.com/ngushchin/LightSB	Korotin 组轻量 SB 求解器：LightSB（闭式高斯混合）、LightSB-M、ASBM（对抗式 D-IMF）。	ICLR 2024 / ICML 2024 / NeurIPS 2024
+code	gregkseno/csbm · gregkseno/catsbench	https://github.com/gregkseno/catsbench	离散空间 SB：Categorical SBM 实现与离散 SB 基准（DLightSB / DLightSB-M / α-CSBM）。	ICML 2025 / ICLR 2026
+code	thu-ml/DiffusionBridge	https://github.com/thu-ml/DiffusionBridge	DBIM（隐式 bridge 采样）与 CDBM（consistency bridge）统一代码库。	ICLR 2025 / NeurIPS 2024
+code	UniDB-SOC/UniDB · 2769433owo/UniDB-plusplus	https://github.com/UniDB-SOC/UniDB	SOC 统一的 diffusion bridge（UniDB）及其免训练快速采样（UniDB++）。	ICML 2025 / 2025
+code	sophtang/BranchSBM · bw-park/MSBM · panostheo98/3MSBM · TianrongChen/DMSB	https://github.com/sophtang/BranchSBM	结构化 SB：分叉（BranchSBM）、多边缘（MSBM、3MSBM、DMSB）——单细胞轨迹推断的主力代码。	ICLR 2026 / 2025 / NeurIPS 2025 / NeurIPS 2023
+code	atong01/conditional-flow-matching (torchcfm)	https://github.com/atong01/conditional-flow-matching	Flow Matching / OT-CFM / [SF]²M（simulation-free SB）的通用库。	TMLR 2024 · ⭐1k+
+code	facebookresearch/flow_matching	https://github.com/facebookresearch/flow_matching	Flow Matching 官方库（含离散 FM），配套《Flow Matching Guide and Code》。	2024
+code	PythonOT/POT · ott-jax/ott · jeanfeydy/geomloss	https://github.com/PythonOT/POT	OT 工具箱：POT（Sinkhorn/UOT/GW）、OTT-JAX（可微 Sinkhorn、大规模）、GeomLoss（GPU 上的 Sinkhorn 散度）。	⭐2.8k / 750 / 700
+code	jarridrb/DEM	https://github.com/jarridrb/DEM	iDEM 能量采样实现，附 GMM / DW4 / LJ13 / LJ55 等 Boltzmann 采样基准。	ICML 2024
+code	jianghcsr/BridgePolicy	https://github.com/jianghcsr/BridgePolicy	BridgePolicy：观测嵌入 SDE 的 diffusion-bridge 视觉运动策略。	ICML 2026
+benchmark	catsbench（离散 SB 基准）	https://github.com/gregkseno/catsbench	有解析解的离散分布对，严格评测离散 SB / EOT 求解器；目前唯一带 ground truth 的 SB 基准。	ICLR 2026
+benchmark	能量采样基准（DEM / Adjoint Sampling）	https://github.com/facebookresearch/adjoint_sampling	GMM-40、Many-Well、DW4、LJ13/LJ55、alanine dipeptide，以及 SPICE 分子构象的 amortized 采样；指标 W₂ / TVD / ESS / 能量分布。	ICML 2024 / ICML 2025
+benchmark	unpaired 翻译常用协议	https://github.com/yuyang-shi/dsbm-pytorch	EMNIST→MNIST、AFHQ 64/256（cat↔dog↔wild）、CelebA；指标 FID + NFE，DSBM / ASBM / SB Flow 共用。	—
+benchmark	单细胞轨迹推断（EB / CITE-seq / Multiome）	https://github.com/KrishnaswamyLab/MIOFlow	多时间点 scRNA-seq 快照，留一时间点评测（EMD / SWD）；TrajectoryNet、MIOFlow、DMSB、3MSBM、MSBM、BranchSBM 的共同战场。	—
+benchmark	SimplerEnv（sim2real 策略评测）	https://github.com/simpler-env/SimplerEnv	仿真评估与真机成功率排序一致性（MMRV / Pearson）；具身 SB 方法落地评测的参考协议（见 topics/E11）。	⭐1.1k
+workshop	ICLR 2026 DeLTa Workshop（Deep Learning for Theory & Applications）	https://www.iclr.cc/virtual/2026/workshop/10000780	2026 年离散 SB / adjoint 采样多篇早期版本的发表地（如 DASBS workshop 版）。	2026

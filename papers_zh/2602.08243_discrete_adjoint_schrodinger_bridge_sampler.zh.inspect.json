@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 3,
+      "code": "list_font_inconsistent",
+      "severity": "error",
+      "message": "Page 3: sibling list items ('digit' markers) render at 9.26-11.96pt (x1.29 spread) at x=55.9, y=368.2: (8) 强调SB (6) 允许一种SOC 解释，其中终端边际约束通过终端成本"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 7.56pt but the original at this position is 10.06pt (ratio 0.75 vs page median 0.92) at x=56.2, y=518.4: Φ^{⋆}，我们需要估计对所有成立。设校正矩阵"
+    }
+  ]
+}

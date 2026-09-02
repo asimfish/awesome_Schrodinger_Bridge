@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (2 words, 0 CJK chars) at x=54.0, y=508.3: is, T = Taﬀ[X, Y ]."
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (4 words, 0 CJK chars) at x=312.8, y=321.5: 2 (NX, NY ) = a−b,where b = 2Tr"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (6 words, 0 CJK chars) at x=54.0, y=394.3: More concretely, if Xt = T ∗(Xs), where T ∗(x) = A∗x + b"
+    }
+  ]
+}

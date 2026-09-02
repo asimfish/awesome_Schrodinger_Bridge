@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 600" width="1280" height="600" font-family="'PingFang SC','Noto Sans CJK SC','Helvetica Neue',Arial,sans-serif">
+  <rect width="1280" height="600" fill="#FFFFFF"/>
+  <text x="40" y="38" font-size="22" font-weight="700" fill="#003366">Schrödinger Bridge 方法族谱系（1932 → 2026）</text>
+  <text x="40" y="60" font-size="13" fill="#666666">箭头 = 方法继承 / 直接依赖；灰字 = 年份或 venue；红标 = 2025–2026 新增</text>
+
+  <!-- column headers -->
+  <g font-size="14" font-weight="700" fill="#FFFFFF">
+    <rect x="40" y="80" width="200" height="30" rx="4" fill="#003366"/><text x="140" y="101" text-anchor="middle">① 经典与理论</text>
+    <rect x="290" y="80" width="230" height="30" rx="4" fill="#003366"/><text x="405" y="101" text-anchor="middle">② 神经求解器</text>
+    <rect x="570" y="80" width="400" height="30" rx="4" fill="#003366"/><text x="770" y="101" text-anchor="middle">③ 扩展分支</text>
+    <rect x="1020" y="80" width="220" height="30" rx="4" fill="#003366"/><text x="1130" y="101" text-anchor="middle">④ 应用</text>
+  </g>
+
+  <!-- column 1 -->
+  <g font-size="12.5" fill="#222222">
+    <rect x="40" y="130" width="200" height="60" rx="6" fill="#EEF3F8" stroke="#0066CC"/><rect x="40" y="130" width="5" height="60" fill="#CC0000"/>
+    <text x="55" y="152" font-weight="700">Schrödinger 1932</text><text x="55" y="172" fill="#666666">大偏差 → 最小 KL 路径测度</text>
+    <rect x="40" y="205" width="200" height="60" rx="6" fill="#EEF3F8" stroke="#0066CC"/><rect x="40" y="205" width="5" height="60" fill="#CC0000"/>
+    <text x="55" y="227" font-weight="700">熵正则 OT / Sinkhorn</text><text x="55" y="247" fill="#666666">Cuturi 2013 · Léonard 2014</text>
+    <rect x="40" y="280" width="200" height="60" rx="6" fill="#EEF3F8" stroke="#0066CC"/><rect x="40" y="280" width="5" height="60" fill="#CC0000"/>
+    <text x="55" y="302" font-weight="700">SB = 随机最优控制</text><text x="55" y="322" fill="#666666">Chen–Georgiou–Pavon 2021</text>
+    <rect x="40" y="355" width="200" height="60" rx="6" fill="#EEF3F8" stroke="#0066CC"/><rect x="40" y="355" width="5" height="60" fill="#CC0000"/>
+    <text x="55" y="377" font-weight="700">统一教程 2025–26</text><text x="55" y="397" fill="#CC0000">Unified framework · Foundations</text>
+  </g>
+
+  <!-- column 2 -->
+  <g font-size="12.5" fill="#222222">
+    <rect x="290" y="130" width="230" height="75" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.5"/>
+    <text x="305" y="152" font-weight="700">IPF 线（2021–22）</text><text x="305" y="172" fill="#666666">DSB · SB-FBSDE · DeepGSB</text><text x="305" y="190" fill="#666666">交替回归 score，误差累积</text>
+    <rect x="290" y="225" width="230" height="95" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="2.5"/>
+    <text x="305" y="247" font-weight="700">IMF / bridge matching（2023–）</text><text x="305" y="267" fill="#666666">IDBM · DSBM · SB Flow · BM²</text><text x="305" y="285" fill="#666666">Markov ↔ reciprocal 交替投影</text><text x="305" y="303" fill="#CC0000">RSBM 2026：ε 谱统一 SB↔FM</text>
+    <rect x="290" y="340" width="230" height="75" rx="6" fill="#FFFFFF" stroke="#0066CC" stroke-width="1.5"/>
+    <text x="305" y="362" font-weight="700">Flow Matching 侧</text><text x="305" y="382" fill="#666666">FM · OT-CFM · [SF]²M · SI · RF</text><text x="305" y="400" fill="#666666">σ→0 的确定性极限</text>
+  </g>
+
+  <!-- column 3: 2x3 grid -->
+  <g font-size="12" fill="#222222">
+    <rect x="570" y="130" width="190" height="88" rx="6" fill="#EEF3F8" stroke="#0066CC"/>
+    <text x="582" y="150" font-weight="700">成对桥 / SOC 统一</text><text x="582" y="168" fill="#666666">I²SB · DDBM · DBIM</text><text x="582" y="184" fill="#CC0000">UniDB / UniDB++（2025）</text><text x="582" y="202" fill="#666666">h-transform = 终端罚→∞</text>
+    <rect x="780" y="130" width="190" height="88" rx="6" fill="#EEF3F8" stroke="#0066CC"/>
+    <text x="792" y="150" font-weight="700">结构化 SB</text><text x="792" y="168" fill="#666666">GSBM · 3MSBM · FSBM · UDSB</text><text x="792" y="184" fill="#CC0000">MSBM · BranchSBM（2025–26）</text><text x="792" y="202" fill="#666666">多边缘 · 分叉 · 反馈 · 非平衡</text>
+    <rect x="570" y="232" width="190" height="88" rx="6" fill="#EEF3F8" stroke="#0066CC"/>
+    <text x="582" y="252" font-weight="700">轻量 / 少步</text><text x="582" y="270" fill="#666666">LightSB(-M) · ASBM · CDBM</text><text x="582" y="286" fill="#666666">LBM 1-NFE latent</text><text x="582" y="304" fill="#666666">闭式 · 对抗 · consistency · 蒸馏</text>
+    <rect x="780" y="232" width="190" height="88" rx="6" fill="#EEF3F8" stroke="#CC0000" stroke-width="2"/>
+    <text x="792" y="252" font-weight="700">离散状态空间</text><text x="792" y="270" fill="#666666">DDSBM · CSBM（ICML 25）</text><text x="792" y="286" fill="#CC0000">catsbench 基准（ICLR 26）</text><text x="792" y="304" fill="#CC0000">MadSBM · DAM · DASBS · MDNS</text>
+    <rect x="570" y="334" width="400" height="88" rx="6" fill="#EEF3F8" stroke="#CC0000" stroke-width="2"/>
+    <text x="582" y="354" font-weight="700">SOC 采样与微调（Adjoint 谱系）</text>
+    <text x="582" y="372" fill="#666666">PIS · DDS · CMCD → Adjoint Matching（ICLR 25）→ AS（ICML 25）→ ASBS（NeurIPS 25）</text>
+    <text x="582" y="390" fill="#CC0000">→ FAS 函数空间 · DAM / DASBS 离散 · AM-via-SMP 理论（均 2026）</text>
+    <text x="582" y="408" fill="#666666">竞品：iDEM · NETS · Sendera（无偏 / 模态覆盖口径）</text>
+  </g>
+
+  <!-- column 4 -->
+  <g font-size="12.5" fill="#222222">
+    <rect x="1020" y="130" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#0066CC"/><rect x="1020" y="130" width="5" height="58" fill="#0066CC"/>
+    <text x="1035" y="152" font-weight="700">图像修复 / 翻译</text><text x="1035" y="172" fill="#666666">UNSB · UniDB · LBM · DDIB 对照</text>
+    <rect x="1020" y="200" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#0066CC"/><rect x="1020" y="200" width="5" height="58" fill="#0066CC"/>
+    <text x="1035" y="222" font-weight="700">具身：sim2real / 策略</text><text x="1035" y="242" fill="#CC0000">EgoBridge · BDGxRL · BridgePolicy</text>
+    <rect x="1020" y="270" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#0066CC"/><rect x="1020" y="270" width="5" height="58" fill="#0066CC"/>
+    <text x="1035" y="292" font-weight="700">科学：细胞 / 分子 / 物理</text><text x="1035" y="312" fill="#666666">BranchSBM · React-OT · SBUnfold</text>
+    <rect x="1020" y="340" width="220" height="58" rx="6" fill="#FFFFFF" stroke="#0066CC"/><rect x="1020" y="340" width="5" height="58" fill="#0066CC"/>
+    <text x="1035" y="362" font-weight="700">采样 / 对齐</text><text x="1035" y="382" fill="#666666">Boltzmann · 构象 · dLLM 微调</text>
+  </g>
+
+  <!-- arrows -->
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0066CC"/></marker></defs>
+  <g stroke="#0066CC" stroke-width="1.8" fill="none" marker-end="url(#ar)">
+    <path d="M240,235 L290,165"/><path d="M240,235 L290,270"/><path d="M240,310 L290,285"/><path d="M240,310 C265,330 265,370 290,375"/>
+    <path d="M520,270 L570,175"/><path d="M520,270 L570,275"/><path d="M520,270 L780,175"/><path d="M520,270 L780,275"/><path d="M520,300 L570,380"/>
+    <path d="M520,375 L570,290"/><path d="M520,165 L570,160"/>
+    <path d="M970,175 L1020,160"/><path d="M970,175 L1020,300"/><path d="M970,275 L1020,230"/><path d="M970,275 L1020,385"/><path d="M970,380 L1020,375"/>
+  </g>
+
+  <!-- timeline bar -->
+  <g font-size="11.5" fill="#666666">
+    <line x1="40" y1="470" x2="1240" y2="470" stroke="#003366" stroke-width="2"/>
+    <g fill="#003366" font-weight="700">
+      <text x="40" y="492">1932 / 2013–14</text><text x="290" y="492">2021–22 IPF</text><text x="470" y="492">2023 IMF</text><text x="640" y="492">2024 FM 统一 · AM</text><text x="850" y="492">2025 AS · UniDB · CSBM</text><text x="1080" y="492">2026 离散基准 · 策略即桥</text>
+    </g>
+    <g>
+      <circle cx="40" cy="470" r="5" fill="#003366"/><circle cx="290" cy="470" r="5" fill="#003366"/><circle cx="470" cy="470" r="5" fill="#003366"/><circle cx="640" cy="470" r="5" fill="#003366"/><circle cx="850" cy="470" r="5" fill="#CC0000"/><circle cx="1080" cy="470" r="5" fill="#CC0000"/>
+    </g>
+    <text x="40" y="530">趋势读法：求解器沿"IPF → IMF → 一次训练 / 少步"收敛；SOC 成为桥与采样的统一语言；离散与结构化是 2025–26 的增量；应用从"数据翻译"走向"策略与采样本身"。</text>
+    <text x="40" y="552">来源：本仓库 reports/ 与 topics/ 精读；2025–26 条目见 survey/SB_TREND_REPORT_2026.md §2。</text>
+  </g>
+</svg>

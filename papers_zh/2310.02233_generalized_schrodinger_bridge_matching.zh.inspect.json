@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (8 words, 0 CJK chars) at x=108.0, y=453.0: t withleast kinetic energy, i.e., it is equivalent to mi"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=463.9: 命题2（第二阶段；条件随机最优控制；CondSOC）。设第二阶段的最小化器可分解为"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 8.07pt but the original at this position is 9.96pt (ratio 0.81 vs page median 0.92) at x=108.8, y=162.4: 图2：在三个具有平均场代价的人群导航任务上的可行性与最优性。"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=292.9, y=151.4: u^{θ} _{t} 仿真随机微分方程。注意DeepGSB 与我们的GSBM 差异显著，后者在所"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=175.9: 命题2（第二阶段；条件随机最优控制；CondSOC）。设第二阶段的最小化器可分解为"
+    },
+    {
+      "page": 17,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 17: table at y=325 has 8 rules vs 7 in the original"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (2 words, 0 CJK chars) at x=289.2, y=206.3: n,where n = [ab−1]⊤.(39)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (6 words, 0 CJK chars) at x=192.0, y=131.2: where−dat = at · ∇ft(Xt)dt,a1 = ∇g(X1)(26b)"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (3 words, 0 CJK chars) at x=152.9, y=682.9: 2∥x1 −x2∥2) = exp(x⊤Rx),where R ="
+    },
+    {
+      "page": 23,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 23: displayed equation at y=647 shifted horizontally by 20pt vs original"
+    }
+  ]
+}

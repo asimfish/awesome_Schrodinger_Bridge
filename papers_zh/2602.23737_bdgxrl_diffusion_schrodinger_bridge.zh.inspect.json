@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 12,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 12: block set at 5.87pt but the original at this position is 9.96pt (ratio 0.59 vs page median 0.92) at x=54.8, y=274.4: 错误根据引理1，学习到的面向目标策略"
+    }
+  ]
+}

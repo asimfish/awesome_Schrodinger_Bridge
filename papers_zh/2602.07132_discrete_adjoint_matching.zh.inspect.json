@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 1,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 1: paragraph still in English (166 words, 0 CJK chars) at x=86.6, y=161.4: Computation methods for solving entropy-regularized rewa"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (6 words, 0 CJK chars) at x=106.7, y=323.9: t(x) ≥0 denotes the jump rate with λbase"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (24 words, 0 CJK chars) at x=70.9, y=320.3: 1(x) →∞, and Qmask representsthe class of the probabilit"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (3 words, 0 CJK chars) at x=190.8, y=555.9: g(x) := −r(x)where r(x) = rcorrect(x) + rformat(x)(23)"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (4 words, 0 CJK chars) at x=271.9, y=690.3: Qt(y|x)| {z }where to jump"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (2 words, 0 CJK chars) at x=70.2, y=670.9: where DKL(λu"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (9 words, 0 CJK chars) at x=70.1, y=672.1: t) are, respectively, standard KL divergences for expone"
+    }
+  ]
+}

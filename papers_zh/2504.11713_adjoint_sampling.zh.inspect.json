@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 6.54pt but the original at this position is 9.96pt (ratio 0.66 vs page median 0.92) at x=325.3, y=453.3: 1,∇g^{(}^{i}^{)}} ∼B. 我们在下一节从理论上证明，这种交"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 5.18pt but the original at this position is 10.04pt (ratio 0.52 vs page median 0.92) at x=71.3, y=594.0: u^{∗} 。更精确的陈述和证明见附录C.1。这一结果为本文提出的算法（算法1）提供了理论依据。"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (2 words, 0 CJK chars) at x=198.5, y=587.0: t(x) = N(x|0, νtI),where νt ="
+    },
+    {
+      "page": 26,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 26: block set at 7.77pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=92.7, y=552.6: S是期望的分子结构类别。在实践中，为了训练稳定性以及由于我们无法精确刻画"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (16 words, 0 CJK chars) at x=70.4, y=590.8: We define the functiothat takes in four column vectors o"
+    }
+  ]
+}
