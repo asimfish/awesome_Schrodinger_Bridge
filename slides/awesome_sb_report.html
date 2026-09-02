@@ -72,7 +72,7 @@ tr:nth-child(even) td{background:#F7F9FC}
 <div id="stage">
 <section class="slide cover"><div class="bar"></div><div class="vbar"></div>
 <h1>Awesome Schrödinger Bridge<br><span style="font-size:40px;color:#CC0000">从经典 SB 到 2026：求解器、控制、离散与具身应用</span></h1>
-<h2>25 篇核心论文中文精读 + 保版式译本 · 20 份专题笔记 · 94 条主题清单 · 2025–2026 趋势与 insight</h2>
+<h2>25 篇核心论文中文精读 + 保版式译本 · 20 份专题笔记 · 133 条主题清单 · 2025–2026 趋势与 insight</h2>
 <div class="meta">汇报人：asimfish（Yufeng Li）<br>仓库：github.com/asimfish/awesome_Schrodinger_Bridge<br>日期：2026-09-03</div>
 <div class="foot">格式参照 awesome-ml4co · 翻译 SuperTranslate · 版式 ppt-master academic_defense · 写作规范 shuorenhua / anti-defensive-writing</div></section>
 <section class="slide"><div class="hdr"><h1>目录</h1><span class="sec">目录</span></div><div class="key">本次汇报回答三个问题：交付了什么、SB 领域到 2026 年走到了哪、对具身 sim2real 意味着什么。</div><div class="body"><div class="toc">
@@ -83,14 +83,14 @@ tr:nth-child(even) td{background:#F7F9FC}
 <div><b>5 · 对具身 sim2real 的启示</b><span>范式选择 · 基线 · 评测</span></div>
 <div><b>6 · 观察清单与方法说明</b><span>未来 12 个月判据 · 核验口径 · 局限</span></div></div></div><div class="ftr"><span>awesome_Schrödinger_Bridge · 调研汇报 2026-09-03</span><span>目录</span><span class="pn">2 / 24</span></div></section>
 <section class="slide chapter"><div class="num">01</div><div class="vbar"></div><h1>仓库交付物</h1><p>一个可复现的 awesome 仓库：清单 + 精读 + 译本 + 专题 + 趋势报告 + 汇报，全部脚本可重建。</p><div class="rule"></div></section>
-<section class="slide"><div class="hdr"><h1>仓库总览：数字与结构</h1><span class="sec">1 · 交付物</span></div><div class="key">25 篇核心论文每篇有中文精读与保版式译本；94 条主题清单按 5 大类 / 14 小类组织，venue 全部核验。</div><div class="body"><div class="kpi"><div><b>94</b><span>论文条目（核心 25 + 扩展 69）</span></div><div><b>25</b><span>中文精读报告（reports/）</span></div><div><b>25</b><span>保版式中文译本 PDF（papers_zh/）</span></div><div><b>20</b><span>专题笔记（topics/ E01–E20）</span></div></div>
+<section class="slide"><div class="hdr"><h1>仓库总览：数字与结构</h1><span class="sec">1 · 交付物</span></div><div class="key">25 篇核心论文每篇有中文精读与保版式译本；133 条主题清单按 5 大类 / 14 小类组织，venue 全部核验。</div><div class="body"><div class="kpi"><div><b>133</b><span>论文条目（核心 25 + 扩展 108）</span></div><div><b>25</b><span>中文精读报告（reports/）</span></div><div><b>29</b><span>保版式中文译本 PDF（papers_zh/）</span></div><div><b>20</b><span>专题笔记（topics/ E01–E20）</span></div></div>
 <div class="cols" style="margin-top:26px;height:auto"><div class="card"><h3>目录结构</h3><ul>
 <li><code>README.md</code>：awesome-ml4co 风格清单，脚本生成</li><li><code>papers/</code> 英文 PDF · <code>papers_zh/</code> 中文译本 + QA 表</li>
 <li><code>reports/</code> 逐篇精读 + 4 份综合 · <code>topics/</code> 20 专题</li><li><code>survey/</code> 趋势报告（md/pdf）+ 原始调研 · <code>slides/</code> 本汇报（html/pdf/beamer）</li>
 <li><code>metadata/*.tsv</code> 单点事实源 · <code>scripts/</code> 生成与核验脚本</li></ul></div>
 <div class="card red"><h3>纪律</h3><ul><li>venue 只写有证据的：arXiv Comments / OpenReview / proceedings 页；否则标 <code>arXiv</code></li>
-<li>代码链接逐个 <code>gh api</code> 核验（50 条）</li><li>作者不确定即留空，不编</li><li>数字均有来源指针（R:/E:/arXiv:）</li></ul></div></div></div><div class="src">来源：metadata/papers.tsv、extended.tsv、resources.tsv；README.md</div><div class="ftr"><span>awesome_Schrödinger_Bridge · 调研汇报 2026-09-03</span><span>1 · 交付物</span><span class="pn">4 / 24</span></div></section>
-<section class="slide"><div class="hdr"><h1>保版式中文译本与视觉 QA</h1><span class="sec">1 · 交付物</span></div><div class="key">25 篇译本全部产出；QA：通过 7 · 通过（有备注）12 · 需人工复核 6。错误主要是公式碎片保留英文与个别字号缩放。</div><div class="body"><div class="cols"><div class="card"><h3>流程</h3><ul><li>引擎：SuperTranslate（DeepSeek 后端，<code>--preserve-graphics-text</code>）</li>
+<li>代码链接逐个 <code>gh api</code> 核验（53 条）</li><li>作者不确定即留空，不编</li><li>数字均有来源指针（R:/E:/arXiv:）</li></ul></div></div></div><div class="src">来源：metadata/papers.tsv、extended.tsv、resources.tsv；README.md</div><div class="ftr"><span>awesome_Schrödinger_Bridge · 调研汇报 2026-09-03</span><span>1 · 交付物</span><span class="pn">4 / 24</span></div></section>
+<section class="slide"><div class="hdr"><h1>保版式中文译本与视觉 QA</h1><span class="sec">1 · 交付物</span></div><div class="key">29 篇译本全部产出；QA：通过 7 · 通过（有备注）13 · 需人工复核 9。错误主要是公式碎片保留英文与个别字号缩放。</div><div class="body"><div class="cols"><div class="card"><h3>流程</h3><ul><li>引擎：SuperTranslate（DeepSeek 后端，<code>--preserve-graphics-text</code>）</li>
 <li>公式 / 图表 / 参考文献 / 双栏原样保留，图内文字不翻</li><li>每篇自动 <code>inspect</code>：页数一致、图像/公式丢失、文字重叠、字号漂移</li>
 <li>失败篇目：复用翻译缓存只重请求未译块，避免重复计费</li><li>3 路并行、tmux 托管、可断点续跑（<code>scripts/translate_batch.sh</code>）</li></ul></div>
 <div class="card red"><h3>QA 口径（papers_zh/QA_REPORT.md）</h3><ul><li><b>通过</b>：0 个 error</li>
@@ -241,8 +241,8 @@ tr:nth-child(even) td{background:#F7F9FC}
 <tr><td>真机统计协议</td><td>具身 SB 论文报告试次数 / 种子 / 置信区间</td><td>更新 I5</td></tr>
 <tr><td>放榜后复核</td><td>2105.11739、2602.23737 两条 preprint；FAS / DASBS 的 PMLR 页码；MSBM、MadSBM、RSBM、MDNS、AM-SMP 的 venue</td><td>更新 <code>metadata/*.tsv</code>，重建 README</td></tr></table></div><div class="src">来源：survey/SB_TREND_REPORT_2026.md §5</div><div class="ftr"><span>awesome_Schrödinger_Bridge · 调研汇报 2026-09-03</span><span>6 · 观察</span><span class="pn">22 / 24</span></div></section>
 <section class="slide"><div class="hdr"><h1>方法与证据、局限</h1><span class="sec">6 · 方法</span></div><div class="key">未核验即不写；数字取自摘要或论文页可见内容，未复现；2025H2–2026 覆盖以 WebSearch 命中为主，不保证完备。</div><div class="body"><div class="cols"><div class="card"><h3>来源层次</h3><ul><li>核心 25 篇：逐篇精读，经 10 路审查 + 修复</li><li>专题 20 份：方法谱系、基线协议、评测方案</li>
-<li>扩展 69 条：48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 2026-09-01 新检索（arXiv / ICLR / ICML / PMLR 页直接可见 ID、标题、venue）</li></ul></div>
-<div class="card red"><h3>局限与复现</h3><ul><li>检索日 arXiv API 与 Semantic Scholar 均限流；Reflected SBM、CytoBridge 等未能打开原页的条目未收录</li>
+<li>扩展 108 条：87 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 2025–26 新检索（21 条 WebSearch 直读会议页 + 39 条 arXiv API 近 12 月扫描 277 篇后人工筛选）</li></ul></div>
+<div class="card red"><h3>局限与复现</h3><ul><li>WebSearch 阶段 arXiv API 与 Semantic Scholar 限流；扫描阶段 API 恢复，277 篇候选中未入选者保留在 survey/raw 雷达表</li>
 <li>作者不确定留空；venue 无会议页证据写 <code>arXiv</code></li><li>复现：<code>build_readme.py</code> · <code>s2_verify.py</code> · <code>translate_batch.sh</code> · <code>qa_table.py</code> · <code>build_slides.py</code></li></ul></div></div></div><div class="src">来源：survey/SB_TREND_REPORT_2026.md §6</div><div class="ftr"><span>awesome_Schrödinger_Bridge · 调研汇报 2026-09-03</span><span>6 · 方法</span><span class="pn">23 / 24</span></div></section>
 <section class="slide cover"><div class="bar"></div>
 <h1 style="top:200px;left:0;width:1280px;text-align:center;font-size:48px">谢谢 · 欢迎 PR</h1>

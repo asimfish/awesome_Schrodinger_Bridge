@@ -42,7 +42,7 @@
 \vspace{4pt}
 \begin{center}\begin{tabular}{lrl}\toprule
 交付物 & 数量 & 位置 \\\midrule
-论文条目（核心 + 扩展） & 25 + 69 = 94 & \texttt{README.md}（脚本生成） \\
+论文条目（核心 + 扩展） & 25 + 108 = 133 & \texttt{README.md}（脚本生成） \\
 中文精读报告 & 25（+4 综合） & \texttt{reports/} \\
 保版式中文译本 PDF & 25 & \texttt{papers\_zh/}（QA 表随附） \\
 专题笔记 E01--E20 & 20 & \texttt{topics/} \\
@@ -247,7 +247,7 @@ dLLM 的 SB/SOC 微调 & DAM / DASBS 之外第二条独立路线，$\ge$7B 验�
 \begin{frame}{Backup Slides}\end{frame}
 \begin{frame}{Backup · 方法与证据、局限}
 \begin{itemize}
-\item 来源层次：核心 25 篇逐篇精读（经 10 路审查 + 修复）；专题 20 份；扩展 69 条 = 48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 2026-09-01 新检索（论文页直接可见 ID / 标题 / venue）
+\item 来源层次：核心 25 篇逐篇精读（经 10 路审查 + 修复）；专题 20 份；扩展 108 条 = 48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 WebSearch 直读会议页 + 39 条 arXiv 近 12 月扫描（277 篇候选）人工筛选（论文页直接可见 ID / 标题 / venue）
 \item 未核验即不写：作者不确定留空；venue 无会议页证据写 arXiv；XFlowMP、FreeBridge 等未能打开原页者未收录
 \item 局限：检索日 arXiv API 与 Semantic Scholar 均限流，2025H2--2026 覆盖以 WebSearch 命中为主；数值取自摘要或论文页，未复现
 \item 复现：\texttt{build\_readme.py} · \texttt{s2\_verify.py} · \texttt{translate\_batch.sh} · \texttt{qa\_table.py} · \texttt{build\_slides.py} · \texttt{md\_to\_pdf.py}

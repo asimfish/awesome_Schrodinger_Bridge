@@ -1,0 +1,107 @@
+{
+  "issue_count": 17,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.16pt but the original at this position is 9.95pt (ratio 0.82 vs page median 0.92) at x=108.8, y=489.5: 命题2. 假设。令= proj(Π)。那么，在温和假设下，我们有"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (5 words, 0 CJK chars) at x=316.6, y=203.5: t for any t ∈[0, T] is given by"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (21 words, 0 CJK chars) at x=108.0, y=245.1: See also De Bortoli et al. (2021); Chen et al. (2022) fo"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (9 words, 0 CJK chars) at x=108.0, y=256.0: T ) is notan entropic OT plan. However, since for any t "
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (14 words, 0 CJK chars) at x=108.0, y=268.0: t , we cancompute the log-likelihood of the model (Song "
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (6 words, 0 CJK chars) at x=107.6, y=504.0: where Πt,T is given by πT (XT )N(Xt; t"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (2 words, 0 CJK chars) at x=107.6, y=569.8: where At ="
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (7 words, 0 CJK chars) at x=173.5, y=264.7: s βudu = σ2(Bt −Bs), where for any t ∈[0, T], Bt ="
+    },
+    {
+      "page": 21,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 21: block set at 8.13pt but the original at this position is 10.03pt (ratio 0.81 vs page median 0.92) at x=108.8, y=89.1: 其次，我们考虑奥恩斯坦-乌伦贝克（Ornstein-Uhlenbeck）设定，并令"
+    },
+    {
+      "page": 21,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 21: block set at 8.13pt but the original at this position is 10.06pt (ratio 0.81 vs page median 0.92) at x=240.4, y=114.6: =x_{T} 。首先，利用（Barczy 和Kern，2013，定理3.3），我们得到对于任意"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.4, y=576.6: σ, v 局部利普希茨。利用（Léonard, 2012, 定理2.3），我们得到"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (8 words, 0 CJK chars) at x=108.0, y=117.8: 0,T= P0,T , and thus Π⋆= P0,T Q|0,T which we recall is s"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (6 words, 0 CJK chars) at x=107.4, y=483.4: For any P ∈P(C), if KL(P|Π) < +∞, we have"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=298.5: Second let P such that P0 = πup"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (8 words, 0 CJK chars) at x=108.0, y=325.6: 1 ) = KL(down#P|π0 ⊗π1).Finally, for any P such that P0 "
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (6 words, 0 CJK chars) at x=107.7, y=368.1: Therefore, for any P such that P0 = πup"
+    },
+    {
+      "page": 29,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 29: block set at 6.77pt but the original at this position is 9.96pt (ratio 0.68 vs page median 0.92) at x=241.2, y=533.9: c^{2}_{SB}。因此，我们正确地恢复了真实静态SB 解"
+    }
+  ]
+}

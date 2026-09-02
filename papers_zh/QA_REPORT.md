@@ -1,6 +1,6 @@
 # 中文译本视觉 QA 报告
 
-生成时间：2026-09-02。翻译引擎：[SuperTranslate](https://github.com/asimfish/super_translate)（DeepSeek 后端，保版式，`--preserve-graphics-text`）；QA 由引擎 `inspect` 子命令逐页比对原文/译文产出（页数一致性、图像/公式丢失、文字重叠、字号漂移、列表字号不一致等）。
+生成时间：2026-09-03。翻译引擎：[SuperTranslate](https://github.com/asimfish/super_translate)（DeepSeek 后端，保版式，`--preserve-graphics-text`）；QA 由引擎 `inspect` 子命令逐页比对原文/译文产出（页数一致性、图像/公式丢失、文字重叠、字号漂移、列表字号不一致等）。
 
 判定口径：**通过** = 0 个 error 级 issue；**通过（有备注）** = 全部 error 属于局部排版类（字号缩放/列表字号）或 ≤12 词的公式碎片保留英文（如 `is, T = T_aff[X, Y].`），译文内容完整、可读，问题位置已列出供读者知悉；**需人工复核** = 存在成段（>12 词）未译或表格结构错位；参考文献与图内文字按设计保留英文。
 
@@ -31,7 +31,11 @@
 | 2602.07132 | [Discrete Adjoint Matching](./2602.07132_discrete_adjoint_matching.zh.pdf) | 36/36 | 7 | 7 | ⚠️ 需人工复核 | p1 untranslated_block; p6 untranslated_block; p6 untranslated_block; p9 untranslated_block; p15 untranslated_block; p16 untranslated_block; p16 untranslated_block |
 | 2602.08243 | [Discrete Adjoint Schrödinger Bridge Sampler](./2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) | 30/30 | 2 | 2 | ✅ 通过（有备注） | p3 list_font_inconsistent; p6 font_size_drift |
 | 2602.23737 | [Bridging Dynamics Gaps via Diffusion Schrödinger Bridge for Cross-Domain Reinforcement Learning](./2602.23737_bdgxrl_diffusion_schrodinger_bridge.zh.pdf) | 12/12 | 1 | 1 | ✅ 通过（有备注） | p12 font_size_drift |
+| 2303.16852 | [Diffusion Schrödinger Bridge Matching](./2303.16852_dsbm_diffusion_schrodinger_bridge_matching.zh.pdf) | 41/41 | 17 | 17 | ⚠️ 需人工复核 | p4 font_size_drift; p7 untranslated_block; p7 untranslated_block; p7 untranslated_block; p7 untranslated_block; p16 untranslated_block; p18 untranslated_block; p20 untranslated_block; p21 font_size_drift; p21 font_size_drift; p23 font_size_drift; p24 untranslated_block; p24 untranslated_block; p27 untranslated_block; p27 untranslated_block; p27 untranslated_block; p29 font_size_drift |
+| 2309.16948 | [Denoising Diffusion Bridge Models](./2309.16948_ddbm_denoising_diffusion_bridge_models.zh.pdf) | 26/26 | 4 | 4 | ✅ 通过（有备注） | p18 font_size_drift; p18 font_size_drift; p19 font_size_drift; p19 font_size_drift |
+| 2310.01174 | [Light Schrödinger Bridge](./2310.01174_light_schrodinger_bridge.zh.pdf) | 30/30 | 16 | 16 | ⚠️ 需人工复核 | p4 font_size_drift; p4 font_size_drift; p4 font_size_drift; p5 font_size_drift; p5 font_size_drift; p5 preserved_ink_mismatch; p6 font_size_drift; p6 font_size_drift; p6 font_size_drift; p6 font_size_drift; p20 font_size_drift; p20 font_size_drift; p20 untranslated_block; p21 font_size_drift; p21 font_size_drift; p21 untranslated_block |
+| 2409.08861 | [Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control](./2409.08861_adjoint_matching.zh.pdf) | 55/55 | 13 | 12 | ⚠️ 需人工复核 | p5 untranslated_block; p7 untranslated_block; p9 untranslated_block; p31 font_size_drift; p33 font_size_drift; p34 untranslated_block; p40 untranslated_block; p42 untranslated_block; p46 untranslated_block; p49 font_size_drift; p50 font_size_drift; p52 table_structure_mismatch |
 
-**汇总**：通过 7 · 通过（有备注）12 · 需复核 6 · 共 25 篇。
+**汇总**：通过 7 · 通过（有备注）13 · 需复核 9 · 共 29 篇。
 
 复现：`bash scripts/translate_batch.sh 3` 生成译本并自动 QA；`bash scripts/translate_retry.sh` 对含 error 的译文用缓存重做；`python3 scripts/qa_table.py` 重建本表。

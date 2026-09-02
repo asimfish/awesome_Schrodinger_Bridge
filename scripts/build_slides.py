@@ -158,8 +158,8 @@ content("未来 12 个月观察清单", "五个观察点、各自的判据与触
  "6 · 观察", "survey/SB_TREND_REPORT_2026.md §5")
 content("方法与证据、局限", "未核验即不写；数字取自摘要或论文页可见内容，未复现；2025H2–2026 覆盖以 WebSearch 命中为主，不保证完备。",
  f'''<div class="cols"><div class="card"><h3>来源层次</h3><ul><li>核心 {n_core} 篇：逐篇精读，经 10 路审查 + 修复</li><li>专题 {n_topics} 份：方法谱系、基线协议、评测方案</li>
-<li>扩展 {n_ext} 条：{n_ext - n_new} 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ {n_new} 条 2026-09-01 新检索（arXiv / ICLR / ICML / PMLR 页直接可见 ID、标题、venue）</li></ul></div>
-<div class="card red"><h3>局限与复现</h3><ul><li>检索日 arXiv API 与 Semantic Scholar 均限流；Reflected SBM、CytoBridge 等未能打开原页的条目未收录</li>
+<li>扩展 {n_ext} 条：{n_ext - n_new} 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ {n_new} 条 2025–26 新检索（21 条 WebSearch 直读会议页 + 39 条 arXiv API 近 12 月扫描 277 篇后人工筛选）</li></ul></div>
+<div class="card red"><h3>局限与复现</h3><ul><li>WebSearch 阶段 arXiv API 与 Semantic Scholar 限流；扫描阶段 API 恢复，277 篇候选中未入选者保留在 survey/raw 雷达表</li>
 <li>作者不确定留空；venue 无会议页证据写 <code>arXiv</code></li><li>复现：<code>build_readme.py</code> · <code>s2_verify.py</code> · <code>translate_batch.sh</code> · <code>qa_table.py</code> · <code>build_slides.py</code></li></ul></div></div>''',
  "6 · 方法", "survey/SB_TREND_REPORT_2026.md §6")
 # ending

@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (12 words, 0 CJK chars) at x=70.5, y=298.8: As part of the objective functional (12), we have an aff"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (4 words, 0 CJK chars) at x=90.6, y=376.6: σ(t)2 = 2ηt + χ(t), where χ : [0, 1] →R is s.t. ∀t ∈(0, "
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (3 words, 0 CJK chars) at x=172.5, y=369.8: where X solves dXt ="
+    },
+    {
+      "page": 31,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 31: block set at 8.17pt but the original at this position is 9.86pt (ratio 0.83 vs page median 0.92) at x=71.1, y=606.2: 引理1（DDIM 和流匹配满足条件(50)）。DDIM 和流匹配对"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 5.87pt but the original at this position is 9.96pt (ratio 0.59 vs page median 0.92) at x=398.9, y=638.2: 我们可以通过参数变易法求解该方程。为了简化记号，"
+    },
+    {
+      "page": 34,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 34: displayed equation at y=369 shifted horizontally by 75pt vs original"
+    },
+    {
+      "page": 34,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 34: paragraph still in English (2 words, 0 CJK chars) at x=295.1, y=408.5: h⃗σ(kh)ϵk,with ϵk ∼N(0, 1).(81)"
+    },
+    {
+      "page": 40,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 40: paragraph still in English (2 words, 0 CJK chars) at x=82.2, y=503.3: where V(x, k) = maxπ Eτ∼π,p"
+    },
+    {
+      "page": 42,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 42: paragraph still in English (4 words, 0 CJK chars) at x=381.8, y=423.2: 1−tξ1−t( ⃗Xt) (where we ignore"
+    },
+    {
+      "page": 46,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 46: paragraph still in English (4 words, 0 CJK chars) at x=166.6, y=436.9: where Xu solves dXu"
+    },
+    {
+      "page": 49,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 49: block set at 8.46pt but the original at this position is 10.06pt (ratio 0.84 vs page median 0.92) at x=71.7, y=152.6: 命题7（伴随匹配损失的理论保证）。损失"
+    },
+    {
+      "page": 50,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 50: block set at 7.70pt but the original at this position is 10.00pt (ratio 0.77 vs page median 0.92) at x=234.7, y=599.1: 对所有，这意味着几乎必然成立。并且由于"
+    },
+    {
+      "page": 52,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 52: table at y=456 has 4 rules vs 3 in the original"
+    }
+  ]
+}

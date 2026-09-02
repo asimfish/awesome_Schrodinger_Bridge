@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 7.52pt but the original at this position is 9.92pt (ratio 0.76 vs page median 0.92) at x=108.4, y=164.2: 其中。由于我们假设，我们将上述方程改写为"
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=211.5, y=409.6: p(x_{t}|x_{T}) 是因为我们将扩散过程视为定理2 中引入的一般"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 8.56pt but the original at this position is 10.06pt (ratio 0.85 vs page median 0.92) at x=108.5, y=468.0: 另一个需要注意的问题是，本文所提出的框架需要将"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 8.56pt but the original at this position is 10.06pt (ratio 0.85 vs page median 0.92) at x=108.5, y=468.0: x_{T} 作为额外条件输入。为处理此问题，我们注意到广义参数化可用于定义"
+    }
+  ]
+}

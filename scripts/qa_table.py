@@ -13,6 +13,13 @@ def pages(p):
     d = fitz.open(p); n = d.page_count; d.close(); return n
 
 rows = list(csv.DictReader(open(ROOT / "metadata/papers.tsv", encoding="utf-8"), delimiter="\t"))
+ext = {r["key"]: r for r in csv.DictReader(open(ROOT / "metadata/extended.tsv", encoding="utf-8"), delimiter="\t")}
+known = {r["id"] for r in rows}
+for p in sorted((ROOT / "papers").glob("*.pdf")):  # 扩展条目的 PDF（非核心 25 篇）
+    key = p.name.split("_")[0]
+    if key in known: continue
+    e = ext.get(key, {})
+    rows.append(dict(id=key, title=e.get("title", p.stem), pdf_path=f"papers/{p.name}"))
 L = ["# 中文译本视觉 QA 报告", "",
      f"生成时间：{datetime.date.today().isoformat()}。翻译引擎：[SuperTranslate](https://github.com/asimfish/super_translate)（DeepSeek 后端，保版式，`--preserve-graphics-text`）；"
      "QA 由引擎 `inspect` 子命令逐页比对原文/译文产出（页数一致性、图像/公式丢失、文字重叠、字号漂移、列表字号不一致等）。",

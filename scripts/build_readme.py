@@ -25,7 +25,7 @@ SECTIONS = [
     ("3.3", "Classical SOC Samplers & Competitors", "经典 SOC 采样器与竞品"),
     ("4",   "Applications", "应用"),
     ("4.1", "Image Translation, Restoration & Editing", "图像翻译 / 修复 / 编辑"),
-    ("4.2", "Video, 3D, Speech & Audio", "视频 / 3D / 语音 / 音频"),
+    ("4.2", "Video, 3D, Speech, Audio & Multimodal", "视频 / 3D / 语音 / 音频 / 多模态"),
     ("4.3", "Science: Single-cell, Molecules, Chemistry & Physics", "科学：单细胞 / 分子 / 化学 / 物理"),
     ("4.4", "Embodied AI: Sim2Real, Cross-domain Transfer & RL", "具身智能：sim2real / 跨域迁移 / RL"),
     ("4.5", "Optimal Transport for Imitation & Reward", "最优传输用于模仿学习与奖励"),
@@ -68,10 +68,12 @@ def core_entries():
 def ext_entries():
     out = []
     for r in read_tsv("metadata/extended.tsv"):
+        en = sorted((ROOT / "papers").glob(f"{r['key']}_*.pdf")); zh = sorted((ROOT / "papers_zh").glob(f"{r['key']}_*.zh.pdf"))
         out.append(dict(key=r["key"], title=r["title"], authors=r.get("authors", ""), venue=r.get("venue", ""),
                         year=r.get("year", ""), section=r["section"], paper_url=r.get("paper_url", ""),
-                        code_url=r.get("code_url", ""), project_url="", report=r.get("report", ""), zh_pdf="",
-                        en_pdf="", note=r.get("note", ""), core=False))
+                        code_url=r.get("code_url", ""), project_url="", report=r.get("report", ""),
+                        zh_pdf=f"papers_zh/{zh[0].name}" if zh else "", en_pdf=f"papers/{en[0].name}" if en else "",
+                        note=r.get("note", ""), core=False))
     return out
 
 def format_venue(venue, year):
@@ -107,7 +109,7 @@ def build():
         by_sec.setdefault(e["section"], []).append(e)
     res = read_tsv("metadata/resources.tsv")
     n_core, n_ext = len(core), len(ext)
-    n_zh = sum(1 for e in core if e["zh_pdf"])
+    n_zh = sum(1 for e in core + ext if e["zh_pdf"])
     n_rep = sum(1 for e in core if e["report"])
     topics = sorted((ROOT / "topics").glob("E*.md"))
     today = datetime.date.today().isoformat()
@@ -206,7 +208,7 @@ def render_reports(core, topics):
 def render_trend():
     return ("- **Trend report (2025–2026)**: [survey/SB_TREND_REPORT_2026.md](survey/SB_TREND_REPORT_2026.md) · "
             "[PDF](survey/SB_TREND_REPORT_2026.pdf) — 五条主线的进展盘点、证据表与 insight。\n"
-            "- **Raw survey notes**: [survey/raw/](survey/raw/) — 分轴调研原始条目（理论与求解器 / 视觉与科学应用 / 具身与对齐 / 采样器与离散桥 / 综述与代码）。\n"
+            "- **Raw survey notes**: [survey/raw/](survey/raw/) — WebSearch 证据记录（`S1_*`）与 arXiv 近 12 个月扫描雷达表（`S2_*`，277 篇候选，含未入选项）；复扫命令 `python3 scripts/arxiv_scan.py --months 12`。\n"
             "- **Slides**: [slides/awesome_sb_report.html](slides/awesome_sb_report.html)（HTML，←/→ 翻页，可打印）· "
             "[slides/awesome_sb_report.pdf](slides/awesome_sb_report.pdf) · Beamer 版 [slides/beamer/awesome_sb_beamer.pdf](slides/beamer/awesome_sb_beamer.pdf)\n")
 

@@ -1,7 +1,7 @@
 # Schrödinger Bridge 趋势报告 2026
 
 > awesome_Schrödinger_Bridge · 综合调研报告 · 2026-09-01
-> 覆盖：25 篇核心精读 + 20 份专题笔记 + 69 篇扩展条目（其中 21 篇为 2025–2026 新增，检索日 2026-09-01）
+> 覆盖：25 篇核心精读 + 20 份专题笔记 + 108 篇扩展条目（其中 60 篇为 2025–2026 新增：21 篇来自 WebSearch 直读会议页，39 篇来自 arXiv API 近 12 个月扫描 277 篇后的人工筛选；检索日 2026-09-01/03）
 > 证据口径：每条论断后括注来源——`R:` 逐篇精读（`reports/`）、`E:` 专题（`topics/`）、`arXiv:` 论文页、`ICLR/ICML:` 会议页。无来源的判断以「判断」标出。
 
 ---
@@ -68,6 +68,15 @@
 - **竞品与评测**：iDEM / NETS / Sendera 在"无偏 + 全模态覆盖"维度仍是 adjoint 线的短板；评测需补 EUBO、前向指标与 mode-coverage 口径（E15）。
 - **理论**：SMP 视角给出控制相关漂移/扩散与凸运行成本下的一般 Hamiltonian adjoint matching 目标，证明其期望的一阶变分与原 SOC 目标一致，lean adjoint 是状态无关扩散下的特例，AM 可解释为连续时间的逐次逼近法（arXiv:2604.08580）。
 
+### 2.4b arXiv 近 12 个月扫描补充（2025-09 → 2026-09，277 篇候选）
+
+- **生成式策略的熵正则改用广义 SB 表述**：FLAC 把最大熵 RL 写成相对高熵参考过程的 GSB，用速度场动能惩罚代替不可得的动作 log 密度（arXiv:2602.12829）；GSB-MDPO 把 on-policy 生成式策略优化写成状态条件生成路径上的 GSB，用路径空间镜像下降替代 PPO 式近端更新（arXiv:2603.21621）；DBC 用 diffusion bridge 建模 Q 值逆 CDF 做分布式 critic（arXiv:2602.05783）。这三篇说明 SB 在 RL 里的角色从"数据"进一步走到"策略与价值的正则语言"。
+- **规划类应用成形**：BridgeDrive 用锚点引导的 diffusion bridge 策略做自动驾驶闭环轨迹规划（ICLR 2026，arXiv:2509.23589）；XFlowMP 用 SB 做任务条件运动规划（arXiv:2512.00022）；MAPF 被写成带 Markov 结构的多边缘 OT，大规模时用 SB 熵正则化迭代求解（ICML 2026 Spotlight，arXiv:2605.10917）。
+- **参考过程与终端约束的设计理论**：软约束 SB 证明罚函数替代硬终端约束后解的存在与收敛（arXiv:2510.11829，与 UniDB 同一思路）；PRISM 给出桥参考过程设计理论——精确 drift + 无限步下任何参考都恢复真后验，参考只在有限步预算下才重要，最优噪声谱正比于传感器摧毁的信息谱（arXiv:2608.06893）；Twisted SBM 把参考换成带时变势的 twisted 布朗运动（arXiv:2607.16987）；NADB 发现 score-matching 式训练在靶端欠拟合并给出噪声对齐修法（CVPR 2026，arXiv:2605.28962）。
+- **少步与免训练采样器继续增多**：DBMSolver 用 DBM 半线性结构做指数积分器，NFE 最多减 5×（CVPR 2026）；E-Bridge 用更短时域 + 熵正则起点 + consistency 学单步映射（ICLR 2026）；SB Mamba 一步语音增强（Interspeech 2026）。
+- **多边缘与相互作用系统的第三、四条路**：MMtSBM 以因子化 IMF 从 unpaired 快照学多边缘（ICML 2026，arXiv:2510.01894）；EntangledSBM 学相互作用多粒子系统的一二阶动力学（arXiv:2511.07406）；非局部平均场 SB 用神经代理替代二次复杂度相互作用项（arXiv:2606.04265）；Curly-FM 指出最小作用量只能学梯度场、给出非梯度周期动力学的匹配目标（NeurIPS 2025）。
+- **几何与约束域**：Contact Wasserstein 测地线放开能量守恒（ICLR 2026）；李群、子黎曼流形上的 SB 与反射 SB（arXiv:2603.14049 等）；Reflected SBM（§2.2）。
+
 ### 2.5 应用面：图像、具身、科学
 
 - **图像修复/翻译**：I²SB（2–10 NFE，R:2302.05872）→ DDBM → UNSB（unpaired）→ DBIM / CDBM（少步）→ UniDB（SOC 统一 + 可调终端罚改善细节）→ UniDB++（免训练加速）→ LBM（1 NFE latent）。CVPR 2026 的两篇继续在 DDBM 框架内做结构保真：RDBM 用成对残差调制噪声、只扰动退化区域，五类修复任务平均 +1.55 dB（arXiv:2510.23116）；Bi-Bridge 利用高斯桥均值对端点的对称性做双向一致性训练（CVF）。E17 指出 DDIB 式"两段桥拼接 ≠ 跨域 OT"、精确 cycle consistency ≠ 对齐，语义漂移是对机器人数据最危险的失败模式。
@@ -116,13 +125,14 @@
 | 连续高维 SB 基准 | catsbench 式解析解基准扩展到连续高维 | 更新 I6；补入 README §5 |
 | dLLM 的 SB/SOC 微调 | DAM/DASBS 之外出现第二条独立路线并在 ≥7B 模型验证 | 更新 §2.3 |
 | 真机统计协议 | 具身 SB 论文报告试次数/种子/置信区间 | 更新 I5 |
-| 放榜后复核 | 2105.11739、2602.23737 两条 preprint；FAS/DASBS 的 PMLR 页码；MSBM、MadSBM、RSBM、MDNS、AM-SMP 五条 arXiv 的 venue | `metadata/*.tsv` 更新 venue，重建 README |
+| 放榜后复核 | 2105.11739、2602.23737 两条 preprint；FAS/DASBS 的 PMLR 页码；MSBM、MadSBM、RSBM、AM-SMP 等标 `arXiv` 的 2025–26 条目 | `metadata/*.tsv` 更新 venue，重建 README |
+| 雷达复扫 | 每季度 `python3 scripts/arxiv_scan.py --months 4`，新高分未收录条目 ≥ 10 | 人工筛选入 `extended.tsv` |
 
 ---
 
 ## §6 方法与证据
 
-- **来源层次**：核心 25 篇有逐篇精读（经 10 路审查 + 修复，见原库审查记录摘要）；20 份专题笔记；扩展 69 条中 48 条为专题反复引用的基础论文（arXiv ID 与标题经 Semantic Scholar 批量核验，47/49 通过，1 条记忆错误已剔除），21 条为 2026-09-01 新检索（arXiv 页 / ICLR 2026 页 / ICML 2025–2026 页 / PMLR 页直接可见 ID、标题与 venue）。
+- **来源层次**：核心 25 篇有逐篇精读（经 10 路审查 + 修复，见原库审查记录摘要）；20 份专题笔记；扩展 108 条中 48 条为专题反复引用的基础论文（arXiv ID 与标题经 Semantic Scholar 批量核验，47/49 通过，1 条记忆错误已剔除），21 条为 WebSearch 直读会议页新检索，39 条来自 arXiv API 近 12 个月扫描（277 篇候选 → 标题命中 149 → 人工按相关性筛选 39，venue 只取 arXiv Comments 明示者；完整雷达表见 `survey/raw/S2_arxiv_scan_2026-09-03.md`）。
 - **未核验即不写**：作者不确定的条目作者栏留空；venue 无会议页证据的写 `arXiv`；XFlowMP、FreeBridge 等仅在搜索摘要中出现、未能打开原页的条目未收录（Reflected SBM 与 CytoBridge 在第二轮检索中已打开原页并收录）。
 - **局限**：检索日 arXiv API 与 Semantic Scholar 均出现限流，2025H2–2026 的覆盖以 WebSearch 命中为主，不保证完备；数值均取自摘要或论文页可见内容，未复现。
 - **复现**：`python3 scripts/build_readme.py` 重建 README；`python3 scripts/s2_verify.py --ids ...` 核验新 ID；`bash scripts/translate_batch.sh` 生成译本；`python3 scripts/qa_table.py` 重建译本 QA 表。

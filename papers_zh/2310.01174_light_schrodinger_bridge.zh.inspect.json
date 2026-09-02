@@ -1,0 +1,101 @@
+{
+  "issue_count": 16,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=160.3: 该目标函数是直接的，但存在一个明显的障碍：我们不知道熵最优传输计划"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=119.6, y=172.2: π^{∗} ，优化问题（5）仍然可以执行。首先，我们已知熵最优传输计划"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=239.0, y=196.2: R^{D} →R_{+} ，我们称之为调整后的薛定谔势。现在（3）式可写为"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=207.4, y=678.1: v_{θ} 为由（9）式给出的未归一化高斯混合，"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=108.8, y=678.1: T_{θ} 为由以下随机微分方程支配的扩散过程："
+    },
+    {
+      "page": 5,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 5: preserved region at x=233, y=696 (121x19pt) renders with ink coverage 0.80 vs original"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=514.1: 定理3.4（调整势的高斯混合参数化提供了薛定谔桥的通用逼近）。假设"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=524.7: 和是紧支撑的。那么对于所有，存在一个高斯混合（9），其分量的标量协方差为，满足不等式KL。尽管"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=561.5: 这个结果看起来简洁明了，但其证明相当具有挑战性。证明该结果的主要基石是，要逼近的关键对象，即调整"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=583.5: 个可测函数，没有任何良好的性质，如连续性。为了克服这个问题，我们采用了弱最优传输对偶理论中的非平"
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.91) at x=165.4, y=352.6: R >0为某个半径，使得以零为中心的该半径球包含"
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.91) at x=108.8, y=629.5: 其密度由一个未归一化的高斯密度界定。此外，我们看到exp 在无穷远处消失。因此，对于每个"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (9 words, 0 CJK chars) at x=108.0, y=490.3: We combine (29) with (30) and see that J( ef) ≥J( bf) > "
+    },
+    {
+      "page": 21,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 21: block set at 6.42pt but the original at this position is 9.96pt (ratio 0.64 vs page median 0.92) at x=124.3, y=169.7: =。它同样是一个未归一化的高斯混合，因为它是两个未归一化高斯混合的乘积。此外，其各分量也具有标量"
+    },
+    {
+      "page": 21,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 21: block set at 6.42pt but the original at this position is 9.96pt (ratio 0.64 vs page median 0.92) at x=193.7, y=186.8: exp(-^{∥}^{x}1^{∥}^{2} _{2}_{ε}) 的协方差本身是标量。更精确地，"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (11 words, 0 CJK chars) at x=108.0, y=567.7: (34)Since z 7→log z is a1zmin -Lipschitz function on [zm"
+    }
+  ]
+}
