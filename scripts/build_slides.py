@@ -95,7 +95,7 @@ content("主线 3 · 离散状态空间：从翻译到采样与微调", "Takeawa
 content("主线 4 · SOC 采样与微调：Adjoint 谱系的三年", "Takeaway：Adjoint Matching 把 SOC 变成回归，衍生出整条采样 / 微调谱系；2026 年 SMP 给它补上严格地基。",
  '''<div class="cols"><div class="card"><h3>谱系</h3><ul><li>源头：PIS / DDS / CMCD——全轨迹反传、on-policy 耦合、先验受限三大瓶颈（E14）</li>
 <li>转折：Adjoint Matching（ICLR 25 Spotlight）memoryless 调度 + lean adjoint 回归</li>
-<li>AS（ICML 25）：梯度更新数 ≫ 能量评估数，SPICE 构象 amortized 采样</li><li>ASBS（NeurIPS 25 Oral）：任意 source 分布 · <span class="tag red">NAAS</span>（NeurIPS 25）退火参考动力学 · <span class="tag red">WT-ASBS</span>（ICLR 26）metadynamics 偏置进 ASBS</li><li>FAS：函数空间 · DAM / DASBS：离散</li></ul></div>
+<li>AS（ICML 25）：梯度更新数 ≫ 能量评估数，SPICE 构象 amortized 采样</li><li>ASBS（NeurIPS 25 Oral）：任意 source 分布 · <span class="tag red">NAAS</span>（NeurIPS 25）退火参考动力学 · <span class="tag red">WT-ASBS</span>（ICLR 26）metadynamics 偏置进 ASBS</li><li>FAS：函数空间 · DAM / DASBS：离散</li><li><span class="tag red">2026H1 横向扩张</span>QAM → TRQAM → ME-AM → MaxEnt-AM → Reinforce AM（RL）· CAM（组合优化，ICML 26）· MFC</li></ul></div>
 <div class="card red"><h3>竞品、评测与理论</h3><ul><li>竞品 iDEM / NETS / Sendera："无偏 + 全模态覆盖"仍是 adjoint 线短板；评测需补 EUBO、前向指标、mode-coverage（E15）</li>
 <li><span class="tag red">AM via SMP（2026）</span>：一般 Hamiltonian adjoint matching 目标，其期望一阶变分与 SOC 目标一致；lean adjoint = 状态无关扩散特例；AM = 连续时间逐次逼近法</li></ul></div></div>''',
  "3 · 进展", "R:2504.11713、R:2506.22565、R:2511.06239、R:2602.07132、R:2602.08243；arXiv:2604.08580；E06/E14/E15")
@@ -133,6 +133,7 @@ content("Insight I5–I8", "具身：策略头而非数据管道 · 评测基础
  '''<div class="cols"><div class="card red"><h3>I5 · 具身 SB 进入策略头，评测没跟上</h3><p>BridgePolicy / RSBM 的收益来自更好的先验（观测）而非更好的翻译。真机统计协议缺口在 2026 年依旧——判断。</p></div>
 <div class="card red"><h3>I6 · 连续高维 SB 仍无 ground truth</h3><p>离散有 catsbench，能量采样有 DW4 / LJ 系与 SPICE，unpaired 翻译只有 FID + NFE。coupling 质量必须用独立于视觉质量的指标（E19）。</p></div>
 <div class="card"><h3>I7 · 轻量闭式求解器 = 探针 + 教师</h3><p>LightSB(-M) 分钟级 ε 扫描（E03）；DLightSB 搬到离散；LBM / CDBM 说明重模型最终靠轻模型部署（E16）。</p></div>
+<div class="card red"><h3>I9 · AM 成为生成式策略 RL 的默认优化器候选</h3><p>2026 上半年五条 RL 路线 + 组合优化 + 平均场控制都用「回归 adjoint 目标」替代「反传多步去噪」；diffusion/flow 策略的在线微调不再必须走 DDPO 式 policy gradient——判断，待真机协议验证。</p></div>
 <div class="card"><h3>I8 · 开源生态三簇</h3><p>Meta/FAIR（Adjoint 系、flow_matching、GSBM）· Guan-Horng Liu 及合作者（SB-FBSDE → DASBS）· Korotin 组（LightSB 系、ASBM、CSBM、catsbench）。分别押注 SOC 与采样、控制视角的 SB、闭式与基准。</p></div></div>''',
  "4 · Insight", "ICML 2026；E15/E19；E03/E16；metadata/resources.tsv")
 # 19 chapter 5 + advice
@@ -158,7 +159,7 @@ content("未来 12 个月观察清单", "五个观察点、各自的判据与触
  "6 · 观察", "survey/SB_TREND_REPORT_2026.md §5")
 content("方法与证据、局限", "未核验即不写；数字取自摘要或论文页可见内容，未复现；2025H2–2026 覆盖以 WebSearch 命中为主，不保证完备。",
  f'''<div class="cols"><div class="card"><h3>来源层次</h3><ul><li>核心 {n_core} 篇：逐篇精读，经 10 路审查 + 修复</li><li>专题 {n_topics} 份：方法谱系、基线协议、评测方案</li>
-<li>扩展 {n_ext} 条：{n_ext - n_new} 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ {n_new} 条 2025–26 新检索（21 条 WebSearch 直读会议页 + 39 条 arXiv API 近 12 月扫描 277 篇后人工筛选）</li></ul></div>
+<li>扩展 {n_ext} 条：{n_ext - n_new} 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ {n_new} 条 2025–26 新检索（21 条 WebSearch 直读会议页 + 72 条来自四条 arXiv API 近 12 月扫描共 448 篇候选的人工筛选）</li></ul></div>
 <div class="card red"><h3>局限与复现</h3><ul><li>WebSearch 阶段 arXiv API 与 Semantic Scholar 限流；扫描阶段 API 恢复，277 篇候选中未入选者保留在 survey/raw 雷达表</li>
 <li>作者不确定留空；venue 无会议页证据写 <code>arXiv</code></li><li>复现：<code>build_readme.py</code> · <code>s2_verify.py</code> · <code>translate_batch.sh</code> · <code>qa_table.py</code> · <code>build_slides.py</code></li></ul></div></div>''',
  "6 · 方法", "survey/SB_TREND_REPORT_2026.md §6")

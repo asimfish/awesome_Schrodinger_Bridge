@@ -42,7 +42,7 @@
 \vspace{4pt}
 \begin{center}\begin{tabular}{lrl}\toprule
 交付物 & 数量 & 位置 \\\midrule
-论文条目（核心 + 扩展） & 25 + 108 = 133 & \texttt{README.md}（脚本生成） \\
+论文条目（核心 + 扩展） & 25 + 141 = 166 & \texttt{README.md}（脚本生成） \\
 中文精读报告 & 25（+4 综合） & \texttt{reports/} \\
 保版式中文译本 PDF & 25 & \texttt{papers\_zh/}（QA 表随附） \\
 专题笔记 E01--E20 & 20 & \texttt{topics/} \\
@@ -153,6 +153,7 @@ SB 与 FM 是一条连续谱的两端；同一网络覆盖全谱。缺的是自�
 \item 转折 Adjoint Matching（ICLR 25 Spotlight）：memoryless 调度 + lean adjoint 回归（E06）
 \item AS（ICML 25）：梯度更新数 $\gg$ 能量评估数；SPICE 构象 amortized 采样（R:2504.11713）
 \item ASBS（NeurIPS 25 Oral）任意 source · \new{NAAS}（NeurIPS 25）退火参考 · \new{WT-ASBS}（ICLR 26）metadynamics 偏置 · FAS 函数空间 · DAM / DASBS 离散
+\item \new{2026H1 横向扩张}：QAM $\to$ TRQAM $\to$ ME-AM $\to$ MaxEnt-AM $\to$ Reinforce AM（RL）· CAM（组合优化，ICML 26）· 平均场控制
 \item 竞品 iDEM / NETS / Sendera：\con{无偏 + 全模态覆盖}仍是短板；评测需补 EUBO / 前向指标（E15）
 \item \new{AM via SMP（2026）}：一般 Hamiltonian adjoint matching 目标，一阶变分与 SOC 目标一致；lean adjoint 为状态无关扩散特例
 \end{itemize}
@@ -191,6 +192,7 @@ Adjoint Matching 把 SOC 变成回归，衍生整条采样 / 微调谱系；2026
 \item \textbf{I5 具身 SB 进入策略头，评测没跟上}：BridgePolicy / RSBM 的收益来自更好的先验而非更好的翻译；真机统计协议缺口在 2026 年依旧（判断）
 \item \textbf{I6 连续高维 SB 仍无 ground truth}：离散有 catsbench，能量采样有 DW4 / LJ / SPICE，unpaired 翻译只有 FID + NFE；coupling 质量需独立指标（E19）
 \item \textbf{I7 轻量闭式求解器 = 探针 + 教师}：LightSB(-M) 分钟级 $\varepsilon$ 扫描；DLightSB 搬到离散；LBM / CDBM 说明重模型靠轻模型部署
+\item \textbf{I9 AM 成为生成式策略 RL 的默认优化器候选}：五条 RL 路线 + CO + MFC 都用「回归 adjoint 目标」替代「反传多步去噪」（判断，待真机协议验证）
 \item \textbf{I8 开源三簇}：Meta/FAIR（Adjoint 系、flow\_matching、GSBM）· Guan-Horng Liu（SB-FBSDE $\to$ DASBS）· Korotin 组（LightSB 系、ASBM、CSBM、catsbench）
 \end{itemize}
 \end{frame}
@@ -247,7 +249,7 @@ dLLM 的 SB/SOC 微调 & DAM / DASBS 之外第二条独立路线，$\ge$7B 验�
 \begin{frame}{Backup Slides}\end{frame}
 \begin{frame}{Backup · 方法与证据、局限}
 \begin{itemize}
-\item 来源层次：核心 25 篇逐篇精读（经 10 路审查 + 修复）；专题 20 份；扩展 108 条 = 48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 WebSearch 直读会议页 + 39 条 arXiv 近 12 月扫描（277 篇候选）人工筛选（论文页直接可见 ID / 标题 / venue）
+\item 来源层次：核心 25 篇逐篇精读（经 10 路审查 + 修复）；专题 20 份；扩展 141 条 = 48 条基础论文（Semantic Scholar 批量核验 47/49，1 条记忆错误剔除）+ 21 条 WebSearch 直读会议页 + 72 条四路 arXiv 近 12 月扫描（448 篇候选）人工筛选（论文页直接可见 ID / 标题 / venue）
 \item 未核验即不写：作者不确定留空；venue 无会议页证据写 arXiv；XFlowMP、FreeBridge 等未能打开原页者未收录
 \item 局限：检索日 arXiv API 与 Semantic Scholar 均限流，2025H2--2026 覆盖以 WebSearch 命中为主；数值取自摘要或论文页，未复现
 \item 复现：\texttt{build\_readme.py} · \texttt{s2\_verify.py} · \texttt{translate\_batch.sh} · \texttt{qa\_table.py} · \texttt{build\_slides.py} · \texttt{md\_to\_pdf.py}

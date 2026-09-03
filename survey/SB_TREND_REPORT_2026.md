@@ -1,7 +1,7 @@
 # Schrödinger Bridge 趋势报告 2026
 
 > awesome_Schrödinger_Bridge · 综合调研报告 · 2026-09-01
-> 覆盖：25 篇核心精读 + 20 份专题笔记 + 108 篇扩展条目（其中 60 篇为 2025–2026 新增：21 篇来自 WebSearch 直读会议页，39 篇来自 arXiv API 近 12 个月扫描 277 篇后的人工筛选；检索日 2026-09-01/03）
+> 覆盖：25 篇核心精读 + 20 份专题笔记 + 141 篇扩展条目（其中 93 篇为 2025–2026 新增：21 篇来自 WebSearch 直读会议页，72 篇来自四条 arXiv API 近 12 个月扫描——SB/bridge 277 篇、采样器/adjoint 98 篇、FM×OT 61 篇、SOC 微调 12 篇——后的人工筛选；检索日 2026-09-01/04）
 > 证据口径：每条论断后括注来源——`R:` 逐篇精读（`reports/`）、`E:` 专题（`topics/`）、`arXiv:` 论文页、`ICLR/ICML:` 会议页。无来源的判断以「判断」标出。
 
 ---
@@ -66,6 +66,9 @@
 - **转折**：Adjoint Matching（ICLR 2025 Spotlight）用 memoryless 噪声调度 + lean adjoint 回归，把 reward 微调和采样都变成回归（E06）。
 - **谱系**：AS 首次做到梯度更新数远多于能量评估数，扩展到 SPICE 分子构象的 amortized 采样（R:2504.11713）；ASBS 允许任意 source 分布（R:2506.22565，NeurIPS 2025 Oral）；NAAS 把退火参考动力学作为 base SDE，让参考轨迹自带朝目标推进的信息（NeurIPS 2025，arXiv:2506.18165）；WT-ASBS 把 well-tempered metadynamics 的在线偏置沿集体变量加进 ASBS，首次用扩散采样器刻画含键断裂/形成的反应面（ICLR 2026，arXiv:2510.11923）；FAS 上函数空间；DAM / DASBS 上离散空间。
 - **竞品与评测**：iDEM / NETS / Sendera 在"无偏 + 全模态覆盖"维度仍是 adjoint 线的短板；评测需补 EUBO、前向指标与 mode-coverage 口径（E15）。
+- **横向扩张（2026 上半年最密集的一条线）**：AM 从"reward 微调"进入 RL 主干——QAM 把"对 Q 函数优化 diffusion/flow 策略"重写为带学习 critic 的 memoryless SOC（arXiv:2601.14234）；TRQAM 用信赖域控制路径空间 KL 抑制病态 critic 引发的崩溃（arXiv:2605.27079）；ME-AM 给离线 RL 加最大熵放开支撑绑定（arXiv:2605.06156）；在线最大熵 RL 的 diffusion 策略也用 AM 做 simulation-free 训练（arXiv:2606.22630）；Reinforce AM 证明 KL 正则 reward 最大化只倾斜干净端点分布、噪声律不变，把 RL 后训练保留为回归结构（arXiv:2605.10759）；Efficient AM 与确定性 AM 削减全轨迹模拟与反向 adjoint 开销（arXiv:2605.11480、2605.06583）；CAM 把离散 adjoint 用于无监督组合优化求解器（ICML 2026，arXiv:2605.30920）；平均场控制的样本级 adjoint 回归与之同源（arXiv:2604.06675）。Domingo-Enrich 等给出统一视角：采样与 reward 微调都是对 base 密度的指数倾斜，AM/AS 与 Novel Score Matching 的梯度方差有限而 Target/Conditional Score Matching 无界（arXiv:2605.00229）；Tilt Matching 用随机插值给出更低方差的同类目标（arXiv:2512.21829）。
+- **离散与探索**：Data-to-Energy 处理一端只有能量的 SB（ICLR 2026）；PDNS 用近端点法抗模式塌缩（ICLR 2026）；离散扩散采样器与桥的 off-policy 训练（ICML 2026）；MetaDNS 是 WT-ASBS 的离散对应（ICML 2026）。
+- **竞品生态：Boltzmann 生成器**在同一年集中升级——自回归骨干（ICML 2026 Spotlight）、粗粒化 + 重加权（ICML 2026）、退火 MC 校正（TMLR 2026）、off-policy log-dispersion 正则、少步似然蒸馏（SCALLOP）、Jeffreys 散度抗塌缩，以及面向无序材料的多模态基础采样器 JANUS；Reinforced SMC 把 SMC 与最大熵 RL 采样器打通（ICML 2026）。这些是 adjoint 线在"无偏 + 模态覆盖"口径上必须对标的对象（E15）。
 - **理论**：SMP 视角给出控制相关漂移/扩散与凸运行成本下的一般 Hamiltonian adjoint matching 目标，证明其期望的一阶变分与原 SOC 目标一致，lean adjoint 是状态无关扩散下的特例，AM 可解释为连续时间的逐次逼近法（arXiv:2604.08580）。
 
 ### 2.4b arXiv 近 12 个月扫描补充（2025-09 → 2026-09，277 篇候选）
@@ -102,6 +105,8 @@
 
 **I7 · 轻量闭式求解器的角色是探针与教师。** LightSB / LightSB-M 分钟级训练适合 latent 上做 ε 扫描（E03）；catsbench 的 DLightSB 把同一思路搬到离散（ICLR 2026）；LBM 的 1-NFE 蒸馏与 CDBM 的"先训桥再压缩"说明重模型最终要靠轻模型部署（E16）。
 
+**I9 · Adjoint Matching 正在成为"生成式策略 RL"的默认优化器候选。** 2026 年 1–6 月连续出现 QAM / TRQAM / ME-AM / MaxEnt-AM / Reinforce AM 五条 RL 路线与 CAM（组合优化）、MFC（平均场控制）两条外延，共同点是用"回归 adjoint 目标"替代"反传多步去噪"来利用 critic 或 reward 的一阶信息（arXiv:2601.14234 起）。这把 SB/SOC 社区的工具直接送进了 RL 主干；对具身方向的含义是：diffusion/flow 策略的在线微调不再必须走 DDPO 式 policy gradient——判断，需在真机协议下验证（E11）。
+
 **I8 · 开源生态呈三簇：** Meta/FAIR（Adjoint 系、flow_matching、GSBM）、Guan-Horng Liu 及合作者（SB-FBSDE、DeepGSB、GSBM、I²SB、ASBS、FAS、DASBS）、Korotin 组（LightSB 系、ASBM、CSBM、catsbench、Neural OT）。三簇分别押注"SOC 与采样"、"控制视角的 SB"、"闭式与基准"（README §5 代码库；仓库 star 与更新日期见 `metadata/resources.tsv`）。
 
 ---
@@ -132,7 +137,7 @@
 
 ## §6 方法与证据
 
-- **来源层次**：核心 25 篇有逐篇精读（经 10 路审查 + 修复，见原库审查记录摘要）；20 份专题笔记；扩展 108 条中 48 条为专题反复引用的基础论文（arXiv ID 与标题经 Semantic Scholar 批量核验，47/49 通过，1 条记忆错误已剔除），21 条为 WebSearch 直读会议页新检索，39 条来自 arXiv API 近 12 个月扫描（277 篇候选 → 标题命中 149 → 人工按相关性筛选 39，venue 只取 arXiv Comments 明示者；完整雷达表见 `survey/raw/S2_arxiv_scan_2026-09-03.md`）。
+- **来源层次**：核心 25 篇有逐篇精读（经 10 路审查 + 修复，见原库审查记录摘要）；20 份专题笔记；扩展 141 条中 48 条为专题反复引用的基础论文（arXiv ID 与标题经 Semantic Scholar 批量核验，47/49 通过，1 条记忆错误已剔除），21 条为 WebSearch 直读会议页新检索，72 条来自四条 arXiv API 近 12 个月扫描（SB/bridge 277 → 39；采样器/adjoint 98 → 27；FM×OT 61 → 7；SOC 微调 12 → 3；人工按相关性筛选，venue 只取 arXiv Comments 明示者；完整雷达表见 `survey/raw/S2_arxiv_scan_*.md`）。
 - **未核验即不写**：作者不确定的条目作者栏留空；venue 无会议页证据的写 `arXiv`；XFlowMP、FreeBridge 等仅在搜索摘要中出现、未能打开原页的条目未收录（Reflected SBM 与 CytoBridge 在第二轮检索中已打开原页并收录）。
 - **局限**：检索日 arXiv API 与 Semantic Scholar 均出现限流，2025H2–2026 的覆盖以 WebSearch 命中为主，不保证完备；数值均取自摘要或论文页可见内容，未复现。
 - **复现**：`python3 scripts/build_readme.py` 重建 README；`python3 scripts/s2_verify.py --ids ...` 核验新 ID；`bash scripts/translate_batch.sh` 生成译本；`python3 scripts/qa_table.py` 重建译本 QA 表。

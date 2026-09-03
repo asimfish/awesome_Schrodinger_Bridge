@@ -1,6 +1,6 @@
 # Awesome Schrödinger Bridge
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-133-blue) ![中文精读](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%B2%BE%E8%AF%BB-25-orange) ![中文译本](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E8%AF%91%E6%9C%AC%20PDF-29-red) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen) ![last update](https://img.shields.io/badge/last%20update-2026-09-03-lightgrey)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![papers](https://img.shields.io/badge/papers-166-blue) ![中文精读](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%B2%BE%E8%AF%BB-25-orange) ![中文译本](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E8%AF%91%E6%9C%AC%20PDF-29-red) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen) ![last update](https://img.shields.io/badge/last%20update-2026-09-04-lightgrey)
 
 A curated list of papers, code, tutorials and **Chinese deep-dive reports** on the **Schrödinger Bridge (SB)** problem and its modern incarnations: diffusion Schrödinger bridges and bridge matching, generalized / multi-marginal / unbalanced SB, adjoint & stochastic-optimal-control samplers, and their applications in generative modeling, scientific data, and embodied AI (sim2real, cross-domain imitation).
 
@@ -22,8 +22,8 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 &emsp;2.6. [Flow Matching, Stochastic Interpolants & SB Unification](#26-flow-matching-stochastic-interpolants-sb-unification) — 流匹配 / 随机插值 / SB 统一  
 3. [Sampling & Stochastic Optimal Control](#3-sampling-stochastic-optimal-control) — 采样与随机最优控制  
 &emsp;3.1. [Adjoint / SOC Samplers (energy-only)](#31-adjoint-soc-samplers-energy-only) — Adjoint / SOC 采样器（仅能量）  
-&emsp;3.2. [SOC for Reward Fine-tuning (Adjoint Matching lineage)](#32-soc-for-reward-fine-tuning-adjoint-matching-lineage) — SOC 奖励微调（Adjoint Matching 谱系）  
-&emsp;3.3. [Classical SOC Samplers & Competitors](#33-classical-soc-samplers-competitors) — 经典 SOC 采样器与竞品  
+&emsp;3.2. [SOC for Reward Fine-tuning & RL (Adjoint Matching lineage)](#32-soc-for-reward-fine-tuning-rl-adjoint-matching-lineage) — SOC 奖励微调与 RL（Adjoint Matching 谱系）  
+&emsp;3.3. [Diffusion Samplers, Boltzmann Generators & Competitors](#33-diffusion-samplers-boltzmann-generators-competitors) — 扩散采样器 / Boltzmann 生成器 / 竞品  
 4. [Applications](#4-applications) — 应用  
 &emsp;4.1. [Image Translation, Restoration & Editing](#41-image-translation-restoration-editing) — 图像翻译 / 修复 / 编辑  
 &emsp;4.2. [Video, 3D, Speech, Audio & Multimodal](#42-video-3d-speech-audio-multimodal) — 视频 / 3D / 语音 / 音频 / 多模态  
@@ -411,7 +411,13 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
  > GSBoG：图上的广义 SB——在状态代价增广动力学下学可执行的受控 CTMC 轨迹级策略，避免稠密全局求解器，随图规模与时域可扩展。
 
-6. **Discrete Diffusion Bridges for Spatiotemporally Aligned Image Translation and Generation.** ECCV, 2026. [paper](https://arxiv.org/abs/2608.29997)
+6. **Discrete diffusion samplers and bridges: Off-policy algorithms and applications in latent spaces.** ICML, 2026. [paper](https://arxiv.org/abs/2602.05961), [code](https://github.com/mmacosha/offpolicy-discrete-diffusion-samplers-and-bridges)
+
+ *Arran Carter, Sanghyeok Choi, Kirill Tamogashev, Víctor Elvira, Esmeralda S. Whitammer*
+
+ > 离散扩散采样器与桥的 off-policy 训练：把连续空间扩散采样器的 off-policy 算法推到离散空间，并应用于离散 latent 空间上的 data-to-energy SB。
+
+7. **Discrete Diffusion Bridges for Spatiotemporally Aligned Image Translation and Generation.** ECCV, 2026. [paper](https://arxiv.org/abs/2608.29997)
 
  *Xing Xie, Jiawei Liu, Shijun Zhou, Huijie Fan, Zhi Han et al.*
 
@@ -481,11 +487,53 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
  > Diffusion Bridge 还是 Flow Matching？用 SOC 视角统一两者并证明 diffusion bridge 的代价函数更低、轨迹更稳；从 OT 视角指出 FM 的 t/(1−t) 插值系数在小数据下失效。
 
-11. **Curly Flow Matching for Learning Non-gradient Field Dynamics.** NeurIPS, 2025. [paper](https://arxiv.org/abs/2510.26645)
+11. **Flow Matching with Semidiscrete Couplings.** arXiv, 2025. [paper](https://arxiv.org/abs/2509.25519)
+
+ *Alireza Mousavi-Hosseini, Stephen Y. Zhang, Michal Klein, Marco Cuturi*
+
+ > 半离散耦合的 flow matching：OT-FM 只在大批次才见效；用半离散 OT 求解器给出可扩展的耦合替代。
+
+12. **Curly Flow Matching for Learning Non-gradient Field Dynamics.** NeurIPS, 2025. [paper](https://arxiv.org/abs/2510.26645)
 
  *Katarina Petrović, Lazar Atanackovic, Viggo Moro, Kacper Kapuśniak, İsmail İlkan Ceylan et al.*
 
  > Curly-FM：现有 flow / bridge matching 基于最小作用量只能学梯度场；Curly-FM 设计可学非梯度、周期性动力学（如 scRNA 细胞周期）的匹配目标。
+
+13. **Expected Batch Optimal Transport Plans and Consequences for Flow Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.12174)
+
+ *Samuel Boïté, Julie Delon, Kimia Nadjahi*
+
+ > 期望 minibatch OT 计划：把重复 minibatch OT 诱导的总体耦合形式化为期望批 OT 计划，证明大批次一致性并在半离散情形给出传输代价偏差与收敛速率——OT-CFM 的理论补丁。
+
+14. **Lagrangian Flow Matching: A Least-Action Framework for Principled Path Design.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.15419)
+
+ *Shukai Du, Junzhe Zhang, Yiming Li*
+
+ > Lagrangian flow matching：直线（rectified / OT）路径只是动能 Lagrangian 的自由粒子特例；按最小作用量原理用一般 Lagrangian 设计概率路径与速度场。
+
+15. **Multiscale Supervised Unbalanced Optimal Transport Flow Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.16529)
+
+ *Qiangwei Peng, Lezhi Chen, Peijie Zhou*
+
+ > MUST-FM：利用单细胞数据的层级注释与转移先验（如谱系）做多尺度、可选监督的非平衡 OT flow matching，降低 UOT 的计算成本。
+
+16. **Optimal Transport Flow Matching by Design.** arXiv, 2026. [paper](https://arxiv.org/abs/2606.04092)
+
+ *Shimon Malnick, Matan Rusanovsky, Ohad Fried, Shai Avidan*
+
+ > OT flow matching by design：不求 OT 耦合而是把先验当设计变量——许多先验与数据之间的恒等耦合已是 OT 最优，选一个可采样的即可得到直的非交叉轨迹。
+
+17. **Multimarginal flow matching with optimal transport potentials.** ICML, 2026. [paper](https://arxiv.org/abs/2606.05327)
+
+ *Raghav Kansal, David Crair, Nghia Nguyen, Scott Pope, Bradley Parry*
+
+ > 多边缘 flow matching：借 FM ↔ 动态 OT 的联系，在动态 OT 作用量里加势项把流「软」引向中间边缘，得到 simulation-free 的多边缘算法——与 MSBM/MMtSBM 的 IMF 路线形成对照。
+
+18. **A Lagrangian View of Flow Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2609.00198)
+
+ *Peyman Milanfar*
+
+ > Flow matching 的 Lagrangian（粒子）视角：由连续去噪器的局部 Taylor 展开导出「目标身份守恒」不变性，得到拟线性平流 PDE，特征线法给出单步生成的解析条件。
 
 <a name="3-sampling-stochastic-optimal-control"></a>
 ## [3. Sampling & Stochastic Optimal Control](#content)
@@ -515,29 +563,47 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
  > MDNS（NeurIPS 2025，据作者主页与 CV）：CTMC 随机最优控制视角训练离散神经采样器（Ising/Potts），用免微分的路径测度对齐目标与加权去噪交叉熵实现高维可扩展；与 DASBS 同属离散能量采样线。
 
-5. **Enhancing Diffusion-Based Sampling with Molecular Collective Variables (WT-ASBS).** ICLR, 2026. [paper](https://arxiv.org/abs/2510.11923), [code](https://github.com/facebookresearch/wt-asbs)
+5. **Tilt Matching for Scalable Sampling and Fine-Tuning.** arXiv, 2025. [paper](https://arxiv.org/abs/2512.21829)
+
+ *Peter Potaptchik, Cheuk-Kit Lee, Michael S. Albergo*
+
+ > Tilt Matching：由「flow matching 速度」与「reward 倾斜后目标的速度」之间的动力学方程出发隐式解 SOC，同时服务于未归一化密度采样与生成模型微调；新速度是比 flow matching 方差更低的目标的极小点。
+
+6. **Data-to-Energy Stochastic Dynamics.** ICLR, 2026. [paper](https://arxiv.org/abs/2509.26364)
+
+ *Kirill Tamogashev, Esmeralda S. Whitammer*
+
+ > Data-to-Energy：现有 SB 算法都要求两端有样本；本文处理一端只有样本、另一端只有能量的设定，学从数据到能量定义分布的随机动力学。
+
+7. **Enhancing Diffusion-Based Sampling with Molecular Collective Variables (WT-ASBS).** ICLR, 2026. [paper](https://arxiv.org/abs/2510.11923), [code](https://github.com/facebookresearch/wt-asbs)
 
  *Juno Nam, Bálint Máté, Artur P. Toshev, Manasa Kaniselvan, Rafael Gómez-Bombarelli, Ricky T. Q. Chen, Brandon Wood, Guan-Horng Liu, Benjamin Kurt Miller*
 
  > WT-ASBS：把 well-tempered metadynamics 的在线排斥偏置沿集体变量（CV）加进 ASBS——内环训到有偏目标收敛、外环按 CV 投影叠加高斯核；发现稀有构象并重加权还原 Boltzmann 分布，首次用扩散采样器刻画含键断裂/形成的反应面。
 
-6. **Functional Adjoint Sampler: Scalable Sampling on Infinite Dimensional Spaces.** ICML, 2026. [paper](https://arxiv.org/abs/2511.06239), [📄 PDF](papers/2511.06239_functional_adjoint_sampler.pdf), [📘 精读](reports/2511.06239_functional_adjoint_sampler.md), [🀄 译本](papers_zh/2511.06239_functional_adjoint_sampler.zh.pdf) ⭐
+8. **Functional Adjoint Sampler: Scalable Sampling on Infinite Dimensional Spaces.** ICML, 2026. [paper](https://arxiv.org/abs/2511.06239), [📄 PDF](papers/2511.06239_functional_adjoint_sampler.pdf), [📘 精读](reports/2511.06239_functional_adjoint_sampler.md), [🀄 译本](papers_zh/2511.06239_functional_adjoint_sampler.zh.pdf) ⭐
 
  *Byoungwoo Park, Juho Lee, Guan-Horng Liu*
 
-7. **Discrete Adjoint Schrödinger Bridge Sampler.** ICML, 2026. [paper](https://arxiv.org/abs/2602.08243), [📄 PDF](papers/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.pdf), [📘 精读](reports/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.md), [🀄 译本](papers_zh/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
+9. **Discrete Adjoint Schrödinger Bridge Sampler.** ICML, 2026. [paper](https://arxiv.org/abs/2602.08243), [📄 PDF](papers/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.pdf), [📘 精读](reports/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.md), [🀄 译本](papers_zh/2602.08243_discrete_adjoint_schrodinger_bridge_sampler.zh.pdf) ⭐
 
  *Wei Guo, Yuchen Zhu, Xiaochen Du, Juno Nam, Yongxin Chen, Rafael Gómez-Bombarelli, Guan-Horng Liu, Molei Tao, Jaemoo Choi*
 
-8. **Hard-Constrained Sampling on Embedded Riemannian Manifolds via Adjoint Schrödinger Bridges.** arXiv, 2026. [paper](https://arxiv.org/abs/2608.25838)
+10. **MetaDNS: Enhancing Exploration in Discrete Neural Samplers via Well-Tempered Metadynamics.** ICML, 2026. [paper](https://arxiv.org/abs/2605.21722)
+
+ *Xiaochen Du, Juno Nam, Jaemoo Choi, Wei Guo, Sathya Edamadaka et al.*
+
+ > MetaDNS：MDNS 类离散神经采样器在高能垒间模式塌缩；把 well-tempered metadynamics 的自适应历史依赖偏置接进离散扩散/自回归采样器，用于自由能估计与相变（WT-ASBS 的离散对应）。
+
+11. **Hard-Constrained Sampling on Embedded Riemannian Manifolds via Adjoint Schrödinger Bridges.** arXiv, 2026. [paper](https://arxiv.org/abs/2608.25838)
 
  *Mattia Mosso, Jaemoo Choi, Heng Yang*
 
  > 在嵌入的紧致黎曼流形上做 adjoint SB 采样：受控扩散在流形上内蕴定义、可行性在状态空间层面强制，面向流形支撑的 Boltzmann 分布（物理应用验证）。
 
-<a name="32-soc-for-reward-fine-tuning-adjoint-matching-lineage"></a>
-### [3.2. SOC for Reward Fine-tuning (Adjoint Matching lineage)](#content)
-*SOC 奖励微调（Adjoint Matching 谱系）*
+<a name="32-soc-for-reward-fine-tuning-rl-adjoint-matching-lineage"></a>
+### [3.2. SOC for Reward Fine-tuning & RL (Adjoint Matching lineage)](#content)
+*SOC 奖励微调与 RL（Adjoint Matching 谱系）*
 
 1. **Training Diffusion Models with Reinforcement Learning.** ICLR, 2024. [paper](https://arxiv.org/abs/2305.13301), [code](https://github.com/jannerm/ddpo)
 
@@ -557,19 +623,85 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
  > DRAKES：对 masked 离散扩散做 reward 微调（Gumbel-Softmax 反传），目标是既像预训练分布又高 reward；DAM 的直接对照。
 
-4. **Discrete Adjoint Matching.** ICLR, 2026. [paper](https://arxiv.org/abs/2602.07132), [📄 PDF](papers/2602.07132_discrete_adjoint_matching.pdf), [📘 精读](reports/2602.07132_discrete_adjoint_matching.md), [🀄 译本](papers_zh/2602.07132_discrete_adjoint_matching.zh.pdf) ⭐
+4. **TR2-D2: Tree Search Guided Trajectory-Aware Fine-Tuning for Discrete Diffusion.** arXiv, 2025. [paper](https://arxiv.org/abs/2509.25171)
+
+ *Sophia Tang, Yuchen Zhu, Molei Tao, Pranam Chatterjee*
+
+ > TR2-D2：SOC 式离散扩散微调依赖当前模型 rollout、易强化低回报轨迹；用树搜索引导的轨迹感知微调筛选高回报路径。
+
+5. **Q-learning with Adjoint Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2601.14234)
+
+ *Qiyang Li, Sergey Levine*
+
+ > QAM：把「对参数化 Q 函数优化 diffusion/flow 策略」重写为带学习 critic 的 memoryless SOC，用 adjoint matching 利用 critic 的一阶信息而不反传多步去噪过程；连续动作 RL 的 TD 类算法。
+
+6. **Discrete Adjoint Matching.** ICLR, 2026. [paper](https://arxiv.org/abs/2602.07132), [📄 PDF](papers/2602.07132_discrete_adjoint_matching.pdf), [📘 精读](reports/2602.07132_discrete_adjoint_matching.md), [🀄 译本](papers_zh/2602.07132_discrete_adjoint_matching.zh.pdf) ⭐
 
  *Oswin So, Brian Karrer, Chuchu Fan, Ricky T. Q. Chen, Guan-Horng Liu*
 
-5. **Adjoint Matching through the Lens of the Stochastic Maximum Principle in Optimal Control.** arXiv, 2026. [paper](https://arxiv.org/abs/2604.08580)
+7. **A Sample-Wise Adjoint Regression Framework for Mean-Field Control with Connections to Adjoint Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2604.06675)
+
+ *Hui Sun*
+
+ > 平均场控制的样本级 adjoint 回归：不显式求解 adjoint 过程 (Y,Z)，而是构造其离散化的无偏样本估计并递归回归近似 Hamiltonian 控制梯度——与 adjoint matching 的「回归而非反传」思路同源。
+
+8. **Adjoint Matching through the Lens of the Stochastic Maximum Principle in Optimal Control.** arXiv, 2026. [paper](https://arxiv.org/abs/2604.08580)
 
  *Carles Domingo-Enrich, Jiequn Han*
 
  > 从随机极大值原理（SMP）重推 Adjoint Matching：给出控制相关漂移/扩散与凸运行成本下的一般 Hamiltonian adjoint matching 目标，证明其一阶变分与原 SOC 目标一致；lean adjoint 是状态无关扩散下的特例。
 
-<a name="33-classical-soc-samplers-competitors"></a>
-### [3.3. Classical SOC Samplers & Competitors](#content)
-*经典 SOC 采样器与竞品*
+9. **A unified perspective on fine-tuning and sampling with diffusion and flow models.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.00229)
+
+ *Carles Domingo-Enrich, Yuanqi Du, Michael S. Albergo*
+
+ > 统一视角：把「从未归一化密度采样」与「reward 微调」都写成对 base 密度的指数倾斜，比较 SOC（adjoint / score matching）与非平衡热力学路线；给出偏差-方差分解（AM/AS 与 Novel Score Matching 梯度方差有限，Target/Conditional Score Matching 无界）与 lean adjoint ODE 的范数界。
+
+10. **Entropy-Regularized Adjoint Matching for Offline Reinforcement Learning.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.06156)
+
+ *Abdelghani Ghanem, Mounir Ghogho*
+
+ > ME-AM：QAM 受限于固定行为分布带来的流行度偏差与支撑绑定；最大熵 adjoint matching 在离线 RL 中放开对低密度高回报动作的抑制，避免退回单峰残差高斯策略。
+
+11. **Improved techniques for fine-tuning flow models via adjoint matching: a deterministic control pipeline.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.06583)
+
+ *Zhengyi Guo, Jiayuan Sheng, David D. Yao, Wenpin Tang*
+
+ > 确定性 AM：把 flow 模型的偏好对齐写成速度场上的最优控制，直接向价值梯度诱导的目标回归；截断 adjoint 只算轨迹末段，并推广到非 KL 正则；SiT-XL/2 与 FLUX 实验。
+
+12. **Reinforce Adjoint Matching: Scaling RL Post-Training of Diffusion and Flow-Matching Models.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.10759)
+
+ *Andreas Bergmeister, Stefanie Jegelka, Nikolas Nüsken, Carles Domingo-Enrich, Jakiw Pidstrigach*
+
+ > Reinforce AM：证明 KL 正则 reward 最大化的最优生成过程只倾斜干净端点分布、噪声律不变，结合 AM 最优性条件与 REINFORCE 恒等式，把 RL 后训练保留为预训练式的回归结构，免去昂贵 SDE rollout 与 reward 梯度。
+
+13. **Efficient Adjoint Matching for Fine-tuning Diffusion Models.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.11480)
+
+ *Jeongwoo Shin, Dongsoo Shin, Yuchen Zhu, Wei Guo, Yongxin Chen et al.*
+
+ > Efficient AM：指出 AM 的两大开销（memoryless 动力学下的全轨迹随机模拟、逐轨迹反向 adjoint ODE）都源自预训练模型的非平凡 base drift，据此设计更省算的变体。
+
+14. **Trust Region Q Adjoint Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2605.27079)
+
+ *Yonghoon Dong, Kyungmin Lee, Changyeon Kim, Jaehyuk Kim, Jinwoo Shin*
+
+ > TRQAM：QAM 会放大病态 critic 的小误差导致崩溃；用投影对偶下降自适应控制与预训练 flow 策略间的路径空间 KL（优化 SOC 中的信赖域参数 λ），稳定 off-policy 微调。
+
+15. **Unsupervised Diffusion Solver for Combinatorial Optimization via Combinatorial Adjoint Matching.** ICML, 2026. [paper](https://arxiv.org/abs/2605.30920)
+
+ *Shengyu Feng, Tarun Suresh, Yiming Yang*
+
+ > CAM：把扩散式组合优化写成 CTMC 上的随机控制，引入离散 adjoint 动力学在离散生成轨迹上传播优化信号，实现无监督（无需近优解标签）训练的离散扩散求解器。
+
+16. **Scalable Maximum Entropy Reinforcement Learning for Diffusion Policies via Adjoint Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2606.22630)
+
+ *Serge Thilges, Onur Celik, Denis Blessing, Emiliyan Gospodinov, Gerhard Neumann*
+
+ > 用 adjoint matching 做在线最大熵 RL 的 diffusion 策略优化：simulation-free、无需显式似然或反传去噪过程，并给出若干稳定性扩展。
+
+<a name="33-diffusion-samplers-boltzmann-generators-competitors"></a>
+### [3.3. Diffusion Samplers, Boltzmann Generators & Competitors](#content)
+*扩散采样器 / Boltzmann 生成器 / 竞品*
 
 1. **Path Integral Sampler: a stochastic control approach for sampling.** ICLR, 2022. [paper](https://arxiv.org/abs/2111.15141), [code](https://github.com/qsh-zh/pis)
 
@@ -607,11 +739,71 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
  > Underdamped Diffusion Bridges：欠阻尼动力学的 bridge 采样器。
 
-7. **Bridge Matching Sampler: Scalable Sampling via Generalized Fixed-Point Diffusion Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2603.00530)
+7. **Proximal Diffusion Neural Sampler.** ICLR, 2026. [paper](https://arxiv.org/abs/2510.03824)
+
+ *Wei Guo, Jaemoo Choi, Yuchen Zhu, Molei Tao, Yongxin Chen*
+
+ > PDNS：把神经采样器训练视为路径测度上的 SOC，用近端点法（proximal point）处理多峰高能垒目标的模式塌缩。
+
+8. **Reinforced sequential Monte Carlo for amortised sampling.** ICML, 2026. [paper](https://arxiv.org/abs/2510.11711), [code](https://github.com/hyeok9855/ReinforcedSMC)
+
+ *Sanghyeok Choi, Sarthak Mittal, Víctor Elvira, Jinkyoo Park, Esmeralda S. Whitammer*
+
+ > Reinforced SMC：建立序贯蒙特卡洛与最大熵 RL 训练的神经序贯采样器之间的联系（策略/价值 ↔ proposal/twist），用 SMC 样本作为行为策略做 off-policy 训练。
+
+9. **One-Step Diffusion Samplers via Self-Distillation and Deterministic Flow.** AISTATS, 2026. [paper](https://arxiv.org/abs/2512.05251)
+
+ *Pascal Jutras-Dube, Jiaru Zhang, Ziran Wang, Ruqi Zhang*
+
+ > 一步扩散采样器：学步长条件化的 ODE，用状态空间一致性损失让一大步复现多小步轨迹；并指出常规 ELBO 估计在少步下失真。
+
+10. **Diffusion-based Annealed Boltzmann Generators : benefits, pitfalls and hopes.** TMLR, 2026. [paper](https://arxiv.org/abs/2601.21026)
+
+ *Louis Grenioux, Maxence Noble*
+
+ > 基于退火 MC 的扩散式 Boltzmann 生成器：分析其相对重要性采样 BG 的收益、陷阱与前景（高维多峰、无需 tractable 似然）。
+
+11. **Efficient Training of Boltzmann Generators Using Off-Policy Log-Dispersion Regularization.** arXiv, 2026. [paper](https://arxiv.org/abs/2602.03729)
+
+ *Henrik Schopmans, Christopher von Klitzing, Pascal Friederich*
+
+ > Off-policy log-dispersion 正则（LDR）：推广 log-variance 目标，提高 Boltzmann 生成器在昂贵能量评估下的数据效率。
+
+12. **Coarse-Grained Boltzmann Generators.** ICML, 2026. [paper](https://arxiv.org/abs/2602.10637)
+
+ *Weilong Chen, Bojun Zhao, Jan Eckwert, Julija Zavadlav*
+
+ > CG-BG：粗粒化代理可扩到更大系统但缺重加权保证渐近正确统计；给出带重加权的粗粒化 Boltzmann 生成器框架。
+
+13. **Bridge Matching Sampler: Scalable Sampling via Generalized Fixed-Point Diffusion Matching.** arXiv, 2026. [paper](https://arxiv.org/abs/2603.00530)
 
  *Denis Blessing, Lorenz Richter, Julius Berner, Egor Malitskiy, Gerhard Neumann*
 
  > Bridge Matching Sampler（BMS）：把近期各类最小二乘「匹配」式采样器统一为源于 Nelson 关系的不动点迭代，单一稳定目标学任意先验→目标的随机传输；阻尼变体缓解模式塌缩。
+
+14. **Jeffreys Flow: Robust Boltzmann Generators for Rare Event Sampling via Parallel Tempering Distillation.** arXiv, 2026. [paper](https://arxiv.org/abs/2604.05303)
+
+ *Guang Lin, Christian Moya, Di Qi, Xuda Ye*
+
+ > Jeffreys Flow：反向 KL 训练的 BG 常模式塌缩；用对称 Jeffreys 散度蒸馏平行回火轨迹的经验数据，兼顾局部精度与全局模态覆盖。
+
+15. **Autoregressive Boltzmann Generators.** ICML, 2026 (Spotlight). [paper](https://arxiv.org/abs/2606.27361)
+
+ *Danyal Rehman, Charlie B. Tan, Yoshua Bengio, Avishek Joey Bose, Alexander Tong*
+
+ > 自回归 Boltzmann 生成器：BG 依赖精确似然 + 重要性采样校正，但归一化流受可逆性或似然代价限制；改用自回归模型作为骨干。
+
+16. **Few-Step Boltzmann Generators via Scalable Likelihood Flow Maps.** arXiv, 2026. [paper](https://arxiv.org/abs/2606.29110)
+
+ *RuiKang OuYang, Hanlin Yu, Xinyue Ai, Yutong He, Nicholas M. Boffi et al.*
+
+ > SCALLOP：少步 flow map 模型缺乏对应的少步似然估计；在 F2D2 基础上给出可扩展的似然蒸馏，替代高方差的 Hutchinson 估计，得到少步 Boltzmann 生成器。
+
+17. **JANUS: A Multi-modal Foundation Neural Sampler for Disordered Materials.** arXiv, 2026. [paper](https://arxiv.org/abs/2608.19116)
+
+ *Denis Blessing, Mouyang Cheng, Maximilian Schebek, Jutta Rogal, Mingda Li et al.*
+
+ > JANUS：耦合连续与 masked 离散扩散的多模态神经采样器（等变 GNN），仅由能量评估训练；Ising 与等压 ΔμNPT 合金系统上以少三个量级的能量评估复现 MC 平衡观测量与自由能。
 
 <a name="4-applications"></a>
 ## [4. Applications](#content)
@@ -651,13 +843,19 @@ A curated list of papers, code, tutorials and **Chinese deep-dive reports** on t
 
  > E-Bridge：更短时域 + 从「退化图像与高斯噪声的熵正则混合点」起步的桥过程，理论上降低所需轨迹能量；借 consistency 模型学单步映射。
 
-6. **Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement.** CVPR, 2026. [paper](https://openaccess.thecvf.com/content/CVPR2026/html/Hua_Bi-Bridge_Bidirectional_Diffusion_Bridges_for_Low-Light_Image_Enhancement_CVPR_2026_paper.html)
+6. **Stochastic Optimal Control Sampling for Diffusion Inverse Problems.** ECCV, 2026. [paper](https://arxiv.org/abs/2606.28785)
+
+ *Jie Zhang, Youmei Qiu, Hanling Tian, Jingyuan Zhang, Xiang Yin, Xiaolin Huang*
+
+ > SOCS：把去噪过程看作动力系统、用 SOC 注入控制信号引导采样轨迹贴合观测，避免此前 SOC 逆问题方法对整条轨迹优化的高开销。
+
+7. **Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement.** CVPR, 2026. [paper](https://openaccess.thecvf.com/content/CVPR2026/html/Hua_Bi-Bridge_Bidirectional_Diffusion_Bridges_for_Low-Light_Image_Enhancement_CVPR_2026_paper.html)
 
  *Zeyu Hua, Hui Li, Yu Wang, Song Wang, Congchao Zhu, Caixia Zheng*
 
  > Bi-Bridge：利用 DDBM 高斯桥均值对端点的对称性，训练时随机交换起终点、单个 U-Net 同时学增强与退化两个方向，用双向一致性约束抑制单向生成模型对结构的扭曲（CVF Open Access，pp. 37455–37464）。
 
-7. **Remote Sensing Image Super-Resolution via Progressive Diffusion Schrödinger Bridge.** Remote Sensing 18(3):532, 2026. [paper](https://www.mdpi.com/2072-4292/18/3/532)
+8. **Remote Sensing Image Super-Resolution via Progressive Diffusion Schrödinger Bridge.** Remote Sensing 18(3):532, 2026. [paper](https://www.mdpi.com/2072-4292/18/3/532)
 
  > PDSB：把大尺度 SR 切成级联子桥，逐级以小尺度结果为条件重建，缓解 LR/HR 配对中的几何位移违反高斯假设的问题；Gaofen-6 (2 m) ↔ Sentinel-2 (10 m) 数据上 FID 8.294，为第二名的一半。
 

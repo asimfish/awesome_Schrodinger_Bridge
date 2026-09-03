@@ -6,10 +6,11 @@ import argparse, csv, datetime, json, pathlib, re, sys, time, urllib.parse, urll
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 NS = {"a": "http://www.w3.org/2005/Atom"}; AX = "{http://arxiv.org/schemas/atom}"
 ap = argparse.ArgumentParser(); ap.add_argument("--months", type=int, default=12); ap.add_argument("--max", type=int, default=400)
+ap.add_argument("--query", default="", help="自定义 arXiv 检索式（URL 编码前的原文，不含日期）"); ap.add_argument("--tag", default="", help="输出文件后缀")
 a = ap.parse_args()
 end = datetime.date.today(); start = end - datetime.timedelta(days=30 * a.months)
-q = ('(all:%22Schr%C3%B6dinger%20bridge%22 OR all:%22Schrodinger%20bridge%22 OR all:%22bridge%20matching%22 OR all:%22diffusion%20bridge%22 OR all:%22entropic%20optimal%20transport%22)'
-     f' AND submittedDate:[{start:%Y%m%d}0000 TO {end:%Y%m%d}2359]')
+base_q = a.query or '(all:"Schrödinger bridge" OR all:"Schrodinger bridge" OR all:"bridge matching" OR all:"diffusion bridge" OR all:"entropic optimal transport")'
+q = urllib.parse.quote(base_q, safe='():') + f' AND submittedDate:[{start:%Y%m%d}0000 TO {end:%Y%m%d}2359]' 
 known = set()
 for f in ["metadata/papers.tsv", "metadata/extended.tsv"]:
     for r in csv.DictReader(open(ROOT / f, encoding="utf-8"), delimiter="\t"):
@@ -40,12 +41,12 @@ for startidx in range(0, a.max, 100):
 # 相关性粗打分：标题命中 > 摘要命中
 def score(r):
     t = r["title"].lower(); s = r["abstract"].lower()
-    kw_t = ["schrödinger bridge", "schrodinger bridge", "bridge matching", "diffusion bridge", "entropic optimal transport", "adjoint"]
-    kw_s = ["schrödinger bridge", "schrodinger bridge", "bridge matching", "iterative markovian", "stochastic optimal control", "boltzmann", "sim-to-real", "imitation", "single-cell", "unpaired"]
+    kw_t = ["schrödinger bridge", "schrodinger bridge", "bridge matching", "diffusion bridge", "entropic optimal transport", "adjoint", "sampler", "optimal control", "optimal transport", "boltzmann"]
+    kw_s = ["schrödinger bridge", "schrodinger bridge", "bridge matching", "iterative markovian", "stochastic optimal control", "boltzmann", "sim-to-real", "imitation", "single-cell", "unpaired", "unnormalized", "energy", "reward", "fine-tun"]
     return 3 * sum(k in t for k in kw_t) + sum(k in s for k in kw_s)
 for r in rows: r["score"] = score(r)
 rows.sort(key=lambda r: (-r["score"], r["date"]), reverse=False)
-tag = end.isoformat()
+tag = end.isoformat() + (f"_{a.tag}" if a.tag else "")
 tsv = ROOT / f"survey/raw/S2_arxiv_scan_{tag}.tsv"
 with open(tsv, "w", encoding="utf-8", newline="") as f:
     w = csv.DictWriter(f, fieldnames=["id", "date", "score", "known", "title", "first_author", "n_authors", "comment", "jref", "cats"], delimiter="\t", lineterminator="\n", extrasaction="ignore")
